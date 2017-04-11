@@ -43,7 +43,6 @@
 		A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93EECE61E78EE26001378B1 /* LaunchScreen.storyboard */; };
 		A93EECF91E791A41001378B1 /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EECF81E791A41001378B1 /* UIColor+CustomColor.m */; };
 		A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EECFE1E7921E0001378B1 /* UIImage+ASHUtil.m */; };
-		A93EED041E792B82001378B1 /* meiyou1.png in Resources */ = {isa = PBXBuildFile; fileRef = A93EED031E792B82001378B1 /* meiyou1.png */; };
 		A93EED0E1E7935C4001378B1 /* ShopItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EED0C1E7935C4001378B1 /* ShopItemCell.m */; };
 		A93EED0F1E7935C4001378B1 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93EED0D1E7935C4001378B1 /* ShopItemCell.xib */; };
 		A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EED111E793D12001378B1 /* UILabel+ASHUtil.m */; };
@@ -56,18 +55,6 @@
 		A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76B91E94CB8A00916E79 /* ASHCommonUtil.m */; };
 		A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76BF1E94CC5200916E79 /* NSBundle+ASHVersion.m */; };
 		A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76C21E9514F200916E79 /* NSString+ASHJson.m */; };
-		A9D0D1901E95E2840047CB88 /* backgroud1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D18F1E95E2840047CB88 /* backgroud1.jpg */; };
-		A9D0D1921E95E2D70047CB88 /* backgroud2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1911E95E2D70047CB88 /* backgroud2.jpg */; };
-		A9D0D1941E95E40D0047CB88 /* backgroud3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1931E95E40D0047CB88 /* backgroud3.jpg */; };
-		A9D0D1971E95E5730047CB88 /* backgroud4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1951E95E5730047CB88 /* backgroud4.jpg */; };
-		A9D0D1981E95E5730047CB88 /* backgroud5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1961E95E5730047CB88 /* backgroud5.jpg */; };
-		A9D0D19A1E95E6460047CB88 /* backgroud6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1991E95E6460047CB88 /* backgroud6.jpg */; };
-		A9D0D19C1E95E69F0047CB88 /* backgroud7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D19B1E95E69F0047CB88 /* backgroud7.jpg */; };
-		A9D0D19E1E95E7020047CB88 /* backgroud8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D19D1E95E7020047CB88 /* backgroud8.jpg */; };
-		A9D0D1A11E95E7440047CB88 /* backgroud9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D19F1E95E7440047CB88 /* backgroud9.jpg */; };
-		A9D0D1A21E95E7440047CB88 /* backgroud10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A01E95E7440047CB88 /* backgroud10.jpg */; };
-		A9D0D1A51E95E7C60047CB88 /* backgroud11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A31E95E7C60047CB88 /* backgroud11.jpg */; };
-		A9D0D1A61E95E7C60047CB88 /* backgroud12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A41E95E7C60047CB88 /* backgroud12.jpg */; };
 		A9D0D1A81E95E8810047CB88 /* backgroud13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A71E95E8810047CB88 /* backgroud13.jpg */; };
 		A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */; };
 /* End PBXBuildFile section */
@@ -122,7 +109,6 @@
 		A93EECF81E791A41001378B1 /* UIColor+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColor.m"; sourceTree = "<group>"; };
 		A93EECFD1E7921E0001378B1 /* UIImage+ASHUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ASHUtil.h"; sourceTree = "<group>"; };
 		A93EECFE1E7921E0001378B1 /* UIImage+ASHUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ASHUtil.m"; sourceTree = "<group>"; };
-		A93EED031E792B82001378B1 /* meiyou1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meiyou1.png; sourceTree = "<group>"; };
 		A93EED0B1E7935C4001378B1 /* ShopItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopItemCell.h; sourceTree = "<group>"; };
 		A93EED0C1E7935C4001378B1 /* ShopItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopItemCell.m; sourceTree = "<group>"; };
 		A93EED0D1E7935C4001378B1 /* ShopItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopItemCell.xib; sourceTree = "<group>"; };
@@ -147,18 +133,6 @@
 		A98F76BF1E94CC5200916E79 /* NSBundle+ASHVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ASHVersion.m"; sourceTree = "<group>"; };
 		A98F76C11E9514F200916E79 /* NSString+ASHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHJson.h"; sourceTree = "<group>"; };
 		A98F76C21E9514F200916E79 /* NSString+ASHJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ASHJson.m"; sourceTree = "<group>"; };
-		A9D0D18F1E95E2840047CB88 /* backgroud1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud1.jpg; sourceTree = "<group>"; };
-		A9D0D1911E95E2D70047CB88 /* backgroud2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud2.jpg; sourceTree = "<group>"; };
-		A9D0D1931E95E40D0047CB88 /* backgroud3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud3.jpg; sourceTree = "<group>"; };
-		A9D0D1951E95E5730047CB88 /* backgroud4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud4.jpg; sourceTree = "<group>"; };
-		A9D0D1961E95E5730047CB88 /* backgroud5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud5.jpg; sourceTree = "<group>"; };
-		A9D0D1991E95E6460047CB88 /* backgroud6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud6.jpg; sourceTree = "<group>"; };
-		A9D0D19B1E95E69F0047CB88 /* backgroud7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud7.jpg; sourceTree = "<group>"; };
-		A9D0D19D1E95E7020047CB88 /* backgroud8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud8.jpg; sourceTree = "<group>"; };
-		A9D0D19F1E95E7440047CB88 /* backgroud9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud9.jpg; sourceTree = "<group>"; };
-		A9D0D1A01E95E7440047CB88 /* backgroud10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud10.jpg; sourceTree = "<group>"; };
-		A9D0D1A31E95E7C60047CB88 /* backgroud11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud11.jpg; sourceTree = "<group>"; };
-		A9D0D1A41E95E7C60047CB88 /* backgroud12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud12.jpg; sourceTree = "<group>"; };
 		A9D0D1A71E95E8810047CB88 /* backgroud13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroud13.jpg; sourceTree = "<group>"; };
 		A9D0D1AF1E96164F0047CB88 /* ASHSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSettingVC.h; sourceTree = "<group>"; };
 		A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSettingVC.m; sourceTree = "<group>"; };
@@ -405,21 +379,8 @@
 			children = (
 				A923CEC51E9CA6BE00C7246B /* icon1024.png */,
 				A923CEC31E9C7BDE00C7246B /* cart.png */,
-				A9D0D19F1E95E7440047CB88 /* backgroud9.jpg */,
-				A9D0D1A01E95E7440047CB88 /* backgroud10.jpg */,
-				A9D0D1A31E95E7C60047CB88 /* backgroud11.jpg */,
-				A9D0D1A41E95E7C60047CB88 /* backgroud12.jpg */,
 				A9318F251E822B2800E66569 /* set.png */,
 				A92BC6471E7FF7AF0019B435 /* yw_1222.jpg */,
-				A93EED031E792B82001378B1 /* meiyou1.png */,
-				A9D0D18F1E95E2840047CB88 /* backgroud1.jpg */,
-				A9D0D1911E95E2D70047CB88 /* backgroud2.jpg */,
-				A9D0D1931E95E40D0047CB88 /* backgroud3.jpg */,
-				A9D0D1951E95E5730047CB88 /* backgroud4.jpg */,
-				A9D0D1961E95E5730047CB88 /* backgroud5.jpg */,
-				A9D0D1991E95E6460047CB88 /* backgroud6.jpg */,
-				A9D0D19B1E95E69F0047CB88 /* backgroud7.jpg */,
-				A9D0D19D1E95E7020047CB88 /* backgroud8.jpg */,
 				A9D0D1A71E95E8810047CB88 /* backgroud13.jpg */,
 			);
 			path = Resource;
@@ -496,29 +457,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D0D1A21E95E7440047CB88 /* backgroud10.jpg in Resources */,
-				A9D0D19A1E95E6460047CB88 /* backgroud6.jpg in Resources */,
-				A9D0D1A61E95E7C60047CB88 /* backgroud12.jpg in Resources */,
-				A9D0D1921E95E2D70047CB88 /* backgroud2.jpg in Resources */,
 				A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */,
-				A9D0D1A51E95E7C60047CB88 /* backgroud11.jpg in Resources */,
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,
 				A92BC6651E7FF8760019B435 /* AlipaySDK.bundle in Resources */,
 				A923CEC61E9CA6BE00C7246B /* icon1024.png in Resources */,
-				A9D0D1981E95E5730047CB88 /* backgroud5.jpg in Resources */,
 				A93EED0F1E7935C4001378B1 /* ShopItemCell.xib in Resources */,
-				A93EED041E792B82001378B1 /* meiyou1.png in Resources */,
-				A9D0D19C1E95E69F0047CB88 /* backgroud7.jpg in Resources */,
 				A9D0D1A81E95E8810047CB88 /* backgroud13.jpg in Resources */,
-				A9D0D1941E95E40D0047CB88 /* backgroud3.jpg in Resources */,
 				A92BC6481E7FF7B00019B435 /* yw_1222.jpg in Resources */,
-				A9D0D19E1E95E7020047CB88 /* backgroud8.jpg in Resources */,
 				A9318F261E822B2800E66569 /* set.png in Resources */,
 				A93EECE31E78EE26001378B1 /* Main.storyboard in Resources */,
-				A9D0D1901E95E2840047CB88 /* backgroud1.jpg in Resources */,
-				A9D0D1971E95E5730047CB88 /* backgroud4.jpg in Resources */,
-				A9D0D1A11E95E7440047CB88 /* backgroud9.jpg in Resources */,
 				A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */,
 				A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */,
 				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,

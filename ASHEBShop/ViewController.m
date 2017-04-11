@@ -168,21 +168,19 @@
 {
     
     
-    NSDictionary *dict = @{@"index" : @(indexPath.row+1)};
-    [MobClick event:@"shopclick" attributes:dict];
+
     
     AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
     showParam.openType = AlibcOpenTypeAuto;
     
     if (_viewModel.model.goodsJa.count > indexPath.row) {
         ASHHomeItemModel* model = [_viewModel.model.goodsJa objectAtIndex:indexPath.row];
+        NSDictionary *dict = @{@"index" : @(model.id)};
+        [MobClick event:@"shopclick" attributes:dict];
         id<AlibcTradePage> page = [AlibcTradePageFactory page: model.goodsUrl];
         [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams: nil trackParam: nil tradeProcessSuccessCallback:nil tradeProcessFailedCallback:nil];
         
     }
-    
-    //根据链接打开页面
-
 }
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
