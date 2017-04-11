@@ -54,7 +54,7 @@
 - (void)postWithUrl:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
 //    [self.manager POST:url parameters:param progress:nil success:success failure:failure];
-    [self.manager POST:url parameters:param constructingBodyWithBlock:nil progress:nil success:success failure:false];
+    [self.manager POST:url parameters:param constructingBodyWithBlock:nil progress:nil success:success failure:failure];
 }
 - (void)requestWithEntity:(ASHPropertyEntity *)eneity success:(void (^)(id))success failure:(void (^)(NSError * _Nonnull))failure
 {

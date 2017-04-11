@@ -11,6 +11,7 @@
 		A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = A90619891E9CCE2B00B5D6E5 /* up.png */; };
 		A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A906198B1E9CCEA400B5D6E5 /* account-2.png */; };
 		A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A906198C1E9CCEA400B5D6E5 /* account-3.png */; };
+		A90619901E9CFFE600B5D6E5 /* startlabel.png in Resources */ = {isa = PBXBuildFile; fileRef = A906198F1E9CFFE600B5D6E5 /* startlabel.png */; };
 		A923CEC41E9C7BDE00C7246B /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = A923CEC31E9C7BDE00C7246B /* cart.png */; };
 		A923CEC61E9CA6BE00C7246B /* icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = A923CEC51E9CA6BE00C7246B /* icon1024.png */; };
 		A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BC6401E7BCD490019B435 /* ASHNetWorkManagerImpl.m */; };
@@ -68,6 +69,7 @@
 		A90619891E9CCE2B00B5D6E5 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		A906198B1E9CCEA400B5D6E5 /* account-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "account-2.png"; sourceTree = "<group>"; };
 		A906198C1E9CCEA400B5D6E5 /* account-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "account-3.png"; sourceTree = "<group>"; };
+		A906198F1E9CFFE600B5D6E5 /* startlabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startlabel.png; sourceTree = "<group>"; };
 		A923CEC31E9C7BDE00C7246B /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 		A923CEC51E9CA6BE00C7246B /* icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1024.png; sourceTree = "<group>"; };
 		A92BC63F1E7BCD490019B435 /* ASHNetWorkManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNetWorkManagerImpl.h; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A906198F1E9CFFE600B5D6E5 /* startlabel.png */,
 				A906198B1E9CCEA400B5D6E5 /* account-2.png */,
 				A906198C1E9CCEA400B5D6E5 /* account-3.png */,
 				A90619891E9CCE2B00B5D6E5 /* up.png */,
@@ -466,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90619901E9CFFE600B5D6E5 /* startlabel.png in Resources */,
 				A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */,
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,

@@ -18,6 +18,7 @@
 #import "ASHSettingVC.h"
 #import <MJRefresh.h>
 #import <UMMobClick/MobClick.h>
+#import <MBProgressHUD.h>
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)UITableView* tableView;
@@ -85,12 +86,7 @@
     self.tableView.mj_header = refreshHeader;
     [self.view addSubview:self.tableView];
     
-    MJRefreshAutoNormalFooter* refreshfooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        @strongify(self);
-        [self loadMore];
-    }];
-    refreshfooter.stateLabel.textColor = [UIColor whiteColor];
-    self.tableView.mj_footer = refreshfooter;
+
     
     self.setBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.setBtn.backgroundColor = [UIColor clearColor];
@@ -166,6 +162,20 @@
     [self.tableView.mj_header beginRefreshing];
     
 }
+- (void)setFooter
+{
+    if (self.tableView.mj_footer) {
+        return;
+    }
+    @weakify(self);
+    MJRefreshAutoNormalFooter* refreshfooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self);
+        [self loadMore];
+    }];
+    refreshfooter.stateLabel.textColor = [UIColor whiteColor];
+    self.tableView.mj_footer = refreshfooter;
+    
+}
 - (void)requestData
 {
     [self bindViewModel];
@@ -182,14 +192,27 @@
     [_viewModel.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
+        [self setFooter];
         if(!self.viewModel.hasMore){
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }else{
+            
             [self.tableView.mj_footer resetNoMoreData];
         }
         [self.tableView reloadData];
     } error:^(NSError *error) {
+        @strongify(self);
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        [self.tableView.mj_footer removeFromSuperview];
         [self.tableView.mj_header endRefreshing];
+        MBProgressHUD* progressHUD = [[MBProgressHUD alloc] initWithFrame:self.view.bounds];
+        progressHUD.mode = MBProgressHUDModeText;
+        progressHUD.removeFromSuperViewOnHide = YES;
+        progressHUD.center = self.view.center;
+        progressHUD.label.text = @"网络异常,请下来刷新重试";
+        [self.view addSubview:progressHUD];
+        [progressHUD showAnimated:NO];
+        [progressHUD hideAnimated:YES afterDelay:2.0];
     }];
 }
 #pragma mark UITableViewDelegate
