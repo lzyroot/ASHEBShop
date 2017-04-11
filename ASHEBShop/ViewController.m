@@ -18,9 +18,12 @@
 #import "ASHSettingVC.h"
 #import <MJRefresh.h>
 #import <UMMobClick/MobClick.h>
+
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)UITableView* tableView;
 @property (nonatomic, strong)UIButton* setBtn;
+@property (nonatomic, strong)UIButton* accoutBtn;
+@property (nonatomic, strong)UIButton* topBtn;
 @property (nonatomic, strong)ASHHomeViewModel* viewModel;
 @end
 
@@ -92,7 +95,7 @@
     self.setBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.setBtn.backgroundColor = [UIColor clearColor];
     [self.setBtn setBackgroundImage:[UIImage imageNamed:@"cart.png"] forState:UIControlStateNormal];
-    self.setBtn.frame = CGRectMake(15, 25, 25, 25);
+    self.setBtn.frame = CGRectMake(50, 25, 25, 25);
     
     
     
@@ -107,9 +110,58 @@
     }];
     [self.view addSubview:self.setBtn];
     
+    self.accoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.accoutBtn.backgroundColor = [UIColor clearColor];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ([ALBBSession sharedInstance].isLogin) {
+            [self.accoutBtn setBackgroundImage:[UIImage imageNamed:@"account-2.png"] forState:UIControlStateNormal];
+        }else{
+            [self.accoutBtn setBackgroundImage:[UIImage imageNamed:@"account-3.png"] forState:UIControlStateNormal];
+        }
+
+    });
+    
+    [[self.accoutBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        if (![ALBBSession sharedInstance].isLogin) {
+            [[ALBBSDK sharedInstance] auth:self successCallback:^(ALBBSession *session) {
+                [self.accoutBtn setBackgroundImage:[UIImage imageNamed:@"account-2.png"] forState:UIControlStateNormal];
+            } failureCallback:^(ALBBSession *session, NSError *error) {
+                
+            }];
+        }else{
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"退出淘宝账号授权" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
+            [[alert rac_buttonClickedSignal] subscribeNext:^(id x) {
+                if ([x integerValue] == 1) {
+                    [[ALBBSDK sharedInstance] logout];
+                }
+                
+            }];
+            [alert show];
+        }
+    }];
+    self.accoutBtn.frame = CGRectMake(15, 25, 25, 25);
+    [self.view addSubview:self.accoutBtn];
+    
+    
+    self.topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.topBtn.backgroundColor = [UIColor colorWithHexString:@"#61BFA9" alpha:0.8];
+    self.topBtn.layer.cornerRadius = 23;
+    self.topBtn.layer.masksToBounds = YES;
+    [self.topBtn setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateNormal];
+    self.topBtn.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+    self.topBtn.frame = CGRectMake(self.view.bounds.size.width - 56, self.view.bounds.size.height - 56, 46, 46);
+    self.topBtn.hidden = YES;
+    [[self.topBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView setContentOffset:CGPointZero animated:YES];
+    }];
+    [self.view addSubview:self.topBtn];
+    
     
     _viewModel = [ASHHomeViewModel new];
-    
     
     [self.tableView.mj_header beginRefreshing];
     
@@ -186,14 +238,13 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if(scrollView.contentOffset.y > 0){
-        if(!self.setBtn.hidden){
-            self.setBtn.hidden = YES;
-        }
-        
+        self.setBtn.hidden = YES;
+        self.accoutBtn.hidden = YES;
+        self.topBtn.hidden = NO;
     }else{
-        if (self.setBtn.hidden) {
-            self.setBtn.hidden = NO;
-        }
+        self.setBtn.hidden = NO;
+        self.accoutBtn.hidden = NO;
+        self.topBtn.hidden = YES;
     }
 }
 

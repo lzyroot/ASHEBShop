@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1FBA5CE63B3B6A91950AEFAE /* libPods-ASHEBShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1661430090D861F4866DFC /* libPods-ASHEBShop.a */; };
+		A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = A90619891E9CCE2B00B5D6E5 /* up.png */; };
+		A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A906198B1E9CCEA400B5D6E5 /* account-2.png */; };
+		A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */ = {isa = PBXBuildFile; fileRef = A906198C1E9CCEA400B5D6E5 /* account-3.png */; };
 		A923CEC41E9C7BDE00C7246B /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = A923CEC31E9C7BDE00C7246B /* cart.png */; };
 		A923CEC61E9CA6BE00C7246B /* icon1024.png in Resources */ = {isa = PBXBuildFile; fileRef = A923CEC51E9CA6BE00C7246B /* icon1024.png */; };
 		A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BC6401E7BCD490019B435 /* ASHNetWorkManagerImpl.m */; };
@@ -62,6 +65,9 @@
 /* Begin PBXFileReference section */
 		2518671DC9C2B59C734E8D27 /* Pods-ASHEBShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.release.xcconfig"; sourceTree = "<group>"; };
 		9D1661430090D861F4866DFC /* libPods-ASHEBShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ASHEBShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90619891E9CCE2B00B5D6E5 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		A906198B1E9CCEA400B5D6E5 /* account-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "account-2.png"; sourceTree = "<group>"; };
+		A906198C1E9CCEA400B5D6E5 /* account-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "account-3.png"; sourceTree = "<group>"; };
 		A923CEC31E9C7BDE00C7246B /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 		A923CEC51E9CA6BE00C7246B /* icon1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1024.png; sourceTree = "<group>"; };
 		A92BC63F1E7BCD490019B435 /* ASHNetWorkManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNetWorkManagerImpl.h; sourceTree = "<group>"; };
@@ -377,6 +383,9 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A906198B1E9CCEA400B5D6E5 /* account-2.png */,
+				A906198C1E9CCEA400B5D6E5 /* account-3.png */,
+				A90619891E9CCE2B00B5D6E5 /* up.png */,
 				A923CEC51E9CA6BE00C7246B /* icon1024.png */,
 				A923CEC31E9C7BDE00C7246B /* cart.png */,
 				A9318F251E822B2800E66569 /* set.png */,
@@ -467,8 +476,11 @@
 				A92BC6481E7FF7B00019B435 /* yw_1222.jpg in Resources */,
 				A9318F261E822B2800E66569 /* set.png in Resources */,
 				A93EECE31E78EE26001378B1 /* Main.storyboard in Resources */,
+				A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */,
 				A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */,
 				A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */,
+				A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */,
+				A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */,
 				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
