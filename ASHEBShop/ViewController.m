@@ -102,7 +102,11 @@
         AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
         showParam.openType = AlibcOpenTypeAuto;
 //        showParam.isNeedPush = YES;
-        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams: nil trackParam: nil tradeProcessSuccessCallback:nil tradeProcessFailedCallback:nil];
+        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams: nil trackParam: nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+            
+        } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+            
+        }];
     }];
     [self.view addSubview:self.setBtn];
     
