@@ -11,12 +11,14 @@ pod 'MBProgressHUD' =>’1.0.0’
 pod 'MJRefresh' =>'3.1.12'
 pod 'ReactiveCocoa' =>'2.5'
 pod 'SDWebImage' =>'3.8.2'
-#pod 'SDWebImage/WebP' =>'3.8.2'
+pod 'SDWebImage/WebP' =>'3.8.2'
 pod 'YYCategories' =>'1.0.4'
 pod 'YYDispatchQueuePool' =>'1.0'
 pod 'YYAsyncLayer' =>'1.0'
 pod 'YYCache' =>'1.0.4'
 pod 'YYModel' =>'1.0.4'
+
+pod 'libwebp', :git=> 'https://github.com/wu736139669/libwebp.git'
 
 
 
