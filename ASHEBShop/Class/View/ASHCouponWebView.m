@@ -49,7 +49,7 @@
     
     
     self.closeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"close.png"]];
-    self.closeImageView.frame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y - 30, 32, 32);
+    self.closeImageView.frame = CGRectMake(self.webView.frame.origin.x, self.webView.frame.origin.y - 38, 32, 32);
     self.closeImageView.hidden = YES;
     [self addSubview:self.closeImageView];
     

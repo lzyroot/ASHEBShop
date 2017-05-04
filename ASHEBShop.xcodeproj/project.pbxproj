@@ -456,6 +456,7 @@
 				TargetAttributes = {
 					A93EECD41E78EE26001378B1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X75CUV458P;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -699,9 +700,9 @@
 			baseConfigurationReference = E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wu ShengHua (X75CUV458P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: wu ShengHua (X75CUV458P)";
+				DEVELOPMENT_TEAM = X75CUV458P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -760,8 +761,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9c19210d-30c9-4eab-a285-254bac2843a4";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopTest;
+				PROVISIONING_PROFILE = "3d279761-5564-483a-be8e-1b8fe7f79a5c";
+				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopAppStore;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
@@ -771,9 +772,9 @@
 			baseConfigurationReference = 2518671DC9C2B59C734E8D27 /* Pods-ASHEBShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: wu ShengHua (X75CUV458P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: wu ShengHua (X75CUV458P)";
+				DEVELOPMENT_TEAM = X75CUV458P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -832,8 +833,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9c19210d-30c9-4eab-a285-254bac2843a4";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopTest;
+				PROVISIONING_PROFILE = "3d279761-5564-483a-be8e-1b8fe7f79a5c";
+				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopAppStore;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;
