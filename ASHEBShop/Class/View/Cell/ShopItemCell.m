@@ -10,6 +10,7 @@
 #import "UILabel+ASHUtil.h"
 #import "ASHHomeModel.h"
 #import "UIColor+CustomColor.h"
+#import <ReactiveCocoa.h>
 
 @interface ShopItemCell()
 @property (weak, nonatomic) IBOutlet UIView *shopContentView;
@@ -18,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *shopImageView;
+@property (weak, nonatomic) IBOutlet UILabel *couponPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *couponTextLabel;
+@property (weak, nonatomic) IBOutlet UIButton *couponBtn;
+@property (weak, nonatomic) IBOutlet UIView *couponView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailRight;
 
 @end
 @implementation ShopItemCell
@@ -31,12 +37,23 @@
 //    self.shopContentView.backgroundColor = [UIColor colorWithHexString:@"#ffffff" alpha:0.8];
     self.shopContentView.layer.masksToBounds = YES;
     self.shopContentView.layer.cornerRadius = 5.0;
-//    
+    
+    self.couponTextLabel.layer.masksToBounds = YES;
+    self.couponTextLabel.layer.cornerRadius = 3.0;
+    self.couponTextLabel.layer.borderWidth = 1.0;
+    self.couponTextLabel.layer.borderColor = [UIColor whiteColor].CGColor;
 //    self.shopContentView.layer.shadowOffset = CGSizeMake(0, 0);
 //    self.shopContentView.layer.shadowRadius = 2;
 //    self.shopContentView.layer.shadowOpacity = 1.0;
 //    self.shopContentView.layer.shadowColor = [UIColor colorWithWhite:0.6 alpha:0.8].CGColor;
     
+    @weakify(self);
+    [[self.couponBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        if (self.couponAction) {
+            self.couponAction(self.model);
+        }
+    }];
     
     self.titleLabel.hidden = YES;
 }
@@ -55,5 +72,14 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%.2f", model.price];
     self.oriPriceLabel.text = [NSString stringWithFormat:@"%.2f", model.oldPrice];
     [self.oriPriceLabel ash_labelByStrikeline];
+    self.couponPriceLabel.text = [NSString stringWithFormat:@"¥%ld",(NSInteger)(model.oldPrice-model.price)];
+    if (model.couponUrl) {
+        self.couponView.hidden = NO;
+        self.detailRight.constant = 8;
+    }else{
+        self.couponView.hidden = YES;
+        self.detailRight.constant = -72;
+    }
+    _model = model;
 }
 @end

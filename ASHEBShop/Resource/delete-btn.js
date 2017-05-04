@@ -1,0 +1,1 @@
+!(function () { var cont = 1;var timer = setInterval(function() {var l = document.querySelector('.center #J-next');cont++;if (l) {l.parentNode.removeChild(l);clearInterval(timer);}if (cont > 300) {clearInterval(timer);}}, 10);})();

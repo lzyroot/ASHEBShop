@@ -11,4 +11,7 @@
 @interface ShopItemCell : UITableViewCell
 
 @property(nonatomic, strong)ASHHomeItemModel* model;
+
+@property(nonatomic, copy)void(^couponAction)(ASHHomeItemModel* model);
+
 @end

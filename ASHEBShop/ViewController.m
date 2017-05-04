@@ -19,6 +19,7 @@
 #import <MJRefresh.h>
 #import <UMMobClick/MobClick.h>
 #import <MBProgressHUD.h>
+#import "ASHCouponWebView.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong)UITableView* tableView;
@@ -64,7 +65,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(4, 0, self.view.bounds.size.width - 8, self.view.bounds.size.height - 0) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 180;
+    self.tableView.rowHeight = 140;
     self.tableView.layer.masksToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -126,11 +127,7 @@
     [[self.accoutBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         if (![ALBBSession sharedInstance].isLogin) {
-            [[ALBBSDK sharedInstance] auth:self successCallback:^(ALBBSession *session) {
-                [self.accoutBtn setBackgroundImage:[UIImage imageNamed:@"account-2.png"] forState:UIControlStateNormal];
-            } failureCallback:^(ALBBSession *session, NSError *error) {
-                
-            }];
+            [self loginTB];
         }else{
             UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"退出淘宝账号授权" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"退出", nil];
             [[alert rac_buttonClickedSignal] subscribeNext:^(id x) {
@@ -213,7 +210,7 @@
         progressHUD.mode = MBProgressHUDModeText;
         progressHUD.removeFromSuperViewOnHide = YES;
         progressHUD.center = self.view.center;
-        progressHUD.label.text = @"网络异常,请下来刷新重试";
+        progressHUD.label.text = @"网络异常,请下拉刷新重试";
         [self.view addSubview:progressHUD];
         [progressHUD showAnimated:NO];
         [progressHUD hideAnimated:YES afterDelay:2.0];
@@ -239,6 +236,15 @@
     if (_viewModel.model.goodsJa.count > indexPath.row) {
         ASHHomeItemModel* model = [_viewModel.model.goodsJa objectAtIndex:indexPath.row];
         cell.model = model;
+        @weakify(self);
+        cell.couponAction = ^(ASHHomeItemModel* model){
+            @strongify(self);
+            if (![ALBBSession sharedInstance].isLogin) {
+                [self loginTB];
+            }else{
+                [self openCouponUrl:model.couponUrl];
+            }
+        };
     }
 
     return cell;
@@ -257,7 +263,7 @@
         [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:nil trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
             
         } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-            NSLog([error description]);
+            NSLog(@"%@", [error description]);
         }];
         
     }
@@ -276,6 +282,20 @@
     }
 }
 
+- (void)openCouponUrl:(NSString*)url
+{
+    ASHCouponWebView* webview = [[ASHCouponWebView alloc] initWithUrl:url];
+    webview.backgroundColor = [UIColor colorWithWhite:.6 alpha:0.5];
+    [self.view addSubview:webview];
+}
+- (void)loginTB
+{
+    [[ALBBSDK sharedInstance] auth:self successCallback:^(ALBBSession *session) {
+        [self.accoutBtn setBackgroundImage:[UIImage imageNamed:@"account-2.png"] forState:UIControlStateNormal];
+    } failureCallback:^(ALBBSession *session, NSError *error) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

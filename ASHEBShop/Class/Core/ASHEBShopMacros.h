@@ -27,4 +27,6 @@
 #define APPBuildVersion         [NSBundle mainBundle].buildVersion
 #define APPBundleIdentifier     [NSBundle mainBundle].identifier
 
+#define ASHScreenWidth                  [UIScreen mainScreen].bounds.size.width
+#define ASHScreenHeight                  [UIScreen mainScreen].bounds.size.height
 #endif /* ASHEBShopMacros_h */

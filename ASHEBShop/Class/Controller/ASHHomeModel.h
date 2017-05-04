@@ -14,6 +14,11 @@
 @property (nonatomic, assign)NSInteger sourceStore;
 @property (nonatomic, copy)NSString* content;
 @property (nonatomic, copy)NSString* goodsUrl;
+
+/**
+ 优惠券链接
+ */
+@property (nonatomic, copy)NSString* couponUrl;
 @property (nonatomic, assign)NSInteger id;
 @property (nonatomic, assign)float oldPrice;
 @property (nonatomic, assign)float goodType;
