@@ -28,6 +28,11 @@
 }
 + (UIColor *)mainColor
 {
-    return [UIColor colorWithHexString:@"#61BFA9" alpha:1.0];
+    return [UIColor colorWithHexString:@"#F84D52" alpha:1.0];
+}
++ (UIColor *)lineColor
+{
+    return [UIColor colorWithHexString:@"#EBEBF1" alpha:1.0];
+    
 }
 @end

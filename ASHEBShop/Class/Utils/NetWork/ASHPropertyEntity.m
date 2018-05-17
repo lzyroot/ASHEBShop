@@ -34,7 +34,7 @@
     NSString* version = APPVersion;
     NSString* root = [dic yy_modelToJSONString];
     
-    NSString* sign = [NSString stringWithFormat:@"%ld%@%@%@", self.command, root, version, kASH_NETWORK_SIGN];
+    NSString* sign = [NSString stringWithFormat:@"%ld%@%@%@", (long)self.command, root, version, kASH_NETWORK_SIGN];
     sign = [sign md5String];
     
     NSDictionary* resultDic = @{@"root":root,

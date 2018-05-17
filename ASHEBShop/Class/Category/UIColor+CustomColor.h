@@ -23,4 +23,6 @@
 + (UIColor *)colorWithHexString:(NSString *)str alpha:(CGFloat)alpha;
 
 + (UIColor *)mainColor;
+
++ (UIColor *)lineColor;
 @end

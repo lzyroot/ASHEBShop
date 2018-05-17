@@ -1,0 +1,13 @@
+//
+//  ASHNewHomeModel.h
+//  ASHEBShop
+//
+//  Created by xmfish on 2018/5/8.
+//  Copyright © 2018年 ash. All rights reserved.
+//
+
+#import "ASHBaseModel.h"
+
+@interface ASHNewHomeModel : ASHBaseModel
+
+@end

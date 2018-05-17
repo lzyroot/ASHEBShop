@@ -10,6 +10,7 @@
 #import "UIColor+CustomColor.h"
 #import "ViewController.h"
 #import "UIImage+ASHUtil.h"
+#import "MainTabBarVC.h"
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibcTradeBiz/AlibcTradeBiz.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
@@ -25,10 +26,14 @@
     // Override point for customization after application launch.
     [self initAliBC];
     [self initUMen];
-//    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-//    nav.navigationBarHidden = YES;
-//    self.window.rootViewController = nav;
     [self customSet];
+    
+    
+    MainTabBarVC* nav = [MainTabBarVC new];
+//    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
+    
+
     return YES;
 }
 
@@ -69,7 +74,7 @@
 {
     UINavigationBar * nav = [UINavigationBar appearance];
     UIImage* image = [UIImage ash_imageFromColor:[UIColor whiteColor] andSize:CGSizeMake(1, 1) opaque:0.2];
-    image = [image imageByBlurWithTint:[UIColor mainColor]];
+    image = [image imageByBlurWithTint:[UIColor whiteColor]];
     [nav setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     nav.tintColor = [UIColor mainColor];
 }
