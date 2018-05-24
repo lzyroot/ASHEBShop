@@ -44,6 +44,7 @@
 
 - (void)rightBarBtnClick:(id)sender
 {
+    [MobClick event:@"praise"];
     NSMutableDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
     if (![pariseDic objectForKey:@(self.detailId)]){
         [_viewModel requestParise];

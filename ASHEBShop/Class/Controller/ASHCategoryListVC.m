@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lineColor];
     
+    [MobClick event:@"category" attributes:@{@"id":@(self.goodsTypeId)}];
     _viewModel = [ASHHomeViewModel new];
     _viewModel.goodsTypeId = self.goodsTypeId;
     [self initTableView];

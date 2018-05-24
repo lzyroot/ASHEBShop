@@ -115,6 +115,7 @@
     vc.detailId = model.itemId;
     vc.imageUrl = model.imageUrl;
     [self.navigationController pushViewController:vc animated:YES];
+    [MobClick event:@"tuijianclick"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
