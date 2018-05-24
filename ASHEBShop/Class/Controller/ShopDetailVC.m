@@ -45,14 +45,17 @@
 - (void)rightBarBtnClick:(id)sender
 {
     [MobClick event:@"praise"];
-    NSMutableDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
+    NSDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
     if (![pariseDic objectForKey:@(self.detailId)]){
         [_viewModel requestParise];
+        NSMutableDictionary* mDic;
         if (!pariseDic) {
-            pariseDic = [NSMutableDictionary dictionary];
+            mDic = [NSMutableDictionary dictionary];
+        }else{
+            mDic = [NSMutableDictionary dictionaryWithDictionary:pariseDic];
         }
-        [pariseDic setObject:@"1" forKey:[NSString stringWithNSInteger:self.detailId]];
-        [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:pariseDic] forKey:kASH_PRAISE_SAVE];
+        [mDic setObject:@"1" forKey:[NSString stringWithNSInteger:self.detailId]];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:mDic] forKey:kASH_PRAISE_SAVE];
         [[NSUserDefaults standardUserDefaults] synchronize];
         self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"homelike"];
     }else{
@@ -143,7 +146,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ShopDetailCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    ShopDetailCell* cell = (ShopDetailCell*)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     return [cell cellHeight];
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
