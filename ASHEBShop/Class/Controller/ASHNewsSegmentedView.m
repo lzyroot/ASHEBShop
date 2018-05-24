@@ -1,20 +1,20 @@
 //
-//  IMYNewsSegmentedView.m
-//  IMYNews
+//  ASHNewsSegmentedView.m
+//  ASHNews
 //
 //
 
-#import "IMYNewsSegmentedView.h"
+#import "ASHNewsSegmentedView.h"
 #import <Masonry/Masonry.h>
 #import <ReactiveCocoa.h>
 
-@interface IMYSegmengMaskView : UIView
+@interface ASHSegmengMaskView : UIView
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (nonatomic, assign) BOOL isLeft;
 - (instancetype)initWithPosition:(BOOL)isLeft;
 @end
 
-@interface IMYNewsSegmentedView ()
+@interface ASHNewsSegmentedView ()
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) CGFloat buttonOffset;
 @property (nonatomic, strong, readwrite) UIView *indicatorView;
@@ -24,7 +24,7 @@
 
 #define DefaultWidth 80
 #define ButtonTag 0x17
-@implementation IMYNewsSegmentedView
+@implementation ASHNewsSegmentedView
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -53,11 +53,11 @@
     }
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.scrollView];
-    UIView *leftShadeView = [[IMYSegmengMaskView alloc] initWithPosition:TRUE];
+    UIView *leftShadeView = [[ASHSegmengMaskView alloc] initWithPosition:TRUE];
     leftShadeView.userInteractionEnabled = FALSE;
     [self addSubview:leftShadeView];
 
-    UIView *rightShadeView = [[IMYSegmengMaskView alloc] initWithPosition:FALSE];
+    UIView *rightShadeView = [[ASHSegmengMaskView alloc] initWithPosition:FALSE];
     rightShadeView.userInteractionEnabled = FALSE;
     [self addSubview:rightShadeView];
     [leftShadeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -159,8 +159,8 @@
     [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *x) {
         @strongify(self);
         NSUInteger tag = x.tag - ButtonTag;
-        if ([self.delegate respondsToSelector:@selector(IMYNewsSegmentedViewDidSelect:index:)]) {
-            [self.delegate IMYNewsSegmentedViewDidSelect:self index:tag];
+        if ([self.delegate respondsToSelector:@selector(ASHNewsSegmentedViewDidSelect:index:)]) {
+            [self.delegate ASHNewsSegmentedViewDidSelect:self index:tag];
         }
         [self setSelectedIndex:tag animate:TRUE];
     }];
@@ -305,7 +305,7 @@
 @end
 
 
-@implementation IMYSegmengMaskView
+@implementation ASHSegmengMaskView
 
 - (instancetype)initWithPosition:(BOOL)isLeft {
     self = [super init];

@@ -7,7 +7,7 @@
 //
 
 #import "ASHPageViewController.h"
-#import "UIViewController+IMYChildController.h"
+#import "UIViewController+ASHChildController.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
 
@@ -15,10 +15,10 @@ CGFloat const kAnimationDurationTime = 0.3f;
 NSUInteger const kMaxCacheCount = 100;
 
 
-typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
-    IMYPageScrollDirectionNone = 0,
-    IMYPageScrollDirectionLeft = -1,
-    IMYPageScrollDirectionRight = 1
+typedef NS_ENUM(NSInteger, ASHPageScrollDirection) {
+    ASHPageScrollDirectionNone = 0,
+    ASHPageScrollDirectionLeft = -1,
+    ASHPageScrollDirectionRight = 1
 };
 
 @interface ASHPageViewController () <NSCacheDelegate>
@@ -121,7 +121,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
         self.firstWillAppear = NO;
     }
     // 最开始进来
-    UIViewController *vc = [self createChildViewControllersAtIndex:self.currentPageIndex direction:IMYPageScrollDirectionNone];
+    UIViewController *vc = [self createChildViewControllersAtIndex:self.currentPageIndex direction:ASHPageScrollDirectionNone];
     [vc beginAppearanceTransition:YES animated:YES];
 }
 
@@ -157,7 +157,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
             // crash时候的currentvc：SYAccountVC2_0
             UIViewController *vc = [self controllerAtIndex:self.currentPageIndex];
             CGRect childViewFrame = [self calculateVisibleViewControllerFrameWithIndex:self.currentPageIndex];
-            [self imy_addChildViewController:vc inView:self.scrollView withFrame:childViewFrame];
+            [self ash_addChildViewController:vc inView:self.scrollView withFrame:childViewFrame];
 
             CGPoint newOffset = [self calculateOffsetWithIndex:self.currentPageIndex width:CGRectGetWidth(self.scrollView.frame) maxWidth:self.scrollView.contentSize.width];
             if (newOffset.x != self.scrollView.contentOffset.x || newOffset.y != self.scrollView.contentOffset.y) {
@@ -198,7 +198,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
 
 // 只有在某个页面显示的时候（选中某个页面，滚动到某个页面，第一次进入），会调用这个方法
 // 调用这个方法的时候，会先先后把预加载页面、当前页面加入缓存，然后在下个runloop中，将预加载页面加入到scrollview中
-- (UIViewController *)createChildViewControllersAtIndex:(NSUInteger)index direction:(IMYPageScrollDirection)direction {
+- (UIViewController *)createChildViewControllersAtIndex:(NSUInteger)index direction:(ASHPageScrollDirection)direction {
     if (index >= self.totalPageCount || index == NSUIntegerMax) {
         return nil;
     }
@@ -206,7 +206,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
     UIViewController *nextVC = nil;
     NSUInteger preIndex = NSUIntegerMax;
     NSUInteger nextIndex = NSUIntegerMax;
-    if (direction == IMYPageScrollDirectionNone) { // 预加载两个方向
+    if (direction == ASHPageScrollDirectionNone) { // 预加载两个方向
         preIndex = index - 1;
         nextIndex = index + 1;
     } else {
@@ -234,7 +234,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
 
     if (![self.childViewControllers containsObject:currentVC]) {
         CGRect childViewFrame = [self calculateVisibleViewControllerFrameWithIndex:index];
-        [self imy_addChildViewController:currentVC inView:self.scrollView withFrame:childViewFrame];
+        [self ash_addChildViewController:currentVC inView:self.scrollView withFrame:childViewFrame];
     }
 
     // 在下一个runloop加入scrollview
@@ -243,11 +243,11 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
         @strongify(self);
         if (preVC && ![self.childViewControllers containsObject:preVC]) {
             CGRect childViewFrame = [self calculateVisibleViewControllerFrameWithIndex:preIndex];
-            [self imy_addChildViewController:preVC inView:self.scrollView withFrame:childViewFrame];
+            [self ash_addChildViewController:preVC inView:self.scrollView withFrame:childViewFrame];
         }
         if (nextVC && ![self.childViewControllers containsObject:nextVC]) {
             CGRect childViewFrame = [self calculateVisibleViewControllerFrameWithIndex:nextIndex];
-            [self imy_addChildViewController:nextVC inView:self.scrollView withFrame:childViewFrame];
+            [self ash_addChildViewController:nextVC inView:self.scrollView withFrame:childViewFrame];
         }
     });
 
@@ -295,12 +295,12 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
             NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:reusablePages];
             [tmpArray removeObject:vc];
             self.reusablePagesByIdentifier[identifier] = [tmpArray copy];
-            vc.imy_pageIdentifier = identifier;
+            vc.ash_pageIdentifier = identifier;
             return vc;
         } else {
             Class pageClass = self.pageClassByIdentifier[identifier];
             vc = [[pageClass alloc] init];
-            vc.imy_pageIdentifier = identifier;
+            vc.ash_pageIdentifier = identifier;
             return vc;
         }
     }
@@ -319,21 +319,21 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
     //        // 一个是回收池，一个是缓存
     //        // 回收池是可以拿出来重用，缓存是下次直接拿出来用
     //        // 因为有一个滚屏的效果，所以
-    //        if (page.imy_pageIdentifier.length > 0) {
+    //        if (page.ash_pageIdentifier.length > 0) {
     //            // 加入重用池
-    //            NSArray *reusablePages = self.reusablePagesByIdentifier[page.imy_pageIdentifier];
+    //            NSArray *reusablePages = self.reusablePagesByIdentifier[page.ash_pageIdentifier];
     //            if (reusablePages.count > 0) {
     //                NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:reusablePages];
     //                [tmpArray addObject:page];
-    //                self.reusablePagesByIdentifier[page.imy_pageIdentifier] = [tmpArray copy];
+    //                self.reusablePagesByIdentifier[page.ash_pageIdentifier] = [tmpArray copy];
     //            } else {
-    //                self.reusablePagesByIdentifier[page.imy_pageIdentifier] = @[page];
+    //                self.reusablePagesByIdentifier[page.ash_pageIdentifier] = @[page];
     //            }
     //            // 移除显示和使用标志
     //            [self.pagesCache removeObjectForKey:@(index)];
     //            [self.cachedPagesDic removeObjectForKey:@(index)];
-    //            [page imy_removeFromParentViewController];
-    //            page.imy_pageIdentifier = @"";
+    //            [page ash_removeFromParentViewController];
+    //            page.ash_pageIdentifier = @"";
     //        }
     //    }
 }
@@ -368,7 +368,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
             if ([self.delegate respondsToSelector:@selector(pageViewController:willTransitionFromIndex:toIndex:)]) {
                 [self.delegate pageViewController:self willTransitionFromIndex:self.lastSelectedIndex toIndex:self.currentPageIndex];
             }
-            UIViewController *vc = [self createChildViewControllersAtIndex:index direction:IMYPageScrollDirectionNone];
+            UIViewController *vc = [self createChildViewControllersAtIndex:index direction:ASHPageScrollDirectionNone];
             // 动画效果，为什么要保存上一个的上一个索引
             [self nonInterativeWillScrollWithAnimation:animated];
             if (animated) {
@@ -410,7 +410,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
     if (self.lastSelectedIndex != self.currentPageIndex) {
 
         CGSize pageSize = self.scrollView.frame.size;
-        IMYPageScrollDirection direction = (self.lastSelectedIndex < self.currentPageIndex) ? IMYPageScrollDirectionRight : IMYPageScrollDirectionLeft;
+        ASHPageScrollDirection direction = (self.lastSelectedIndex < self.currentPageIndex) ? ASHPageScrollDirectionRight : ASHPageScrollDirectionLeft;
 
         UIView *lastView = [self controllerAtIndex:self.lastSelectedIndex].view;
         UIView *currentView = [self controllerAtIndex:self.currentPageIndex].view;
@@ -451,7 +451,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
         CGPoint lastViewStartOrigin = lastView.frame.origin;
         CGPoint currentViewStartOrigin = lastView.frame.origin;
         CGPoint lastViewAnimateToOrigin = lastView.frame.origin;
-        if (direction == IMYPageScrollDirectionRight) {
+        if (direction == ASHPageScrollDirectionRight) {
             currentViewStartOrigin.x += CGRectGetWidth(self.scrollView.frame);
             lastViewAnimateToOrigin.x -= CGRectGetWidth(self.scrollView.frame);
         } else {
@@ -525,15 +525,15 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
         }
 
         NSUInteger lastGuessIndex = self.guessToIndex == NSUIntegerMax ? self.currentPageIndex : self.guessToIndex;
-        IMYPageScrollDirection direction = IMYPageScrollDirectionNone;
+        ASHPageScrollDirection direction = ASHPageScrollDirectionNone;
         if (offset < 0) {
             self.guessToIndex = 0;
         } else {
             if (self.originOffsetX < offset) { // turn to right
                 self.guessToIndex = (NSUInteger)(ceilf(offset / width));
-                direction = IMYPageScrollDirectionRight;
+                direction = ASHPageScrollDirectionRight;
             } else if (self.originOffsetX >= offset) { // turn to left
-                direction = IMYPageScrollDirectionLeft;
+                direction = ASHPageScrollDirectionLeft;
                 self.guessToIndex = (NSUInteger)(floorf(offset / width));
             }
         }
@@ -647,7 +647,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
             [self recyclePage:disappearVC atIndex:self.guessToIndex];
         }
     } else {
-        UIViewController *appearVC = [self createChildViewControllersAtIndex:newIndex direction:oldIndex <= newIndex ? IMYPageScrollDirectionRight : IMYPageScrollDirectionLeft]; // 最终确定的页面，可能会因为页面卡顿，导致不是guessToIndex那个vc，可能不在缓存中，需要临时创建
+        UIViewController *appearVC = [self createChildViewControllersAtIndex:newIndex direction:oldIndex <= newIndex ? ASHPageScrollDirectionRight : ASHPageScrollDirectionLeft]; // 最终确定的页面，可能会因为页面卡顿，导致不是guessToIndex那个vc，可能不在缓存中，需要临时创建
         UIViewController *disappearVC = [self controllerAtIndex:oldIndex];                                                                                                        // old一定是原来的current，这个current的消失，在scroll那边启动过
         [appearVC beginAppearanceTransition:YES animated:YES];
         [disappearVC endAppearanceTransition];
@@ -764,7 +764,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
             [self addEvictionVCToPendingCleanSet:obj];
             // 表示这个vc最近不会再使用过了，从视图中移除子控制器
             if (self.cleaningPagesDic.count == 0) {
-                [obj imy_removeFromParentViewController];
+                [obj ash_removeFromParentViewController];
             }
         }
         // 同步数据
@@ -838,7 +838,7 @@ typedef NS_ENUM(NSInteger, IMYPageScrollDirection) {
     //        } else {
     //            [self.cachedPagesDic removeObjectForKey:key];
     //            [self.pagesCache removeObjectForKey:key];
-    //            [obj imy_removeFromParentViewController];
+    //            [obj ash_removeFromParentViewController];
     //        }
     //    }];
     //

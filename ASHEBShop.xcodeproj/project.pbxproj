@@ -84,8 +84,8 @@
 		A93E215020A19A1800B6556E /* sessionCollect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E214E20A19A1800B6556E /* sessionCollect@3x.png */; };
 		A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215220A19B0400B6556E /* UIView+ASHUtil.m */; };
 		A93E215620A1A23500B6556E /* ASHPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215420A1A23500B6556E /* ASHPageViewController.m */; };
-		A93E215920A1A27800B6556E /* UIViewController+IMYChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215720A1A27700B6556E /* UIViewController+IMYChildController.m */; };
-		A93E215C20A1A90600B6556E /* IMYNewsSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215B20A1A90600B6556E /* IMYNewsSegmentedView.m */; };
+		A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215720A1A27700B6556E /* UIViewController+ASHChildController.m */; };
+		A93E215C20A1A90600B6556E /* ASHNewsSegmentedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E215B20A1A90600B6556E /* ASHNewsSegmentedView.m */; };
 		A93EECDA1E78EE26001378B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EECD91E78EE26001378B1 /* main.m */; };
 		A93EECDD1E78EE26001378B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EECDC1E78EE26001378B1 /* AppDelegate.m */; };
 		A93EECE01E78EE26001378B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EECDF1E78EE26001378B1 /* ViewController.m */; };
@@ -213,10 +213,10 @@
 		A93E215220A19B0400B6556E /* UIView+ASHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ASHUtil.m"; sourceTree = "<group>"; };
 		A93E215420A1A23500B6556E /* ASHPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHPageViewController.m; sourceTree = "<group>"; };
 		A93E215520A1A23500B6556E /* ASHPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHPageViewController.h; sourceTree = "<group>"; };
-		A93E215720A1A27700B6556E /* UIViewController+IMYChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IMYChildController.m"; sourceTree = "<group>"; };
-		A93E215820A1A27700B6556E /* UIViewController+IMYChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IMYChildController.h"; sourceTree = "<group>"; };
-		A93E215A20A1A90600B6556E /* IMYNewsSegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMYNewsSegmentedView.h; sourceTree = "<group>"; };
-		A93E215B20A1A90600B6556E /* IMYNewsSegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMYNewsSegmentedView.m; sourceTree = "<group>"; };
+		A93E215720A1A27700B6556E /* UIViewController+ASHChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ASHChildController.m"; sourceTree = "<group>"; };
+		A93E215820A1A27700B6556E /* UIViewController+ASHChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ASHChildController.h"; sourceTree = "<group>"; };
+		A93E215A20A1A90600B6556E /* ASHNewsSegmentedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHNewsSegmentedView.h; sourceTree = "<group>"; };
+		A93E215B20A1A90600B6556E /* ASHNewsSegmentedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHNewsSegmentedView.m; sourceTree = "<group>"; };
 		A93EECD51E78EE26001378B1 /* ASHEBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASHEBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93EECD91E78EE26001378B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A93EECDB1E78EE26001378B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -435,10 +435,10 @@
 		A93EECF11E78EFF7001378B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A93E215A20A1A90600B6556E /* IMYNewsSegmentedView.h */,
-				A93E215B20A1A90600B6556E /* IMYNewsSegmentedView.m */,
-				A93E215820A1A27700B6556E /* UIViewController+IMYChildController.h */,
-				A93E215720A1A27700B6556E /* UIViewController+IMYChildController.m */,
+				A93E215A20A1A90600B6556E /* ASHNewsSegmentedView.h */,
+				A93E215B20A1A90600B6556E /* ASHNewsSegmentedView.m */,
+				A93E215820A1A27700B6556E /* UIViewController+ASHChildController.h */,
+				A93E215720A1A27700B6556E /* UIViewController+ASHChildController.m */,
 				A93E215520A1A23500B6556E /* ASHPageViewController.h */,
 				A93E215420A1A23500B6556E /* ASHPageViewController.m */,
 				A9D0D1AF1E96164F0047CB88 /* ASHSettingVC.h */,
@@ -767,7 +767,7 @@
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
 				A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */,
-				A93E215C20A1A90600B6556E /* IMYNewsSegmentedView.m in Sources */,
+				A93E215C20A1A90600B6556E /* ASHNewsSegmentedView.m in Sources */,
 				A93EECE01E78EE26001378B1 /* ViewController.m in Sources */,
 				A93E215620A1A23500B6556E /* ASHPageViewController.m in Sources */,
 				A93D32AE20AD96CD00306F72 /* ShopDetailVC.m in Sources */,
@@ -791,7 +791,7 @@
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
 				A93E2137209AA80F00B6556E /* HomeCell.m in Sources */,
 				A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */,
-				A93E215920A1A27800B6556E /* UIViewController+IMYChildController.m in Sources */,
+				A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */,
 				A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */,
 				A93E214B20A1882E00B6556E /* HomeCell2.m in Sources */,
 			);

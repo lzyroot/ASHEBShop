@@ -1,30 +1,30 @@
 //
-//  UIViewController+IMYChildController.m
+//  UIViewController+ASHChildController.m
 //  Pods
 //
 
 //
 //
 
-#import "UIViewController+IMYChildController.h"
+#import "UIViewController+ASHChildController.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (IMYChildController)
+@implementation UIViewController (ASHChildController)
 
-- (void)setImy_pageIdentifier:(NSString *)imy_pageIdentifier {
-    objc_setAssociatedObject(self, @selector(imy_pageIdentifier), imy_pageIdentifier, OBJC_ASSOCIATION_COPY);
+- (void)setAsh_pageIdentifier:(NSString *)ash_pageIdentifier {
+    objc_setAssociatedObject(self, @selector(ash_pageIdentifier), ash_pageIdentifier, OBJC_ASSOCIATION_COPY);
 }
 
-- (NSString *)imy_pageIdentifier {
-    return objc_getAssociatedObject(self, @selector(imy_pageIdentifier));
+- (NSString *)ash_pageIdentifier {
+    return objc_getAssociatedObject(self, @selector(ash_pageIdentifier));
 }
 
-- (void)imy_addChildViewController:(UIViewController *)childVC {
-    [self imy_addChildViewController:childVC withFrame:self.view.bounds];
+- (void)ash_addChildViewController:(UIViewController *)childVC {
+    [self ash_addChildViewController:childVC withFrame:self.view.bounds];
 }
 
-- (void)imy_addChildViewController:(UIViewController *)childVC inView:(UIView *)containerView withFrame:(CGRect)frame {
-    [self imy_addChildViewController:childVC
+- (void)ash_addChildViewController:(UIViewController *)childVC inView:(UIView *)containerView withFrame:(CGRect)frame {
+    [self ash_addChildViewController:childVC
                         addViewBlock:^(UIViewController *superVC, UIViewController *childVC) {
                             childVC.view.frame = frame;
                             if (![containerView.subviews containsObject:childVC.view]) {
@@ -33,8 +33,8 @@
                         }];
 }
 
-- (void)imy_addChildViewController:(UIViewController *)childVC withFrame:(CGRect)frame {
-    [self imy_addChildViewController:childVC
+- (void)ash_addChildViewController:(UIViewController *)childVC withFrame:(CGRect)frame {
+    [self ash_addChildViewController:childVC
                         addViewBlock:^(UIViewController *superVC, UIViewController *childVC) {
                             childVC.view.frame = frame;
                             if (![superVC.view.subviews containsObject:childVC.view]) {
@@ -43,7 +43,7 @@
                         }];
 }
 
-- (void)imy_addChildViewController:(UIViewController *)childVC addViewBlock:(void (^)(UIViewController *superVC, UIViewController *childVC))addViewBlock {
+- (void)ash_addChildViewController:(UIViewController *)childVC addViewBlock:(void (^)(UIViewController *superVC, UIViewController *childVC))addViewBlock {
     if (!childVC) {
         return;
     }
@@ -61,7 +61,7 @@
     }
 }
 
-- (void)imy_removeFromParentViewController {
+- (void)ash_removeFromParentViewController {
     [self willMoveToParentViewController:nil];
     [self.view removeFromSuperview];
     [self removeFromParentViewController];

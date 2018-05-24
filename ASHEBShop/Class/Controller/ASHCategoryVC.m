@@ -9,11 +9,11 @@
 #import "ASHCategoryVC.h"
 #import "ASHPageViewController.h"
 #import "ViewController.h"
-#import "IMYNewsSegmentedView.h"
+#import "ASHNewsSegmentedView.h"
 #import <Masonry.h>
-@interface ASHCategoryVC ()<ASHPageViewControllerDelegate,ASHPageViewControllerDataSource,UIScrollViewDelegate,IMYNewsSegmentedViewDataSource,IMYNewsSegmentedViewDelegate>
+@interface ASHCategoryVC ()<ASHPageViewControllerDelegate,ASHPageViewControllerDataSource,UIScrollViewDelegate,ASHNewsSegmentedViewDataSource,ASHNewsSegmentedViewDelegate>
 @property(nonatomic, strong)ASHPageViewController* pageViewController;
-@property (nonatomic, strong) IMYNewsSegmentedView *segmentView;
+@property (nonatomic, strong) ASHNewsSegmentedView *segmentView;
 @property(nonatomic, copy)NSMutableArray* vcArr;
 @end
 
@@ -32,9 +32,9 @@
     [_vcArr addObject:[ViewController new]];
     
 }
-- (IMYNewsSegmentedView *)segmentView {
+- (ASHNewsSegmentedView *)segmentView {
     if (_segmentView == nil) {
-        _segmentView = [[IMYNewsSegmentedView alloc] init];
+        _segmentView = [[ASHNewsSegmentedView alloc] init];
         _segmentView.dataSource = self;
         _segmentView.delegate = self;
         _segmentView.titleFont = [UIFont systemFontOfSize:17];
@@ -75,7 +75,7 @@
 {
     
 }
-#pragma mark IMYNewsSegmentedViewDataSource
+#pragma mark ASHNewsSegmentedViewDataSource
 - (NSUInteger)numberOfSegmentedViews:(id)sender{
     return _vcArr.count;
 }
@@ -86,8 +86,8 @@
 {
     return 62.0;
 }
-#pragma mark IMYNewsSegmentedViewDelegate
-- (void)IMYNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index
+#pragma mark ASHNewsSegmentedViewDelegate
+- (void)ASHNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index
 {
     [self.pageViewController setViewControllerAtIndex:index animated:YES];
 }

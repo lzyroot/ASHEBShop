@@ -1,19 +1,19 @@
 //
-//  IMYNewsSegmentedView.h
-//  IMYNews
+//  ASHNewsSegmentedView.h
+//  ASHNews
 //
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol IMYNewsSegmentedViewDelegate <NSObject>
+@protocol ASHNewsSegmentedViewDelegate <NSObject>
 
 @optional
-- (void)IMYNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index;
+- (void)ASHNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index;
 @end
 
-@protocol IMYNewsSegmentedViewDataSource <NSObject>
+@protocol ASHNewsSegmentedViewDataSource <NSObject>
 @required
 - (NSUInteger)numberOfSegmentedViews:(id)sender;
 - (NSString *)titleForSegmentedView:(id)sender index:(NSUInteger)index;
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)segmentedViewWidth:(id)sender index:(NSUInteger)index;
 @end
 
-@interface IMYNewsSegmentedView : UIView
+@interface ASHNewsSegmentedView : UIView
 @property (nonatomic, assign) NSUInteger currentIndex;
 @property (nonatomic, strong, readonly) UIView *indicatorView;
 @property (nonatomic, assign) CGFloat indicatorWidth;
@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *titleSelectColor;
 
-@property (nonatomic, weak, nullable) id<IMYNewsSegmentedViewDelegate> delegate;
-@property (nonatomic, weak, nullable) id<IMYNewsSegmentedViewDataSource> dataSource;
+@property (nonatomic, weak, nullable) id<ASHNewsSegmentedViewDelegate> delegate;
+@property (nonatomic, weak, nullable) id<ASHNewsSegmentedViewDataSource> dataSource;
 
 - (void)reload;
 - (void)reloadAt:(NSUInteger)index;
