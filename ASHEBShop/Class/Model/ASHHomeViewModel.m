@@ -9,8 +9,7 @@
 #import "ASHHomeViewModel.h"
 #import "ASHHomeModel.h"
 #import "ASHNetWork.h"
-#import "ASHPropertyEntity.h"
-#import <ReactiveCocoa.h>
+
 @interface ASHHomeViewModel()
 @property (nonatomic, strong)ASHHomeModel* model;
 @end

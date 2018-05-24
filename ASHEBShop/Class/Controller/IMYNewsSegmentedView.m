@@ -2,8 +2,6 @@
 //  IMYNewsSegmentedView.m
 //  IMYNews
 //
-//  Created by shenfh on 17/1/16.
-//  Copyright © 2017年 shenfh. All rights reserved.
 //
 
 #import "IMYNewsSegmentedView.h"

@@ -37,5 +37,16 @@
     
     self.layer.mask = shape;
 }
-
++ (void)showToast:(NSString *)title
+{
+    UIWindow* view = (UIWindow*)[UIApplication sharedApplication].windows[0];
+    MBProgressHUD* progressHUD = [[MBProgressHUD alloc] initWithFrame:view.bounds];
+    progressHUD.mode = MBProgressHUDModeText;
+    progressHUD.removeFromSuperViewOnHide = YES;
+    progressHUD.center = view.center;
+    progressHUD.label.text = title;
+    [view addSubview:progressHUD];
+    [progressHUD showAnimated:NO];
+    [progressHUD hideAnimated:YES afterDelay:2.0];
+}
 @end

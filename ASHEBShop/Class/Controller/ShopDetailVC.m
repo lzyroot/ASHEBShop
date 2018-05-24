@@ -1,42 +1,47 @@
 //
-//  MainViewController.m
+//  ShopDetailVC.m
 //  ASHEBShop
 //
-//  Created by xmfish on 2018/5/2.
+//  Created by xmfish on 2018/5/17.
 //  Copyright © 2018年 ash. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "HomeCell.h"
-#import "HomeCell2.h"
-#import "HomeCell3.h"
-#import "ASHNewHomeViewModel.h"
 #import "ShopDetailVC.h"
-@interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property(nonatomic, strong) UITableView* tableView;
-@property(nonatomic, copy)ASHNewHomeViewModel* viewModel;
+#import "ASHShopDetailViewModel.h"
+#import "ShopDetailCell.h"
+@interface ShopDetailVC ()<UITableViewDelegate,UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
+@property (weak, nonatomic) IBOutlet UILabel *headTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *headContentLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property(nonatomic, copy)ASHShopDetailViewModel* viewModel;
+
 @end
 
-@implementation MainViewController
+@implementation ShopDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithHexString:@"#FBF5F5" alpha:1.0];
-    self.title = @"推荐";
-    [self initTableView];
-    _viewModel = [ASHNewHomeViewModel new];
+    // Do any additional setup after loading the view from its nib.
+    self.title = @"攻略详情";
+    
+    
+    [self setupTable];
+    _viewModel = [ASHShopDetailViewModel new];
     [self.tableView.mj_header beginRefreshing];
 }
+
 - (void)requestData
 {
     [self bindViewModel];
-    [_viewModel requestData];
+    [_viewModel requestDataWithId:self.detailId];
 }
 - (void)loadMore
 {
     [self bindViewModel];
-    [_viewModel loadMore];
+    [_viewModel requestDataWithId:self.detailId];
 }
 - (void)bindViewModel
 {
@@ -50,6 +55,8 @@
             
             [self.tableView.mj_footer resetNoMoreData];
         }
+        [self setupHeaderView];
+        
         [self.tableView reloadData];
     } error:^(NSError *error) {
         @strongify(self);
@@ -59,12 +66,12 @@
         [UIView showToast:@"网络异常，请下拉刷新"];
     }];
 }
-- (void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+
+- (void)setupTable{
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 223.5;
+//    self.tableView.rowHeight = 223.5;
     self.tableView.layer.masksToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -72,7 +79,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.tableView];
-    
     
     @weakify(self);
     MJRefreshNormalHeader* refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -83,6 +89,20 @@
     refreshHeader.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
     self.tableView.mj_header = refreshHeader;
     [self.tableView.mj_header beginRefreshing];
+}
+- (void)setupHeaderView
+{
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.viewModel.model.imageUrl]];
+    self.headTitleLabel.text = self.viewModel.model.title;
+    self.headContentLabel.text = self.viewModel.model.desc;
+
+    
+    CGSize textSize = [self.headTitleLabel.text boundingRectWithSize:CGSizeMake(self.headTitleLabel.ash_size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.headTitleLabel.font} context:nil].size;
+    
+    CGSize contentSize = [self.headContentLabel.text boundingRectWithSize:CGSizeMake(self.headContentLabel.ash_size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.headContentLabel.font} context:nil].size;
+    
+    self.headerView.ash_height = textSize.height + contentSize.height + 220;
+    self.tableView.tableHeaderView= self.headerView;
     
 }
 #pragma mark UITableViewDelegate
@@ -94,42 +114,28 @@
 {
     return _viewModel.dataCount;
 }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ShopDetailCell* cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell cellHeight];
+}
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HomeCell3* cell = [tableView dequeueReusableCellWithIdentifier:@"HomeCell3"];
+    ShopDetailCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ShopDetailCell"];
     if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"HomeCell3" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"ShopDetailCell" owner:nil options:nil] firstObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    ASHNewHomeItemModel* model = [_viewModel modelIndex:indexPath.row];
+    ASHShopDetailItemModel* model = [_viewModel modelIndex:indexPath.row];
     cell.model = model;
-
+    
     return cell;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ShopDetailVC* vc = [ShopDetailVC new];
-    ASHNewHomeItemModel* model = [_viewModel modelIndex:indexPath.row];
-    vc.hidesBottomBarWhenPushed = YES;
-    vc.detailId = model.itemId;
-    vc.imageUrl = model.imageUrl;
-    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

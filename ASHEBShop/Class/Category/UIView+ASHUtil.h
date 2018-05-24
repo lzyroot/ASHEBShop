@@ -27,4 +27,6 @@
 - (void)ash_addRoundedCorners:(UIRectCorner)corners
                 withRadii:(CGSize)radii
                  viewRect:(CGRect)rect;
+
++(void)showToast:(NSString*)title;
 @end

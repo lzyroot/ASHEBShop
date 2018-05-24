@@ -21,8 +21,7 @@
     [super awakeFromNib];
     // Initialization code
     [self.contentImageView ash_addRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight withRadii:CGSizeMake(4.0, 4.0) viewRect:CGRectMake(0, 0, ASHScreenWidth - 20, self.contentImageView.bounds.size.height)];
-//    self.likeCountLabel.shadowColor = [UIColor blackColor];
-//    self.likeCountLabel.shadowOffset = CGSizeMake(1, 1);
+
 }
 
 - (void)setModel:(ASHNewHomeModel *)model

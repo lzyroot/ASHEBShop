@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ASHNewHomeItemModel;
 @interface HomeCell3 : UITableViewCell
-
+@property(nonatomic, strong)ASHNewHomeItemModel* model;
 @end

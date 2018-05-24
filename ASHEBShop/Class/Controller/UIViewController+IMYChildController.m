@@ -2,7 +2,7 @@
 //  UIViewController+IMYChildController.m
 //  Pods
 //
-//  Created by anchor on 2017/4/19.
+
 //
 //
 

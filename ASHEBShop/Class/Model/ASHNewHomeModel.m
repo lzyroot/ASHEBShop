@@ -7,7 +7,15 @@
 //
 
 #import "ASHNewHomeModel.h"
-
+@implementation ASHNewHomeItemModel
++ (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper
+{
+    return @{@"itemId":@"id"};
+}
+@end
 @implementation ASHNewHomeModel
-
++ (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper
+{
+    return @{@"dataArr":@"reommendJa"};
+}
 @end

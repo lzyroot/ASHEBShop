@@ -49,6 +49,18 @@
 		A93D329720AD67CA00306F72 /* likebg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D329620AD67C900306F72 /* likebg@2x.png */; };
 		A93D329B20AD6C6500306F72 /* HomeCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D329920AD6C6500306F72 /* HomeCell3.m */; };
 		A93D329C20AD6C6500306F72 /* HomeCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93D329A20AD6C6500306F72 /* HomeCell3.xib */; };
+		A93D32A120AD713300306F72 /* homelike@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D329D20AD713200306F72 /* homelike@3x.png */; };
+		A93D32A220AD713300306F72 /* homenolike@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D329E20AD713200306F72 /* homenolike@3x.png */; };
+		A93D32A320AD713300306F72 /* homelike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D329F20AD713300306F72 /* homelike@2x.png */; };
+		A93D32A420AD713300306F72 /* homenolike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93D32A020AD713300306F72 /* homenolike@2x.png */; };
+		A93D32A720AD78DE00306F72 /* UIView+ASHFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32A620AD78DE00306F72 /* UIView+ASHFrame.m */; };
+		A93D32AA20AD855E00306F72 /* ASHNewHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32A920AD855E00306F72 /* ASHNewHomeViewModel.m */; };
+		A93D32AE20AD96CD00306F72 /* ShopDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32AC20AD96CD00306F72 /* ShopDetailVC.m */; };
+		A93D32AF20AD96CD00306F72 /* ShopDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93D32AD20AD96CD00306F72 /* ShopDetailVC.xib */; };
+		A93D32BE20B2ACED00306F72 /* ShopDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32BC20B2ACED00306F72 /* ShopDetailCell.m */; };
+		A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93D32BD20B2ACED00306F72 /* ShopDetailCell.xib */; };
+		A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32C120B2C95400306F72 /* ASHShopDetailModel.m */; };
+		A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */; };
 		A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21242099CF4D00B6556E /* home_normal@2x.png */; };
 		A93E21292099CF4D00B6556E /* home_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21252099CF4D00B6556E /* home_selected@3x.png */; };
 		A93E212A2099CF4D00B6556E /* home_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21262099CF4D00B6556E /* home_selected@2x.png */; };
@@ -155,6 +167,24 @@
 		A93D329820AD6C6500306F72 /* HomeCell3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell3.h; sourceTree = "<group>"; };
 		A93D329920AD6C6500306F72 /* HomeCell3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell3.m; sourceTree = "<group>"; };
 		A93D329A20AD6C6500306F72 /* HomeCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell3.xib; sourceTree = "<group>"; };
+		A93D329D20AD713200306F72 /* homelike@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homelike@3x.png"; sourceTree = "<group>"; };
+		A93D329E20AD713200306F72 /* homenolike@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homenolike@3x.png"; sourceTree = "<group>"; };
+		A93D329F20AD713300306F72 /* homelike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homelike@2x.png"; sourceTree = "<group>"; };
+		A93D32A020AD713300306F72 /* homenolike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homenolike@2x.png"; sourceTree = "<group>"; };
+		A93D32A520AD78DE00306F72 /* UIView+ASHFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ASHFrame.h"; sourceTree = "<group>"; };
+		A93D32A620AD78DE00306F72 /* UIView+ASHFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ASHFrame.m"; sourceTree = "<group>"; };
+		A93D32A820AD855E00306F72 /* ASHNewHomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHNewHomeViewModel.h; sourceTree = "<group>"; };
+		A93D32A920AD855E00306F72 /* ASHNewHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHNewHomeViewModel.m; sourceTree = "<group>"; };
+		A93D32AB20AD96CD00306F72 /* ShopDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetailVC.h; sourceTree = "<group>"; };
+		A93D32AC20AD96CD00306F72 /* ShopDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetailVC.m; sourceTree = "<group>"; };
+		A93D32AD20AD96CD00306F72 /* ShopDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopDetailVC.xib; sourceTree = "<group>"; };
+		A93D32BB20B2ACED00306F72 /* ShopDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetailCell.h; sourceTree = "<group>"; };
+		A93D32BC20B2ACED00306F72 /* ShopDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetailCell.m; sourceTree = "<group>"; };
+		A93D32BD20B2ACED00306F72 /* ShopDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopDetailCell.xib; sourceTree = "<group>"; };
+		A93D32C020B2C95400306F72 /* ASHShopDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHShopDetailModel.h; sourceTree = "<group>"; };
+		A93D32C120B2C95400306F72 /* ASHShopDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHShopDetailModel.m; sourceTree = "<group>"; };
+		A93D32C320B2D1D900306F72 /* ASHShopDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHShopDetailViewModel.h; sourceTree = "<group>"; };
+		A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHShopDetailViewModel.m; sourceTree = "<group>"; };
 		A93E21242099CF4D00B6556E /* home_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_normal@2x.png"; sourceTree = "<group>"; };
 		A93E21252099CF4D00B6556E /* home_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_selected@3x.png"; sourceTree = "<group>"; };
 		A93E21262099CF4D00B6556E /* home_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_selected@2x.png"; sourceTree = "<group>"; };
@@ -421,6 +451,9 @@
 				A91CE7B92099C84B008F612E /* MainViewController.m */,
 				A91CE7BB2099C87B008F612E /* BaseViewController.h */,
 				A91CE7BC2099C87B008F612E /* BaseViewController.m */,
+				A93D32AB20AD96CD00306F72 /* ShopDetailVC.h */,
+				A93D32AC20AD96CD00306F72 /* ShopDetailVC.m */,
+				A93D32AD20AD96CD00306F72 /* ShopDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,6 +467,8 @@
 				A98F76AF1E9497EF00916E79 /* ASHHomeModel.m */,
 				A93E214520A1461100B6556E /* ASHNewHomeModel.h */,
 				A93E214620A1461100B6556E /* ASHNewHomeModel.m */,
+				A93D32C020B2C95400306F72 /* ASHShopDetailModel.h */,
+				A93D32C120B2C95400306F72 /* ASHShopDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +480,10 @@
 				A98F76A61E94869400916E79 /* ASHBaseViewModel.m */,
 				A98F76A81E948E8100916E79 /* ASHHomeViewModel.h */,
 				A98F76A91E948E8100916E79 /* ASHHomeViewModel.m */,
+				A93D32A820AD855E00306F72 /* ASHNewHomeViewModel.h */,
+				A93D32A920AD855E00306F72 /* ASHNewHomeViewModel.m */,
+				A93D32C320B2D1D900306F72 /* ASHShopDetailViewModel.h */,
+				A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -483,6 +522,8 @@
 				A98F76C21E9514F200916E79 /* NSString+ASHJson.m */,
 				A93E215120A19B0400B6556E /* UIView+ASHUtil.h */,
 				A93E215220A19B0400B6556E /* UIView+ASHUtil.m */,
+				A93D32A520AD78DE00306F72 /* UIView+ASHFrame.h */,
+				A93D32A620AD78DE00306F72 /* UIView+ASHFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -491,6 +532,10 @@
 			isa = PBXGroup;
 			children = (
 				A93D329620AD67C900306F72 /* likebg@2x.png */,
+				A93D329F20AD713300306F72 /* homelike@2x.png */,
+				A93D329D20AD713200306F72 /* homelike@3x.png */,
+				A93D32A020AD713300306F72 /* homenolike@2x.png */,
+				A93D329E20AD713200306F72 /* homenolike@3x.png */,
 				A93E213D20A13EA500B6556E /* navItemCollect@2x.png */,
 				A93E213F20A13EA500B6556E /* navItemCollect@3x.png */,
 				A93E213E20A13EA500B6556E /* navItemNotCollect@2x.png */,
@@ -538,6 +583,9 @@
 				A93D329820AD6C6500306F72 /* HomeCell3.h */,
 				A93D329920AD6C6500306F72 /* HomeCell3.m */,
 				A93D329A20AD6C6500306F72 /* HomeCell3.xib */,
+				A93D32BB20B2ACED00306F72 /* ShopDetailCell.h */,
+				A93D32BC20B2ACED00306F72 /* ShopDetailCell.m */,
+				A93D32BD20B2ACED00306F72 /* ShopDetailCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -606,9 +654,11 @@
 			files = (
 				A937EE051EBB1F0900000C5C /* delete-btn.js in Resources */,
 				A93E212B2099CF4D00B6556E /* home_normal@3x.png in Resources */,
+				A93D32AF20AD96CD00306F72 /* ShopDetailVC.xib in Resources */,
 				A93E2138209AA80F00B6556E /* HomeCell.xib in Resources */,
 				A90619901E9CFFE600B5D6E5 /* startlabel.png in Resources */,
 				A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */,
+				A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */,
 				A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */,
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,
@@ -634,14 +684,18 @@
 				A93E214C20A1882E00B6556E /* HomeCell2.xib in Resources */,
 				A93E213B20A13DA000B6556E /* browseEye@2x.png in Resources */,
 				A93E214420A13EA500B6556E /* navItemNotCollect@3x.png in Resources */,
+				A93D32A220AD713300306F72 /* homenolike@3x.png in Resources */,
 				A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */,
 				A93E212A2099CF4D00B6556E /* home_selected@2x.png in Resources */,
 				A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */,
 				A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */,
 				A93D329C20AD6C6500306F72 /* HomeCell3.xib in Resources */,
 				A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */,
+				A93D32A120AD713300306F72 /* homelike@3x.png in Resources */,
 				A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */,
 				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,
+				A93D32A320AD713300306F72 /* homelike@2x.png in Resources */,
+				A93D32A420AD713300306F72 /* homenolike@2x.png in Resources */,
 				A93E213C20A13DA000B6556E /* browseEye@3x.png in Resources */,
 				A93E214F20A19A1800B6556E /* sessionCollect@2x.png in Resources */,
 			);
@@ -702,11 +756,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93D32BE20B2ACED00306F72 /* ShopDetailCell.m in Sources */,
 				A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */,
 				A91CE7BD2099C87B008F612E /* BaseViewController.m in Sources */,
 				A93D329B20AD6C6500306F72 /* HomeCell3.m in Sources */,
 				A93E214720A1461100B6556E /* ASHNewHomeModel.m in Sources */,
 				A92BC6451E7BD4BA0019B435 /* ASHPropertyEntity.m in Sources */,
+				A93D32AA20AD855E00306F72 /* ASHNewHomeViewModel.m in Sources */,
 				A937EDFB1EBB0C5900000C5C /* ASHCouponWebView.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
@@ -714,15 +770,19 @@
 				A93E215C20A1A90600B6556E /* IMYNewsSegmentedView.m in Sources */,
 				A93EECE01E78EE26001378B1 /* ViewController.m in Sources */,
 				A93E215620A1A23500B6556E /* ASHPageViewController.m in Sources */,
+				A93D32AE20AD96CD00306F72 /* ShopDetailVC.m in Sources */,
 				A91CE7B42099BC4A008F612E /* MainTabBarVC.m in Sources */,
 				A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */,
 				A98F76B01E9497EF00916E79 /* ASHHomeModel.m in Sources */,
 				A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */,
 				A98F76B31E94C07A00916E79 /* ASHNetWork.m in Sources */,
+				A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */,
 				A91CE7BA2099C84B008F612E /* MainViewController.m in Sources */,
 				A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */,
 				A93EECDD1E78EE26001378B1 /* AppDelegate.m in Sources */,
+				A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */,
 				A93EECF91E791A41001378B1 /* UIColor+CustomColor.m in Sources */,
+				A93D32A720AD78DE00306F72 /* UIView+ASHFrame.m in Sources */,
 				A93EECDA1E78EE26001378B1 /* main.m in Sources */,
 				A93EED0E1E7935C4001378B1 /* ShopItemCell.m in Sources */,
 				A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */,

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,20 +28,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhJ-CQ-FN4">
-                                        <rect key="frame" x="8" y="11" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="8" y="13" width="37.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homenolike.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLK-uR-5G3">
+                                        <rect key="frame" x="257.5" y="14" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="58i-Nr-iR7"/>
+                                            <constraint firstAttribute="width" constant="16" id="qfi-E5-Z74"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1024" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-Dm-O5g">
+                                        <rect key="frame" x="281.5" y="2" width="32.5" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="ca3-Dm-O5g" firstAttribute="leading" secondItem="zLK-uR-5G3" secondAttribute="trailing" constant="8" id="0Ad-bG-XGU"/>
+                                    <constraint firstItem="ca3-Dm-O5g" firstAttribute="centerY" secondItem="zLK-uR-5G3" secondAttribute="centerY" id="1BF-SG-xPQ"/>
                                     <constraint firstItem="IhJ-CQ-FN4" firstAttribute="leading" secondItem="Qyl-4e-Q1d" secondAttribute="leading" constant="8" id="AYG-yH-gf9"/>
                                     <constraint firstItem="IhJ-CQ-FN4" firstAttribute="centerY" secondItem="Qyl-4e-Q1d" secondAttribute="centerY" id="E1m-Av-zoA"/>
+                                    <constraint firstItem="ca3-Dm-O5g" firstAttribute="centerY" secondItem="Qyl-4e-Q1d" secondAttribute="centerY" id="WmS-3l-Rjq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ca3-Dm-O5g" secondAttribute="trailing" constant="6" id="b4B-gc-5Fl"/>
+                                    <constraint firstItem="zLK-uR-5G3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IhJ-CQ-FN4" secondAttribute="trailing" constant="10" id="et3-RJ-UK4"/>
+                                    <constraint firstItem="ca3-Dm-O5g" firstAttribute="top" secondItem="Qyl-4e-Q1d" secondAttribute="top" constant="2" id="qYN-N9-unx"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="NzF-2F-id5"/>
                             <constraint firstItem="Qyl-4e-Q1d" firstAttribute="top" secondItem="1Kw-tY-PjI" secondAttribute="top" id="OSJ-c0-nwN"/>
@@ -62,8 +80,16 @@
                     <constraint firstItem="1Kw-tY-PjI" firstAttribute="bottom" secondItem="3b1-yo-OQv" secondAttribute="bottom" id="ldL-u5-dyF"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="6" y="-10"/>
+            <connections>
+                <outlet property="contentImageView" destination="3b1-yo-OQv" id="NBY-fe-pFL"/>
+                <outlet property="contentTitleLabel" destination="IhJ-CQ-FN4" id="NUj-mX-VPs"/>
+                <outlet property="likeCountLabel" destination="ca3-Dm-O5g" id="ydz-Eq-Vix"/>
+                <outlet property="likeImageView" destination="zLK-uR-5G3" id="cf6-Kv-3VL"/>
+            </connections>
+            <point key="canvasLocation" x="-79" y="-10"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="homenolike.png" width="16" height="16"/>
+    </resources>
 </document>

@@ -2,8 +2,6 @@
 //  IMYNewsSegmentedView.h
 //  IMYNews
 //
-//  Created by shenfh on 17/1/16.
-//  Copyright © 2017年 shenfh. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

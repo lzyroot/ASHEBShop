@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <YYModel.h>
 @interface ASHBaseModel : NSObject
 
 @property (nonatomic, assign, readonly)NSInteger ret;

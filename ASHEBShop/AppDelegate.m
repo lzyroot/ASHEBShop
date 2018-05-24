@@ -33,9 +33,11 @@
 //    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     
+    
 
     return YES;
 }
+
 
 - (void)initUMen
 {
@@ -73,10 +75,11 @@
 - (void)customSet
 {
     UINavigationBar * nav = [UINavigationBar appearance];
-    UIImage* image = [UIImage ash_imageFromColor:[UIColor whiteColor] andSize:CGSizeMake(1, 1) opaque:0.2];
-    image = [image imageByBlurWithTint:[UIColor whiteColor]];
+    UIImage* image = [UIImage ash_imageFromColor:[UIColor mainRedColor] andSize:CGSizeMake(1, 1) opaque:1.0];
+//    image = [image imageByBlurWithTint:[UIColor clearColor]];
+    nav.tintColor = [UIColor whiteColor];
     [nav setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    nav.tintColor = [UIColor mainColor];
+    [nav setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 #pragma mark - open url
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options

@@ -30,6 +30,10 @@
 {
     return [UIColor colorWithHexString:@"#F84D52" alpha:1.0];
 }
++ (UIColor *)mainRedColor
+{
+    return [UIColor colorWithHexString:@"#f54f4f" alpha:1.0];
+}
 + (UIColor *)lineColor
 {
     return [UIColor colorWithHexString:@"#EBEBF1" alpha:1.0];
