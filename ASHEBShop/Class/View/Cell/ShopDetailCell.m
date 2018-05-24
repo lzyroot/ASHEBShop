@@ -64,7 +64,7 @@
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     UIViewController *rootViewController = keyWindow.rootViewController;
     AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
-    showParam.openType = AlibcOpenTypeAuto;
+    showParam.openType = AlibcOpenTypeNative;
     id<AlibcTradePage> page = [AlibcTradePageFactory page: _model.goodsUrl];
     [[AlibcTradeSDK sharedInstance].tradeService show: rootViewController page:page showParams:showParam taoKeParams:nil trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
         

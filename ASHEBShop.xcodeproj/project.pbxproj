@@ -629,7 +629,7 @@
 				TargetAttributes = {
 					A93EECD41E78EE26001378B1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X75CUV458P;
+						DevelopmentTeam = T63J6SF7QS;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -919,8 +919,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				DEVELOPMENT_TEAM = X75CUV458P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -979,8 +980,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9c19210d-30c9-4eab-a285-254bac2843a4";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopTest;
+				PROVISIONING_PROFILE = "cef1cba1-20fc-478b-b14a-565005cf2b15";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
@@ -991,8 +992,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
-				DEVELOPMENT_TEAM = X75CUV458P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1051,8 +1053,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9c19210d-30c9-4eab-a285-254bac2843a4";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShopTest;
+				PROVISIONING_PROFILE = "cef1cba1-20fc-478b-b14a-565005cf2b15";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;
