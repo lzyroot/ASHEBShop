@@ -101,7 +101,7 @@
     
     CGSize contentSize = [self.headContentLabel.text boundingRectWithSize:CGSizeMake(self.headContentLabel.ash_size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.headContentLabel.font} context:nil].size;
     
-    self.headerView.ash_height = textSize.height + contentSize.height + 220;
+    self.headerView.ash_height = textSize.height + contentSize.height + 270;
     self.tableView.tableHeaderView= self.headerView;
     
 }
