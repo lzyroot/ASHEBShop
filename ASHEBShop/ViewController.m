@@ -46,10 +46,8 @@
     
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-//    UIImage* image = [UIImage imageNamed:@"backgroud13.jpg"];
     UIImage* image = [UIImage ash_imageFromColor:[UIColor whiteColor] andSize:CGSizeMake(1, 1) opaque:0.2];
-//    image = [image imageByBlurRadius:10 tintColor:[UIColor colorWithWhite:0.6 alpha:0.3] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil];;
-    image = [image imageByBlurWithTint:[UIColor mainColor]];
+    image = [image imageByBlurWithTint:[UIColor lineColor]];
     UIImageView* imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.image = image;
     [self.view addSubview:imageView];
@@ -60,7 +58,6 @@
     view.layer.cornerRadius = 5.0;
     
     view.center = self.view.center;
-//    [self.view addSubview:view];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(4, 0, self.view.bounds.size.width - 8, self.view.bounds.size.height - 0) style:UITableViewStylePlain];
     self.tableView.delegate = self;

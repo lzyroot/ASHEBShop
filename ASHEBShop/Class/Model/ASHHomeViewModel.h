@@ -12,4 +12,5 @@
 @interface ASHHomeViewModel : ASHBaseViewModel
 
 @property (nonatomic, strong, readonly)ASHHomeModel* model;
+@property (nonatomic, assign)NSInteger goodsTypeId;
 @end

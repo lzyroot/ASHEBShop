@@ -44,7 +44,7 @@
     
     
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, (ASHScreenWidth - 40), (ASHScreenWidth * 1.2))];
-    self.webView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    self.webView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2 - 60);
     [self addSubview:self.webView];
     
     

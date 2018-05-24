@@ -83,7 +83,6 @@
     refreshHeader.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
     self.tableView.mj_header = refreshHeader;
     [self.tableView.mj_header beginRefreshing];
-    
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

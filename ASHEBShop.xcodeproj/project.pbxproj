@@ -61,6 +61,7 @@
 		A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93D32BD20B2ACED00306F72 /* ShopDetailCell.xib */; };
 		A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32C120B2C95400306F72 /* ASHShopDetailModel.m */; };
 		A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */; };
+		A93D32C820B66CDB00306F72 /* ASHCategoryListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93D32C720B66CDB00306F72 /* ASHCategoryListVC.m */; };
 		A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21242099CF4D00B6556E /* home_normal@2x.png */; };
 		A93E21292099CF4D00B6556E /* home_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21252099CF4D00B6556E /* home_selected@3x.png */; };
 		A93E212A2099CF4D00B6556E /* home_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93E21262099CF4D00B6556E /* home_selected@2x.png */; };
@@ -185,6 +186,8 @@
 		A93D32C120B2C95400306F72 /* ASHShopDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHShopDetailModel.m; sourceTree = "<group>"; };
 		A93D32C320B2D1D900306F72 /* ASHShopDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHShopDetailViewModel.h; sourceTree = "<group>"; };
 		A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHShopDetailViewModel.m; sourceTree = "<group>"; };
+		A93D32C620B66CDB00306F72 /* ASHCategoryListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCategoryListVC.h; sourceTree = "<group>"; };
+		A93D32C720B66CDB00306F72 /* ASHCategoryListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCategoryListVC.m; sourceTree = "<group>"; };
 		A93E21242099CF4D00B6556E /* home_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_normal@2x.png"; sourceTree = "<group>"; };
 		A93E21252099CF4D00B6556E /* home_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_selected@3x.png"; sourceTree = "<group>"; };
 		A93E21262099CF4D00B6556E /* home_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_selected@2x.png"; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 				A93D32AB20AD96CD00306F72 /* ShopDetailVC.h */,
 				A93D32AC20AD96CD00306F72 /* ShopDetailVC.m */,
 				A93D32AD20AD96CD00306F72 /* ShopDetailVC.xib */,
+				A93D32C620B66CDB00306F72 /* ASHCategoryListVC.h */,
+				A93D32C720B66CDB00306F72 /* ASHCategoryListVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -780,6 +785,7 @@
 				A91CE7BA2099C84B008F612E /* MainViewController.m in Sources */,
 				A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */,
 				A93EECDD1E78EE26001378B1 /* AppDelegate.m in Sources */,
+				A93D32C820B66CDB00306F72 /* ASHCategoryListVC.m in Sources */,
 				A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */,
 				A93EECF91E791A41001378B1 /* UIColor+CustomColor.m in Sources */,
 				A93D32A720AD78DE00306F72 /* UIView+ASHFrame.m in Sources */,

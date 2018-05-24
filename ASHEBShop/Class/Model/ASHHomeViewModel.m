@@ -34,6 +34,9 @@
     proEntity.responesOBJ = [ASHHomeModel class];
     proEntity.command = 10001;
     proEntity.param = @{@"page":@(page), @"pageSize":@(kDefaultPageSize)};
+    if (self.goodsTypeId > 0) {
+        proEntity.param = @{@"page":@(page), @"pageSize":@(kDefaultPageSize),@"goodType":@(self.goodsTypeId)};
+    }
     requestDisposable = [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHHomeModel* model) {
         self.page++;
         

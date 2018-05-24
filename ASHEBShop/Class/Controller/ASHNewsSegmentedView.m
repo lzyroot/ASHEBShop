@@ -22,7 +22,7 @@
 @end
 
 
-#define DefaultWidth 80
+#define DefaultWidth 120
 #define ButtonTag 0x17
 @implementation ASHNewsSegmentedView
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -91,7 +91,7 @@
 }
 
 - (void)setCurrentIndex:(NSUInteger)currentIndex {
-    [self setSelectedIndex:currentIndex animate:FALSE];
+    [self setSelectedIndex:currentIndex animate:YES];
 }
 - (void)setSelectedIndex:(NSUInteger)currentIndex animate:(BOOL)animate {
     NSUInteger numsSegmendedViews = 0;
