@@ -24,6 +24,7 @@
 #import "ASHNetWork.h"
 #import "ASHPropertyEntity.h"
 #import "UIColor+CustomColor.h"
+#import "NSString+ASHJson.h"
 #import <UIImageView+WebCache.h>
 #import "UIView+ASHUtil.h"
 #import <Masonry.h>

@@ -10,10 +10,13 @@
 #import "ASHShopDetailModel.h"
 @interface ASHShopDetailViewModel : ASHBaseViewModel
 
+@property (nonatomic, assign)NSInteger itemId;
 @property (nonatomic, strong, readonly)ASHShopDetailModel* model;
 @property (nonatomic, assign, readonly)NSInteger dataCount;
 
 - (ASHShopDetailItemModel*)modelIndex:(NSInteger)index;
 
-- (void)requestDataWithId:(NSInteger)itemId;
+- (void)requestData;
+
+- (void)requestParise;
 @end

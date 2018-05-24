@@ -11,22 +11,18 @@
 @property (nonatomic, strong)ASHShopDetailModel* model;
 @end
 @implementation ASHShopDetailViewModel
-- (void)requestData
-{
-//    [self requestDataWithId:0];
-}
 - (void)loadMore
 {
 //    [self requestHomeDataWithPage:self.page + 1];
 }
-- (void)requestDataWithId:(NSInteger)itemId{
+- (void)requestData{
     [requestDisposable dispose];
     ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
     proEntity.requireType = HTTPRequestTypeWithPOST;
     proEntity.isCache = YES;
     proEntity.responesOBJ = [ASHShopDetailModel class];
     proEntity.command = 10003 ;
-    proEntity.param = @{@"id":@(itemId)};
+    proEntity.param = @{@"id":@(self.itemId)};
     requestDisposable = [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHShopDetailModel* model) {
         self.hasMore = NO;
         self.page = 1;
@@ -35,6 +31,22 @@
         [self.ash_requestFinishedSubscriber sendNext:self.model];
         [self.ash_requestFinishedSubscriber sendCompleted];
         
+        
+    } error:^(NSError *error) {
+        [self.ash_requestFinishedSubscriber sendError:error];
+    }];
+}
+- (void)requestParise
+{
+    ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
+    proEntity.requireType = HTTPRequestTypeWithPOST;
+    proEntity.isCache = YES;
+    proEntity.responesOBJ = [ASHShopDetailModel class];
+    proEntity.command = 10004 ;
+    proEntity.param = @{@"id":@(self.itemId)};
+    [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHShopDetailModel* model) {
+        [self.ash_requestFinishedSubscriber sendNext:self.model];
+        [self.ash_requestFinishedSubscriber sendCompleted];
         
     } error:^(NSError *error) {
         [self.ash_requestFinishedSubscriber sendError:error];

@@ -11,4 +11,5 @@
 @interface ShopDetailVC : UIViewController
 @property(nonatomic, assign)NSInteger detailId;
 @property(nonatomic, copy)NSString* imageUrl;
+
 @end

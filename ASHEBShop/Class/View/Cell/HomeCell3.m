@@ -25,6 +25,7 @@
     // Initialization code
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     self.effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    self.effectView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.6];
 //    self.effectView.alpha = 0.8;
     [self.contentImageView addSubview:self.effectView];
     [self.effectView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,6 +58,12 @@
     [self.contentImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]];
     self.contentTitleLabel.text = model.title;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%ld",model.praise];
+    NSMutableDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
+    if ([pariseDic objectForKey:[NSString stringWithNSInteger:model.itemId]]) {
+        self.likeImageView.image = [UIImage imageNamed:@"homelike"];
+    }else{
+        self.likeImageView.image = [UIImage imageNamed:@"homenolike"];
+    }
 
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

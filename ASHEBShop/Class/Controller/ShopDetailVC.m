@@ -30,18 +30,44 @@
     
     [self setupTable];
     _viewModel = [ASHShopDetailViewModel new];
+    _viewModel.itemId = self.detailId;
     [self.tableView.mj_header beginRefreshing];
+    
+    NSMutableDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
+    if ([pariseDic objectForKey:[NSString stringWithNSInteger:self.detailId]]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"homelike"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)];
+    }else{
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"homenolike"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarBtnClick:)];
+    }
+    
 }
 
+- (void)rightBarBtnClick:(id)sender
+{
+    NSMutableDictionary* pariseDic =  [[NSUserDefaults standardUserDefaults] objectForKey:kASH_PRAISE_SAVE];
+    if (![pariseDic objectForKey:@(self.detailId)]){
+        [_viewModel requestParise];
+        if (!pariseDic) {
+            pariseDic = [NSMutableDictionary dictionary];
+        }
+        [pariseDic setObject:@"1" forKey:[NSString stringWithNSInteger:self.detailId]];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:pariseDic] forKey:kASH_PRAISE_SAVE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"homelike"];
+    }else{
+        [UIView showToast:@"已经收藏啦～"];
+    }
+    
+}
 - (void)requestData
 {
     [self bindViewModel];
-    [_viewModel requestDataWithId:self.detailId];
+    [_viewModel requestData];
 }
 - (void)loadMore
 {
     [self bindViewModel];
-    [_viewModel requestDataWithId:self.detailId];
+    [_viewModel requestData];
 }
 - (void)bindViewModel
 {
