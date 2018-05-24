@@ -149,7 +149,7 @@
 {
     
     AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
-    showParam.openType = AlibcOpenTypeAuto;
+    showParam.openType = AlibcOpenTypeNative;
     
     if (_viewModel.model.goodsJa.count > indexPath.row) {
         ASHHomeItemModel* model = [_viewModel.model.goodsJa objectAtIndex:indexPath.row];
