@@ -14,4 +14,8 @@
 {
     return [[ASHNetWorkManagerImpl shareInstance] requestSignWithEneity:eneity];
 }
++ (RACSignal *)newRequestSignWithEneity:(ASHPropertyEntity *)eneity
+{
+    return [[ASHNetWorkManagerImpl shareInstance] getRequestSignWithEneity:eneity];
+}
 @end

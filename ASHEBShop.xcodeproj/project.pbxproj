@@ -100,6 +100,23 @@
 		A93EED0F1E7935C4001378B1 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93EED0D1E7935C4001378B1 /* ShopItemCell.xib */; };
 		A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A93EED111E793D12001378B1 /* UILabel+ASHUtil.m */; };
 		A94B859A1EB9D56B0012687A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A94B85991EB9D56B0012687A /* Default-568h@2x.png */; };
+		A988AFC221117DD7009AC6A8 /* ASHEBHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFC121117DD7009AC6A8 /* ASHEBHomeViewController.m */; };
+		A988AFC62111808A009AC6A8 /* ASHSearchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFC52111808A009AC6A8 /* ASHSearchButton.m */; };
+		A988AFC9211182EB009AC6A8 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFC7211182EA009AC6A8 /* search@2x.png */; };
+		A988AFCA211182EB009AC6A8 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFC8211182EA009AC6A8 /* search@3x.png */; };
+		A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFCC2111962D009AC6A8 /* ASHEBCategoryVC.m */; };
+		A988AFD021119869009AC6A8 /* category@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFCE21119869009AC6A8 /* category@3x.png */; };
+		A988AFD121119869009AC6A8 /* category@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFCF21119869009AC6A8 /* category@2x.png */; };
+		A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFD421119EBD009AC6A8 /* ASHTabModel.m */; };
+		A988AFD921119FE2009AC6A8 /* ASHTabViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFD821119FE2009AC6A8 /* ASHTabViewModel.m */; };
+		A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFDB2111A50E009AC6A8 /* ASHShareInstace.m */; };
+		A988AFDF2111A606009AC6A8 /* ASHTabManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFDE2111A606009AC6A8 /* ASHTabManager.m */; };
+		A988AFE22111B3C6009AC6A8 /* ASHTabCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFE12111B3C6009AC6A8 /* ASHTabCategoryView.m */; };
+		A988AFE52111B66E009AC6A8 /* ASHCategoryItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFE42111B66E009AC6A8 /* ASHCategoryItemView.m */; };
+		A988AFE82111C7E9009AC6A8 /* whiteClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFE62111C7E8009AC6A8 /* whiteClose@2x.png */; };
+		A988AFE92111C7E9009AC6A8 /* whiteClose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFE72111C7E9009AC6A8 /* whiteClose@3x.png */; };
+		A988AFEC2111CBD1009AC6A8 /* grayclose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFEA2111CBD0009AC6A8 /* grayclose@3x.png */; };
+		A988AFED2111CBD1009AC6A8 /* grayclose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFEB2111CBD1009AC6A8 /* grayclose@2x.png */; };
 		A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76A61E94869400916E79 /* ASHBaseViewModel.m */; };
 		A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76A91E948E8100916E79 /* ASHHomeViewModel.m */; };
 		A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76AC1E948EA800916E79 /* ASHBaseModel.m */; };
@@ -243,6 +260,32 @@
 		A93EED111E793D12001378B1 /* UILabel+ASHUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ASHUtil.m"; sourceTree = "<group>"; };
 		A93EED131E794199001378B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A94B85991EB9D56B0012687A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A988AFC021117DD7009AC6A8 /* ASHEBHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHEBHomeViewController.h; sourceTree = "<group>"; };
+		A988AFC121117DD7009AC6A8 /* ASHEBHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHEBHomeViewController.m; sourceTree = "<group>"; };
+		A988AFC42111808A009AC6A8 /* ASHSearchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchButton.h; sourceTree = "<group>"; };
+		A988AFC52111808A009AC6A8 /* ASHSearchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchButton.m; sourceTree = "<group>"; };
+		A988AFC7211182EA009AC6A8 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		A988AFC8211182EA009AC6A8 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		A988AFCB2111962D009AC6A8 /* ASHEBCategoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHEBCategoryVC.h; sourceTree = "<group>"; };
+		A988AFCC2111962D009AC6A8 /* ASHEBCategoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHEBCategoryVC.m; sourceTree = "<group>"; };
+		A988AFCE21119869009AC6A8 /* category@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "category@3x.png"; sourceTree = "<group>"; };
+		A988AFCF21119869009AC6A8 /* category@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "category@2x.png"; sourceTree = "<group>"; };
+		A988AFD321119EBD009AC6A8 /* ASHTabModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTabModel.h; sourceTree = "<group>"; };
+		A988AFD421119EBD009AC6A8 /* ASHTabModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTabModel.m; sourceTree = "<group>"; };
+		A988AFD721119FE2009AC6A8 /* ASHTabViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTabViewModel.h; sourceTree = "<group>"; };
+		A988AFD821119FE2009AC6A8 /* ASHTabViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTabViewModel.m; sourceTree = "<group>"; };
+		A988AFDA2111A50E009AC6A8 /* ASHShareInstace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHShareInstace.h; sourceTree = "<group>"; };
+		A988AFDB2111A50E009AC6A8 /* ASHShareInstace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHShareInstace.m; sourceTree = "<group>"; };
+		A988AFDD2111A606009AC6A8 /* ASHTabManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTabManager.h; sourceTree = "<group>"; };
+		A988AFDE2111A606009AC6A8 /* ASHTabManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTabManager.m; sourceTree = "<group>"; };
+		A988AFE02111B3C6009AC6A8 /* ASHTabCategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTabCategoryView.h; sourceTree = "<group>"; };
+		A988AFE12111B3C6009AC6A8 /* ASHTabCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTabCategoryView.m; sourceTree = "<group>"; };
+		A988AFE32111B66E009AC6A8 /* ASHCategoryItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCategoryItemView.h; sourceTree = "<group>"; };
+		A988AFE42111B66E009AC6A8 /* ASHCategoryItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCategoryItemView.m; sourceTree = "<group>"; };
+		A988AFE62111C7E8009AC6A8 /* whiteClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteClose@2x.png"; sourceTree = "<group>"; };
+		A988AFE72111C7E9009AC6A8 /* whiteClose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteClose@3x.png"; sourceTree = "<group>"; };
+		A988AFEA2111CBD0009AC6A8 /* grayclose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayclose@3x.png"; sourceTree = "<group>"; };
+		A988AFEB2111CBD1009AC6A8 /* grayclose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayclose@2x.png"; sourceTree = "<group>"; };
 		A98F76A51E94869400916E79 /* ASHBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHBaseViewModel.h; sourceTree = "<group>"; };
 		A98F76A61E94869400916E79 /* ASHBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHBaseViewModel.m; sourceTree = "<group>"; };
 		A98F76A81E948E8100916E79 /* ASHHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASHHomeViewModel.h; path = ../Model/ASHHomeViewModel.h; sourceTree = "<group>"; };
@@ -414,6 +457,7 @@
 		A93EECEF1E78EFDA001378B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFD621119EE6009AC6A8 /* Manager */,
 				A92BC6491E7FF86F0019B435 /* Vender */,
 				A93EECF61E791A29001378B1 /* Category */,
 				A93EECF51E78F0FD001378B1 /* Core */,
@@ -430,6 +474,7 @@
 		A93EECF01E78EFE8001378B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFC32111805D009AC6A8 /* Home */,
 				A93EED051E793592001378B1 /* Cell */,
 				A937EDF91EBB0C5900000C5C /* ASHCouponWebView.h */,
 				A937EDFA1EBB0C5900000C5C /* ASHCouponWebView.m */,
@@ -440,6 +485,7 @@
 		A93EECF11E78EFF7001378B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFBF21117D49009AC6A8 /* NewEB */,
 				A93E215A20A1A90600B6556E /* ASHNewsSegmentedView.h */,
 				A93E215B20A1A90600B6556E /* ASHNewsSegmentedView.m */,
 				A93E215820A1A27700B6556E /* UIViewController+ASHChildController.h */,
@@ -468,6 +514,7 @@
 		A93EECF21E78F07B001378B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFD221119E8F009AC6A8 /* NewEB */,
 				A98F76AB1E948EA800916E79 /* ASHBaseModel.h */,
 				A98F76AC1E948EA800916E79 /* ASHBaseModel.m */,
 				A98F76AE1E9497EF00916E79 /* ASHHomeModel.h */,
@@ -491,6 +538,8 @@
 				A93D32A920AD855E00306F72 /* ASHNewHomeViewModel.m */,
 				A93D32C320B2D1D900306F72 /* ASHShopDetailViewModel.h */,
 				A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */,
+				A988AFD721119FE2009AC6A8 /* ASHTabViewModel.h */,
+				A988AFD821119FE2009AC6A8 /* ASHTabViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -538,6 +587,14 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFEB2111CBD1009AC6A8 /* grayclose@2x.png */,
+				A988AFEA2111CBD0009AC6A8 /* grayclose@3x.png */,
+				A988AFE62111C7E8009AC6A8 /* whiteClose@2x.png */,
+				A988AFE72111C7E9009AC6A8 /* whiteClose@3x.png */,
+				A988AFCF21119869009AC6A8 /* category@2x.png */,
+				A988AFCE21119869009AC6A8 /* category@3x.png */,
+				A988AFC7211182EA009AC6A8 /* search@2x.png */,
+				A988AFC8211182EA009AC6A8 /* search@3x.png */,
 				A93D32CA20B6EA6200306F72 /* icon180.png */,
 				A93D329620AD67C900306F72 /* likebg@2x.png */,
 				A93D329F20AD713300306F72 /* homelike@2x.png */,
@@ -598,6 +655,50 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A988AFBF21117D49009AC6A8 /* NewEB */ = {
+			isa = PBXGroup;
+			children = (
+				A988AFC021117DD7009AC6A8 /* ASHEBHomeViewController.h */,
+				A988AFC121117DD7009AC6A8 /* ASHEBHomeViewController.m */,
+				A988AFCB2111962D009AC6A8 /* ASHEBCategoryVC.h */,
+				A988AFCC2111962D009AC6A8 /* ASHEBCategoryVC.m */,
+			);
+			path = NewEB;
+			sourceTree = "<group>";
+		};
+		A988AFC32111805D009AC6A8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A988AFC42111808A009AC6A8 /* ASHSearchButton.h */,
+				A988AFC52111808A009AC6A8 /* ASHSearchButton.m */,
+				A988AFE02111B3C6009AC6A8 /* ASHTabCategoryView.h */,
+				A988AFE12111B3C6009AC6A8 /* ASHTabCategoryView.m */,
+				A988AFE32111B66E009AC6A8 /* ASHCategoryItemView.h */,
+				A988AFE42111B66E009AC6A8 /* ASHCategoryItemView.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A988AFD221119E8F009AC6A8 /* NewEB */ = {
+			isa = PBXGroup;
+			children = (
+				A988AFD321119EBD009AC6A8 /* ASHTabModel.h */,
+				A988AFD421119EBD009AC6A8 /* ASHTabModel.m */,
+			);
+			path = NewEB;
+			sourceTree = "<group>";
+		};
+		A988AFD621119EE6009AC6A8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A988AFDA2111A50E009AC6A8 /* ASHShareInstace.h */,
+				A988AFDB2111A50E009AC6A8 /* ASHShareInstace.m */,
+				A988AFDD2111A606009AC6A8 /* ASHTabManager.h */,
+				A988AFDE2111A606009AC6A8 /* ASHTabManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -627,12 +728,13 @@
 		A93EECCD1E78EE26001378B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ASH;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ash;
 				TargetAttributes = {
 					A93EECD41E78EE26001378B1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = T63J6SF7QS;
+						DevelopmentTeam = X75CUV458P;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -660,13 +762,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A988AFC9211182EB009AC6A8 /* search@2x.png in Resources */,
 				A937EE051EBB1F0900000C5C /* delete-btn.js in Resources */,
 				A93E212B2099CF4D00B6556E /* home_normal@3x.png in Resources */,
+				A988AFED2111CBD1009AC6A8 /* grayclose@2x.png in Resources */,
 				A93D32AF20AD96CD00306F72 /* ShopDetailVC.xib in Resources */,
 				A93E2138209AA80F00B6556E /* HomeCell.xib in Resources */,
 				A90619901E9CFFE600B5D6E5 /* startlabel.png in Resources */,
 				A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */,
 				A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */,
+				A988AFCA211182EB009AC6A8 /* search@3x.png in Resources */,
 				A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */,
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,
@@ -675,6 +780,7 @@
 				A93E21332099D22500B6556E /* mall_normal@2x.png in Resources */,
 				A93E215020A19A1800B6556E /* sessionCollect@3x.png in Resources */,
 				A93E214320A13EA500B6556E /* navItemCollect@3x.png in Resources */,
+				A988AFD021119869009AC6A8 /* category@3x.png in Resources */,
 				A93E214120A13EA500B6556E /* navItemCollect@2x.png in Resources */,
 				A93E21312099D22500B6556E /* mall_selected@3x.png in Resources */,
 				A93E21322099D22500B6556E /* mall_selected@2x.png in Resources */,
@@ -682,6 +788,7 @@
 				A93EED0F1E7935C4001378B1 /* ShopItemCell.xib in Resources */,
 				A9D0D1A81E95E8810047CB88 /* Default.jpg in Resources */,
 				A93D329720AD67CA00306F72 /* likebg@2x.png in Resources */,
+				A988AFEC2111CBD1009AC6A8 /* grayclose@3x.png in Resources */,
 				A93E214220A13EA500B6556E /* navItemNotCollect@2x.png in Resources */,
 				A92BC6481E7FF7B00019B435 /* yw_1222.jpg in Resources */,
 				A9318F261E822B2800E66569 /* set.png in Resources */,
@@ -690,6 +797,7 @@
 				A93D32CB20B6EA6200306F72 /* icon180.png in Resources */,
 				A93EECE31E78EE26001378B1 /* Main.storyboard in Resources */,
 				A94B859A1EB9D56B0012687A /* Default-568h@2x.png in Resources */,
+				A988AFE82111C7E9009AC6A8 /* whiteClose@2x.png in Resources */,
 				A93E214C20A1882E00B6556E /* HomeCell2.xib in Resources */,
 				A93E213B20A13DA000B6556E /* browseEye@2x.png in Resources */,
 				A93E214420A13EA500B6556E /* navItemNotCollect@3x.png in Resources */,
@@ -699,11 +807,13 @@
 				A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */,
 				A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */,
 				A93D329C20AD6C6500306F72 /* HomeCell3.xib in Resources */,
+				A988AFE92111C7E9009AC6A8 /* whiteClose@3x.png in Resources */,
 				A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */,
 				A93D32A120AD713300306F72 /* homelike@3x.png in Resources */,
 				A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */,
 				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,
 				A93D32A320AD713300306F72 /* homelike@2x.png in Resources */,
+				A988AFD121119869009AC6A8 /* category@2x.png in Resources */,
 				A93D32A420AD713300306F72 /* homenolike@2x.png in Resources */,
 				A93E213C20A13DA000B6556E /* browseEye@3x.png in Resources */,
 				A93E214F20A19A1800B6556E /* sessionCollect@2x.png in Resources */,
@@ -769,10 +879,13 @@
 				A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */,
 				A91CE7BD2099C87B008F612E /* BaseViewController.m in Sources */,
 				A93D329B20AD6C6500306F72 /* HomeCell3.m in Sources */,
+				A988AFE52111B66E009AC6A8 /* ASHCategoryItemView.m in Sources */,
 				A93E214720A1461100B6556E /* ASHNewHomeModel.m in Sources */,
 				A92BC6451E7BD4BA0019B435 /* ASHPropertyEntity.m in Sources */,
 				A93D32AA20AD855E00306F72 /* ASHNewHomeViewModel.m in Sources */,
 				A937EDFB1EBB0C5900000C5C /* ASHCouponWebView.m in Sources */,
+				A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */,
+				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
 				A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */,
@@ -783,11 +896,13 @@
 				A91CE7B42099BC4A008F612E /* MainTabBarVC.m in Sources */,
 				A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */,
 				A98F76B01E9497EF00916E79 /* ASHHomeModel.m in Sources */,
+				A988AFD921119FE2009AC6A8 /* ASHTabViewModel.m in Sources */,
 				A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */,
 				A98F76B31E94C07A00916E79 /* ASHNetWork.m in Sources */,
 				A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */,
 				A91CE7BA2099C84B008F612E /* MainViewController.m in Sources */,
 				A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */,
+				A988AFE22111B3C6009AC6A8 /* ASHTabCategoryView.m in Sources */,
 				A93EECDD1E78EE26001378B1 /* AppDelegate.m in Sources */,
 				A93D32C820B66CDB00306F72 /* ASHCategoryListVC.m in Sources */,
 				A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */,
@@ -797,13 +912,17 @@
 				A93EED0E1E7935C4001378B1 /* ShopItemCell.m in Sources */,
 				A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */,
 				A98F76B71E94C8DE00916E79 /* ASHPublicKey.m in Sources */,
+				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
 				A93E2137209AA80F00B6556E /* HomeCell.m in Sources */,
 				A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */,
 				A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */,
+				A988AFC62111808A009AC6A8 /* ASHSearchButton.m in Sources */,
+				A988AFDF2111A606009AC6A8 /* ASHTabManager.m in Sources */,
 				A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */,
 				A93E214B20A1882E00B6556E /* HomeCell2.m in Sources */,
+				A988AFC221117DD7009AC6A8 /* ASHEBHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,7 +1044,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = T63J6SF7QS;
+				DEVELOPMENT_TEAM = X75CUV458P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -984,8 +1103,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cef1cba1-20fc-478b-b14a-565005cf2b15";
-				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
+				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
+				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
@@ -998,7 +1117,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = T63J6SF7QS;
+				DEVELOPMENT_TEAM = X75CUV458P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1057,8 +1176,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cef1cba1-20fc-478b-b14a-565005cf2b15";
-				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
+				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
+				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;

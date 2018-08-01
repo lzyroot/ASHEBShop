@@ -11,6 +11,8 @@
 #import "ASHPropertyEntity.h"
 #import <YYModel.h>
 #import <ReactiveCocoa.h>
+#import <YYCache.h>
+#import <YYCategories.h>
 @interface ASHNetWorkManagerImpl()
 @property (nonatomic, strong)AFHTTPSessionManager* manager;
 @end
@@ -53,7 +55,6 @@
 }
 - (void)postWithUrl:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
-//    [self.manager POST:url parameters:param progress:nil success:success failure:failure];
     [self.manager POST:url parameters:param constructingBodyWithBlock:nil progress:nil success:success failure:failure];
 }
 - (void)requestWithEntity:(ASHPropertyEntity *)eneity success:(void (^)(id))success failure:(void (^)(NSError * _Nonnull))failure
@@ -104,6 +105,53 @@
             [self getWithUrl:requestUrl param:[eneity encodePro] success:successBlock failure:failBlock];
         }else if(eneity.requireType == HTTPRequestTypeWithPOST){
             [self postWithUrl:requestUrl param:[eneity encodePro] success:successBlock failure:failBlock];
+        }
+        
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
+    return signal;
+}
+-(RACSignal *)getRequestSignWithEneity:(ASHPropertyEntity *)eneity
+{
+    RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSString* requestUrl = [[NSURL URLWithString:eneity.path relativeToURL:[NSURL URLWithString:eneity.baseUrl]] absoluteString];
+        if (!requestUrl) {
+            requestUrl = @"";
+        }
+        void(^successBlock)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
+            if (responseObject) {
+                if (eneity.isCache) {
+                    YYCache* cache = [YYCache cacheWithName:kASH_CACHE_PATH];
+                    [cache setObject:responseObject forKey:[requestUrl md5String]];
+                }
+                id model = [[eneity.responesOBJ class] yy_modelWithJSON:responseObject];
+                [subscriber sendNext:model];
+            }else{
+                [subscriber sendNext:nil];
+            }
+            [subscriber sendCompleted];
+        };
+        void(^failBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
+            [subscriber sendError:error];
+        };
+        
+        if (eneity.isCache) {
+            YYCache* cache = [YYCache cacheWithName:kASH_CACHE_PATH];
+            NSString* cacheKey = [requestUrl md5String];
+            if ([cache containsObjectForKey:cacheKey]) {
+                id responseObject = [cache objectForKey:cacheKey];
+                if (responseObject) {
+                    id model = [[eneity.responesOBJ class] yy_modelWithJSON:responseObject];
+                    [subscriber sendNext:model];
+                }
+            }
+            
+            
+        }
+        if (eneity.requireType == HTTPRequestTypeWithGET) {
+            [self getWithUrl:requestUrl param:eneity.param success:successBlock failure:failBlock];
         }
         
         return [RACDisposable disposableWithBlock:^{

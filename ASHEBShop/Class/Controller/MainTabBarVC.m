@@ -9,13 +9,14 @@
 #import "MainTabBarVC.h"
 #import "ViewController.h"
 #import "ASHCategoryVC.h"
+#import "ASHEBHomeViewController.h"
 #import "MainViewController.h"
 @implementation MainTabBarVC
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    UINavigationController* mainNav = [[UINavigationController alloc] initWithRootViewController:[MainViewController new]];
-    UITabBarItem* mainItem = [[UITabBarItem alloc] initWithTitle:@"精选" image:[UIImage imageNamed:@"home_normal"] selectedImage:[[UIImage imageNamed:@"home_selected"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
+    UINavigationController* mainNav = [[UINavigationController alloc] initWithRootViewController:[ASHEBHomeViewController new]];
+    UITabBarItem* mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"home_normal"] selectedImage:[[UIImage imageNamed:@"home_selected"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
     [mainItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor mainColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     mainNav.tabBarItem = mainItem;
     

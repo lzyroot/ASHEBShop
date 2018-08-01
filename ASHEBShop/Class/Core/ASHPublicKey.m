@@ -12,3 +12,7 @@ NSString* kASH_EBSHOP_API_URL = @"http://yujianni520.com/QuestionServer/rs/shopp
 NSString* kASH_NETWORK_SIGN = @"yjn@jjyy123";
 NSString* kASH_TAOBAO_PID = @"mm_49141657_22650840_74950410";
 NSString* kASH_PRAISE_SAVE = @"kASH_PRAISE_SAVE";
+NSString* kASH_CACHE_PATH = @"CACHE_PATH";
+
+
+NSString* kASH_Post_Tab = @"kASH_Post_Tab";

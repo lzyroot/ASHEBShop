@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) CGFloat buttonOffset;
 @property (nonatomic, strong, readwrite) UIView *indicatorView;
+@property (nonatomic, strong) UIButton *categoryBtn;
 
 @end
 
@@ -28,7 +29,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.indicatorWidth = [[UIScreen mainScreen] bounds].size.width / 4;
+        self.indicatorWidth = ([[UIScreen mainScreen] bounds].size.width-50) / 4;
         [self prepareUI];
     }
     return self;
@@ -44,6 +45,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.scrollView.frame = self.bounds;
+    self.scrollView.ash_width = self.ash_width - 50;
     [self updateSubViewFrame];
 }
 
@@ -69,6 +71,23 @@
         make.top.right.bottom.equalTo(self);
         make.width.mas_equalTo(20);
     }];
+    
+    //阴影
+    CAGradientLayer *bottomGradient = [CAGradientLayer layer];
+    bottomGradient.colors = @[(__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:1].CGColor, (__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:0].CGColor];
+    bottomGradient.startPoint = CGPointMake(1.0, 0.0);
+    bottomGradient.endPoint = CGPointMake(0.0, 0.0);
+    bottomGradient.frame = CGRectMake(self.ash_width - 80, 0, 50, self.ash_height);
+    [self.layer addSublayer:bottomGradient];
+    
+    _categoryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _categoryBtn.frame = CGRectMake(0, 0, 16, 16);
+    [_categoryBtn setImage:[UIImage imageNamed:@"category.png"] forState:UIControlStateNormal];
+    _categoryBtn.ash_centerY = self.ash_height / 2;
+    _categoryBtn.ash_right = self.ash_width - 20;
+    [_categoryBtn addTarget:self action:@selector(categoryBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_categoryBtn];
+    
 }
 
 
@@ -301,7 +320,12 @@
     }
     return nil;
 }
-
+- (void)categoryBtnClick:(UIButton*)button
+{
+    if ([self.delegate respondsToSelector:@selector(ASHNewsSegmentedCategoryClick:)]) {
+        [self.delegate ASHNewsSegmentedCategoryClick:self];
+    }
+}
 @end
 
 

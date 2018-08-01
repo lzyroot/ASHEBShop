@@ -19,4 +19,12 @@
  @return signal
  */
 + (RACSignal*)requestSignWithEneity:(ASHPropertyEntity*)eneity;
+
+/**
+ new  根据请求实体获取signal
+ 
+ @param eneity 请求实体
+ @return signal
+ */
++ (RACSignal*)newRequestSignWithEneity:(ASHPropertyEntity*)eneity;
 @end

@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (void)ASHNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index;
+- (void)ASHNewsSegmentedCategoryClick:(id)sender;
 @end
 
 @protocol ASHNewsSegmentedViewDataSource <NSObject>

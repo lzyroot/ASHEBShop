@@ -52,5 +52,12 @@ NS_ASSUME_NONNULL_BEGIN
  @return RAC信号
  */
 - (RACSignal*)requestSignWithEneity:(ASHPropertyEntity*)eneity;
+/**
+ 
+ Get 方法
+ @param eneity 请求实体
+ @return RAC信号
+ */
+- (RACSignal*)getRequestSignWithEneity:(ASHPropertyEntity*)eneity;
 NS_ASSUME_NONNULL_END
 @end
