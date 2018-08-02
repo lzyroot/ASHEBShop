@@ -14,6 +14,7 @@
 #import "ASHTabViewModel.h"
 #import "ASHTabManager.h"
 #import "ASHTabCategoryView.h"
+#import "ASHEBCategoryVC.h"
 @interface ASHEBHomeViewController ()<ASHPageViewControllerDelegate,ASHPageViewControllerDataSource,UIScrollViewDelegate,ASHNewsSegmentedViewDataSource,ASHNewsSegmentedViewDelegate>
 @property(nonatomic, strong)ASHPageViewController* pageViewController;
 @property (nonatomic, strong) ASHNewsSegmentedView *segmentView;
@@ -51,10 +52,8 @@
     self.pageViewController.view.ash_top = 38;
     self.pageViewController.view.ash_height -= 38;
     
-    
-
-    
 }
+
 - (void)setupBar{
     UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 30)];
 
@@ -83,8 +82,7 @@
     _idArr = [NSMutableArray arrayWithArray:@[@"0",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"12"]];
     _vcArr = [[NSMutableArray alloc] init];
     for (NSString* type in _idArr) {
-        ASHCategoryListVC* vc = [ASHCategoryListVC new];
-        vc.goodsTypeId = type.integerValue;
+        ASHEBCategoryVC* vc = [ASHEBCategoryVC new];
         [_vcArr addObject:vc];
     }
 }

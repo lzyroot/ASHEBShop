@@ -30,6 +30,12 @@
     proEntity.baseUrl = @"http://m.sqkb.com/tab";
     proEntity.responesOBJ = [ASHTabModel class];
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHTabModel* model) {
+        
+        ASHTabItemModel* itemModel = [ASHTabItemModel new];
+        itemModel.name = @"今日精选";
+        itemModel.tab_id = 0;
+        itemModel.pic = @"http://ms1.sqkb.com/dist/image/before/today-best-choose-icon-e566c712cb.png";
+        [model.tab_elementArr insertObject:itemModel atIndex:0];
         self.model = model;
         [self.ash_requestFinishedSubscriber sendNext:self.model];
 //        [self.ash_requestFinishedSubscriber sendCompleted];

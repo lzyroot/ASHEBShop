@@ -16,6 +16,7 @@
 #import <ReactiveCocoa.h>
 #import "ASHHomeModel.h"
 #import "ASHSettingVC.h"
+#import "ASHBannerView.h"
 #import <MJRefresh.h>
 #import <UMMobClick/MobClick.h>
 #import <MBProgressHUD.h>
@@ -37,6 +38,19 @@
     _viewModel = [ASHHomeViewModel new];
     _viewModel.goodsTypeId = self.goodsTypeId;
     [self initTableView];
+    [self setupBanner];
+}
+- (void)setupBanner
+{
+    ASHBannerView *bannerView = [[ASHBannerView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 5 * ASHScreenWidth / 16)];
+    bannerView.position = ASHBannerPageControlAtCenter;
+    @weakify(self);
+    NSArray *bannerImages = @[@"http://file.17gwx.com/sqkb/element/2018/08/01/717475b6111380d272.jpg",@"http://file.17gwx.com/sqkb/element/2018/07/31/204255b6035af59c81.jpg",@"http://file.17gwx.com/sqkb/element/2018/07/30/435975b5ef87fa5bc3.jpg",@"http://file.17gwx.com/sqkb/element/2018/07/30/893485b5ef83a73efd.jpg",@"http://file.17gwx.com/sqkb/element/2018/07/27/300975b5ae3eaa0ed8.jpg"];
+    bannerView.images = bannerImages;
+    bannerView.onDidClickEvent = ^(NSInteger index) {
+        @strongify(self);
+    };
+    self.tableView.tableHeaderView = bannerView;
 }
 - (void)initTableView{
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -62,6 +76,8 @@
     refreshHeader.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
     self.tableView.mj_header = refreshHeader;
     [self.tableView.mj_header beginRefreshing];
+    
+    
 }
 - (void)setFooter
 {

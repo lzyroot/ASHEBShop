@@ -117,6 +117,9 @@
 		A988AFE92111C7E9009AC6A8 /* whiteClose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFE72111C7E9009AC6A8 /* whiteClose@3x.png */; };
 		A988AFEC2111CBD1009AC6A8 /* grayclose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFEA2111CBD0009AC6A8 /* grayclose@3x.png */; };
 		A988AFED2111CBD1009AC6A8 /* grayclose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A988AFEB2111CBD1009AC6A8 /* grayclose@2x.png */; };
+		A988AFF02111D14B009AC6A8 /* ASHCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFEF2111D14B009AC6A8 /* ASHCategoryModel.m */; };
+		A988AFF32111D2EB009AC6A8 /* ASHCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFF22111D2EB009AC6A8 /* ASHCategoryViewModel.m */; };
+		A988AFF62111D3C5009AC6A8 /* ASHBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A988AFF42111D3C4009AC6A8 /* ASHBannerView.m */; };
 		A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76A61E94869400916E79 /* ASHBaseViewModel.m */; };
 		A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76A91E948E8100916E79 /* ASHHomeViewModel.m */; };
 		A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76AC1E948EA800916E79 /* ASHBaseModel.m */; };
@@ -126,6 +129,8 @@
 		A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76B91E94CB8A00916E79 /* ASHCommonUtil.m */; };
 		A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76BF1E94CC5200916E79 /* NSBundle+ASHVersion.m */; };
 		A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = A98F76C21E9514F200916E79 /* NSString+ASHJson.m */; };
+		A9C1DD68211296650045E4C4 /* ASHCaetgoryTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */; };
+		A9C1DD69211296650045E4C4 /* ASHCaetgoryTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */; };
 		A9D0D1A81E95E8810047CB88 /* Default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A71E95E8810047CB88 /* Default.jpg */; };
 		A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */; };
 /* End PBXBuildFile section */
@@ -286,6 +291,12 @@
 		A988AFE72111C7E9009AC6A8 /* whiteClose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteClose@3x.png"; sourceTree = "<group>"; };
 		A988AFEA2111CBD0009AC6A8 /* grayclose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayclose@3x.png"; sourceTree = "<group>"; };
 		A988AFEB2111CBD1009AC6A8 /* grayclose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayclose@2x.png"; sourceTree = "<group>"; };
+		A988AFEE2111D14B009AC6A8 /* ASHCategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCategoryModel.h; sourceTree = "<group>"; };
+		A988AFEF2111D14B009AC6A8 /* ASHCategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCategoryModel.m; sourceTree = "<group>"; };
+		A988AFF12111D2EB009AC6A8 /* ASHCategoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCategoryViewModel.h; sourceTree = "<group>"; };
+		A988AFF22111D2EB009AC6A8 /* ASHCategoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCategoryViewModel.m; sourceTree = "<group>"; };
+		A988AFF42111D3C4009AC6A8 /* ASHBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHBannerView.m; sourceTree = "<group>"; };
+		A988AFF52111D3C5009AC6A8 /* ASHBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHBannerView.h; sourceTree = "<group>"; };
 		A98F76A51E94869400916E79 /* ASHBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHBaseViewModel.h; sourceTree = "<group>"; };
 		A98F76A61E94869400916E79 /* ASHBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHBaseViewModel.m; sourceTree = "<group>"; };
 		A98F76A81E948E8100916E79 /* ASHHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASHHomeViewModel.h; path = ../Model/ASHHomeViewModel.h; sourceTree = "<group>"; };
@@ -304,6 +315,9 @@
 		A98F76BF1E94CC5200916E79 /* NSBundle+ASHVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ASHVersion.m"; sourceTree = "<group>"; };
 		A98F76C11E9514F200916E79 /* NSString+ASHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHJson.h"; sourceTree = "<group>"; };
 		A98F76C21E9514F200916E79 /* NSString+ASHJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ASHJson.m"; sourceTree = "<group>"; };
+		A9C1DD65211296650045E4C4 /* ASHCaetgoryTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCaetgoryTwoCell.h; sourceTree = "<group>"; };
+		A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCaetgoryTwoCell.m; sourceTree = "<group>"; };
+		A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASHCaetgoryTwoCell.xib; sourceTree = "<group>"; };
 		A9D0D1A71E95E8810047CB88 /* Default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Default.jpg; sourceTree = "<group>"; };
 		A9D0D1AF1E96164F0047CB88 /* ASHSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSettingVC.h; sourceTree = "<group>"; };
 		A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSettingVC.m; sourceTree = "<group>"; };
@@ -474,6 +488,9 @@
 		A93EECF01E78EFE8001378B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A988AFF52111D3C5009AC6A8 /* ASHBannerView.h */,
+				A988AFF42111D3C4009AC6A8 /* ASHBannerView.m */,
+				A988AFF72111E3C1009AC6A8 /* Category */,
 				A988AFC32111805D009AC6A8 /* Home */,
 				A93EED051E793592001378B1 /* Cell */,
 				A937EDF91EBB0C5900000C5C /* ASHCouponWebView.h */,
@@ -540,6 +557,8 @@
 				A93D32C420B2D1D900306F72 /* ASHShopDetailViewModel.m */,
 				A988AFD721119FE2009AC6A8 /* ASHTabViewModel.h */,
 				A988AFD821119FE2009AC6A8 /* ASHTabViewModel.m */,
+				A988AFF12111D2EB009AC6A8 /* ASHCategoryViewModel.h */,
+				A988AFF22111D2EB009AC6A8 /* ASHCategoryViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -684,6 +703,8 @@
 			children = (
 				A988AFD321119EBD009AC6A8 /* ASHTabModel.h */,
 				A988AFD421119EBD009AC6A8 /* ASHTabModel.m */,
+				A988AFEE2111D14B009AC6A8 /* ASHCategoryModel.h */,
+				A988AFEF2111D14B009AC6A8 /* ASHCategoryModel.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -697,6 +718,16 @@
 				A988AFDE2111A606009AC6A8 /* ASHTabManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		A988AFF72111E3C1009AC6A8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A9C1DD65211296650045E4C4 /* ASHCaetgoryTwoCell.h */,
+				A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */,
+				A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -773,6 +804,7 @@
 				A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */,
 				A988AFCA211182EB009AC6A8 /* search@3x.png in Resources */,
 				A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */,
+				A9C1DD69211296650045E4C4 /* ASHCaetgoryTwoCell.xib in Resources */,
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,
 				A92BC6651E7FF8760019B435 /* AlipaySDK.bundle in Resources */,
@@ -885,6 +917,7 @@
 				A93D32AA20AD855E00306F72 /* ASHNewHomeViewModel.m in Sources */,
 				A937EDFB1EBB0C5900000C5C /* ASHCouponWebView.m in Sources */,
 				A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */,
+				A988AFF02111D14B009AC6A8 /* ASHCategoryModel.m in Sources */,
 				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
@@ -896,6 +929,7 @@
 				A91CE7B42099BC4A008F612E /* MainTabBarVC.m in Sources */,
 				A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */,
 				A98F76B01E9497EF00916E79 /* ASHHomeModel.m in Sources */,
+				A988AFF62111D3C5009AC6A8 /* ASHBannerView.m in Sources */,
 				A988AFD921119FE2009AC6A8 /* ASHTabViewModel.m in Sources */,
 				A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */,
 				A98F76B31E94C07A00916E79 /* ASHNetWork.m in Sources */,
@@ -911,10 +945,12 @@
 				A93EECDA1E78EE26001378B1 /* main.m in Sources */,
 				A93EED0E1E7935C4001378B1 /* ShopItemCell.m in Sources */,
 				A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */,
+				A988AFF32111D2EB009AC6A8 /* ASHCategoryViewModel.m in Sources */,
 				A98F76B71E94C8DE00916E79 /* ASHPublicKey.m in Sources */,
 				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
+				A9C1DD68211296650045E4C4 /* ASHCaetgoryTwoCell.m in Sources */,
 				A93E2137209AA80F00B6556E /* HomeCell.m in Sources */,
 				A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */,
 				A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */,
