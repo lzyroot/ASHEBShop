@@ -31,9 +31,9 @@
 @implementation ASHTopicModel
 + (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper
 {
-    return @{@"topic_list":@"data.topic_list",@"max_count":@"data.count"};
+    return @{@"coupon_list":@"data.coupon_list",@"topic_list":@"data.topic_list",@"max_count":@"data.count"};
 }
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"topic_list" : [ASHTopicItemModel class],};
+    return @{@"topic_list" : [ASHTopicItemModel class],@"coupon_list" : [ASHCouponInfoModel class]};
 }
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ASHCouponInfoModel;
 @interface ASHShopItem2Cell : UITableViewCell
 
+- (void)setModel:(ASHCouponInfoModel*)model secondModel:(ASHCouponInfoModel*)model2;
 @end

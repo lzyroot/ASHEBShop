@@ -22,6 +22,7 @@
 @property (nonatomic, copy)NSString* discount;
 @property (nonatomic, copy)NSString* url;
 @property (nonatomic, assign)NSInteger item_id;
+@property (nonatomic, assign)BOOL post_free;
 @property (nonatomic, assign)NSInteger topic_type;
 @property (nonatomic, assign)NSInteger product_type;
 @property (nonatomic, assign)NSTimeInterval offline_time;
@@ -46,5 +47,6 @@
 @end
 @interface ASHTopicModel : ASHBaseModel
 @property (nonatomic, strong)NSMutableArray<ASHTopicItemModel>* topic_list;
+@property (nonatomic, strong)NSMutableArray<ASHTopicItemModel>* coupon_list;
 @property (nonatomic, assign)NSInteger max_count;
 @end

@@ -15,6 +15,7 @@
 #import "ASHTopSessionView.h"
 #import "ASHOneImageCell.h"
 #import "ASHTabCategoryView.h"
+#import "ASHShopItem2Cell.h"
 @interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
 @property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
@@ -54,8 +55,8 @@
     self.tableView.rowHeight = 140.0;
     self.tableView.layer.masksToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor lineColor];
+    self.tableView.backgroundView.backgroundColor = [UIColor lineColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.tableView];
@@ -66,14 +67,13 @@
         @strongify(self);
         [self requestData];
     }];
+    refreshHeader.backgroundColor = [UIColor lineColor];
     refreshHeader.stateLabel.textColor = [UIColor grayColor];
     refreshHeader.lastUpdatedTimeLabel.textColor = [UIColor grayColor];
     self.tableView.mj_header = refreshHeader;
     [self.tableView.mj_header beginRefreshing];
     
-    [_tableView registerNib:[UINib nibWithNibName:@"ASHCaetgoryTwoCell" bundle:nil] forCellReuseIdentifier:@"ASHCaetgoryTwoCell"];
-    [_tableView registerNib:[UINib nibWithNibName:@"ASHOneImageCell" bundle:nil] forCellReuseIdentifier:@"ASHOneImageCell"];
-    [_tableView registerNib:[UINib nibWithNibName:@"ASHShopItem1Cell" bundle:nil] forCellReuseIdentifier:@"ASHShopItem1Cell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"ASHShopItem2Cell" bundle:nil] forCellReuseIdentifier:@"ASHShopItem2Cell"];
     
 }
 - (void)setFooter
@@ -163,46 +163,50 @@
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.topicViewModel.model.topic_list.count) {
+    if (self.topicViewModel.model.coupon_list.count) {
         return 1;
     }
     return 0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = self.topicViewModel.model.topic_list.count;
+    NSInteger count = self.topicViewModel.model.coupon_list.count;
+    count = count / 2 + count % 2;
     return count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CGFloat height = 146.0;
-    if (ASHScreenWidth <= 320) {
-        height = 120;
-    }
+    CGFloat height = ASHScreenWidth / 2 * 1.58;
+    
     return height;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ASHShopItem1Cell* cell;
-
-    cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem1Cell"];
+    ASHShopItem2Cell* cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem2Cell"];
     if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem1Cell" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem2Cell" owner:nil options:nil] firstObject];
     }
-        
-    NSInteger index = indexPath.row;
-    if (self.hasTimeline && indexPath.row > 2) {
-        index--;
+    NSInteger index = indexPath.row*2;
+    if (index >= self.topicViewModel.model.coupon_list.count) {
+        return cell;
     }
-    [(ASHShopItem1Cell*)cell setModel:self.topicViewModel.model.topic_list[index]];
+    ASHCouponInfoModel* model1 = self.topicViewModel.model.coupon_list[indexPath.row];
+    ASHCouponInfoModel* model2;
+    if (index + 1 < self.topicViewModel.model.coupon_list.count) {
+        model2 = self.topicViewModel.model.coupon_list[ index + 1];
+    }else{
+        NSLog(@"%ld",index);
+    }
+    [cell setModel:model1 secondModel:model2];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.topicViewModel.hasMore && (indexPath.item >= self.topicViewModel.model.topic_list.count - 4) && (tableView.contentOffset.y > 0)) {
+    if (self.topicViewModel.hasMore && (indexPath.item >= self.topicViewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {
         [self.tableView.mj_footer beginRefreshing];
     }
 }
