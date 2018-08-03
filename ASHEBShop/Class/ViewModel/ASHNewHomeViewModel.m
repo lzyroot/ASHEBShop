@@ -31,7 +31,9 @@
     proEntity.responesOBJ = [ASHNewHomeModel class];
     proEntity.command = 10002;
     proEntity.param = @{@"page":@(page), @"pageSize":@(kDefaultPageSize)};
+    @weakify(self);
     requestDisposable = [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHNewHomeModel* model) {
+        @strongify(self);
         self.page++;
         if (model.dataArr.count < kDefaultPageSize) {
             self.hasMore = NO;

@@ -37,7 +37,9 @@
     if (self.goodsTypeId > 0) {
         proEntity.param = @{@"page":@(page), @"pageSize":@(kDefaultPageSize),@"goodType":@(self.goodsTypeId)};
     }
+    @weakify(self);
     requestDisposable = [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHHomeModel* model) {
+        @strongify(self);
         self.page++;
         
         if (model.goodsJa.count < kDefaultPageSize) {

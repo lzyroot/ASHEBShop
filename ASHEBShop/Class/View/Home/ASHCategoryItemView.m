@@ -7,14 +7,15 @@
 //
 
 #import "ASHCategoryItemView.h"
-
+#import "ASHCategoryModel.h"
+#import "ASHTabModel.h"
 #define TabCategoryBtnTag 1000;
 
 @interface ASHCategoryItemView()
 @property(nonatomic, strong)UIImageView* imageView;
 @property(nonatomic, strong)UILabel* nameLabel;
 @property(nonatomic, strong)UIButton* tapButton;
-@property(nonatomic, strong)ASHTabItemModel* model;
+@property(nonatomic, strong)id model;
 @end
 @implementation ASHCategoryItemView
 
@@ -44,12 +45,22 @@
     return self;
 }
 
-- (void)setModel:(ASHTabItemModel *)model
+- (void)setModel:(id)model
 {
     _model = model;
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
-    _nameLabel.text = model.name;
+    
+    if ([model isKindOfClass:[ASHTabItemModel class]]) {
+        ASHTabItemModel* model = _model;
+        [_imageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+        _nameLabel.text = model.name;
+    }else if([model isKindOfClass:[ASHCategoryItemModel class]]){
+        ASHCategoryItemModel* model = (ASHCategoryItemModel*)_model;
+        [_imageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+        _nameLabel.text = model.title;
+    }
+    
+
 }
 
 - (void)tapButtonClick:(UIButton*)button

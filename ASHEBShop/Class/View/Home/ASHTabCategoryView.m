@@ -86,11 +86,44 @@
     }
     return self;
 }
+- (instancetype)initWithCategoryArr:(NSArray<ASHCategoryItemModel> *)categoryArr
+{
+    self = [super initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 100 * (categoryArr.count/4 + (categoryArr.count%4?1:0)) + 20)];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        [self setupUIWithData:categoryArr];
+        
+    }
+    return self;
+}
+- (void)setupUIWithData:(NSArray<ASHCategoryItemModel> *)categoryArr{
+    
+    
+    CGFloat offsetX = 20;
+    CGFloat width = (self.ash_width) / 4 - offsetX;
+    CGFloat height = 100;
+    for (int i = 0; i < categoryArr.count; i++) {
+        CGFloat x = (i % 4) * (width+offsetX) + 10;
+        CGFloat y = (i / 4) * height + 5;
+        ASHCategoryItemView* bgView = [[ASHCategoryItemView alloc] initWithFrame:CGRectMake(x, y, width, height)];
+        bgView.backgroundColor = [UIColor whiteColor];
+        [bgView setModel:categoryArr[i]];
+        [self addSubview:bgView];
+        bgView.tag = TabCategoryBtnTag + i;
+        @weakify(self);
+        [bgView setTapAction:^(NSInteger index) {
+            @strongify(self);
+            if (self.categoryIndexAction) {
+                self.categoryIndexAction(index - TabCategoryBtnTag);
+            }
+        }];
+    }
+}
 - (void)setupUI{
     
     NSArray<ASHTabItemModel*>* dataArr = [ASHTabManager shareInstance].model.tab_elementArr;
     CGFloat offsetX = 20;
-    CGFloat width = self.ash_width / 4 - offsetX;
+    CGFloat width = (self.ash_width / 4 ) - offsetX;
     CGFloat height = 95;
     
     UIImageView* blurImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.ash_width, self.ash_height)];
@@ -106,11 +139,11 @@
     [bgButton addTarget:self action:@selector(bgTapAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:bgButton];
     
-    UIView* whiteBGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.ash_width, height * (dataArr.count/4 + 1) + 5) ];
+    UIView* whiteBGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.ash_width, height * (dataArr.count/4 + (dataArr.count%4?1:0) ) + 5) ];
     whiteBGView.backgroundColor = [UIColor whiteColor];
     [self addSubview:whiteBGView];
     for (int i = 0; i < dataArr.count; i++) {
-        CGFloat x = (i % 4) * (width+offsetX);
+        CGFloat x = (i % 4) * (width+offsetX) + 10;
         CGFloat y = (i / 4) * height;
         ASHCategoryItemView* bgView = [[ASHCategoryItemView alloc] initWithFrame:CGRectMake(x, y, width, height)];
         bgView.backgroundColor = [UIColor whiteColor];

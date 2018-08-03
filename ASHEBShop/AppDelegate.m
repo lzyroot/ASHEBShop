@@ -75,7 +75,9 @@
 - (void)customSet
 {
     UINavigationBar * nav = [UINavigationBar appearance];
-    UIImage* image = [UIImage ash_imageFromColor:[UIColor mainRedColor] andSize:CGSizeMake(1, 1) opaque:1.0];
+//    UIImage* image = [UIImage ash_imageFromColor:[UIColor mainRedColor] andSize:CGSizeMake(1, 1) opaque:1.0];
+    UIImage* image = [UIImage imageNamed:@"home_nav_bg"];
+    image = [image resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch];
 //    image = [image imageByBlurWithTint:[UIColor clearColor]];
     nav.tintColor = [UIColor whiteColor];
     [nav setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];

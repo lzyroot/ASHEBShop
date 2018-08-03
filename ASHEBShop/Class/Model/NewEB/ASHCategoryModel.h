@@ -13,6 +13,7 @@
 @property (nonatomic, assign)NSInteger element_id;
 @property (nonatomic, copy)NSString* element_type;
 @property (nonatomic, copy)NSString* title;
+@property (nonatomic, copy)NSString* name;
 @property (nonatomic, copy)NSString* subtitle;
 @property (nonatomic, copy)NSString* extend;
 @property (nonatomic, copy)NSString* pic;
@@ -21,9 +22,6 @@
 @property (nonatomic, assign)NSInteger pic_height;
 @property (nonatomic, assign)NSTimeInterval offline_time;
 @property (nonatomic, assign)NSInteger index;
-
-
-
 @end
 
 @interface ASHCategoryModel : ASHBaseModel
@@ -33,4 +31,5 @@
 @property (nonatomic, strong)NSMutableArray<ASHCategoryItemModel>* zhekou_index_fixed_ad;
 @property (nonatomic, strong)NSMutableArray<ASHCategoryItemModel>* zhekou_cate_banner;
 @property (nonatomic, strong)NSMutableArray<ASHCategoryItemModel>* zhekou_cate_timeline;
+@property (nonatomic, strong)NSMutableArray<ASHCategoryItemModel>* zhekou_cate_minipic;
 @end

@@ -29,8 +29,9 @@
     proEntity.isCache = YES;
     proEntity.baseUrl = @"http://m.sqkb.com/tab";
     proEntity.responesOBJ = [ASHTabModel class];
+    @weakify(self);
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHTabModel* model) {
-        
+        @strongify(self);
         ASHTabItemModel* itemModel = [ASHTabItemModel new];
         itemModel.name = @"今日精选";
         itemModel.tab_id = 0;

@@ -182,7 +182,7 @@
         imageView.backgroundColor = [UIColor clearColor];
         imageView.contentMode = UIViewContentModeScaleToFill;
         imageView.clipsToBounds = YES;
-        imageView.backgroundColor = [UIColor lightGrayColor];
+        imageView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
     }
     return imageView;
 }

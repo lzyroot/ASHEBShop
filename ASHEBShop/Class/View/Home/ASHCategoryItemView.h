@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASHTabModel.h"
+
 @interface ASHCategoryItemView : UIView
 @property(copy,nonatomic)void(^tapAction)(NSInteger tag);
-- (void)setModel:(ASHTabItemModel*)model;
+- (void)setModel:(id)model;
 @end

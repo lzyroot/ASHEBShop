@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ASHCategoryModel.h"
 @interface ASHTabCategoryView : UIView
 @property(copy,nonatomic)void(^categoryIndexAction)(NSInteger index);
 @property(copy,nonatomic)void(^closeAction)(void);
 + (ASHTabCategoryView*)show;
+
+- (instancetype)initWithCategoryArr:(NSArray<ASHCategoryItemModel>*)categoryArr;
 @end

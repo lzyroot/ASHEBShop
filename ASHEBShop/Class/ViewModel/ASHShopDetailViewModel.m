@@ -23,7 +23,9 @@
     proEntity.responesOBJ = [ASHShopDetailModel class];
     proEntity.command = 10003 ;
     proEntity.param = @{@"id":@(self.itemId)};
+    @weakify(self);
     requestDisposable = [[ASHNetWork requestSignWithEneity:proEntity] subscribeNext:^(ASHShopDetailModel* model) {
+        @strongify(self);
         self.hasMore = NO;
         self.page = 1;
         self.model = model;

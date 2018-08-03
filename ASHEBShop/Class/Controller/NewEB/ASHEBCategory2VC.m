@@ -6,7 +6,7 @@
 //  Copyright © 2018年 ash. All rights reserved.
 //
 
-#import "ASHEBCategoryVC.h"
+#import "ASHEBCategory2VC.h"
 #import "ASHCategoryViewModel.h"
 #import "ASHBannerView.h"
 #import "ASHCaetgoryTwoCell.h"
@@ -15,7 +15,7 @@
 #import "ASHTopSessionView.h"
 #import "ASHOneImageCell.h"
 #import "ASHTabCategoryView.h"
-@interface ASHEBCategoryVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
 @property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
 @property (nonatomic, strong)UITableView* tableView;
@@ -25,7 +25,7 @@
 @property (nonatomic, strong)ASHTabCategoryView* categoryView;
 @end
 
-@implementation ASHEBCategoryVC
+@implementation ASHEBCategory2VC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,8 +35,10 @@
     self.hasTimeline = NO;
     [MobClick event:@"category" attributes:@{@"id":@(0)}];
     _viewModel = [ASHCategoryViewModel new];
+    _viewModel.categoryId = self.categoryId;
     _topicViewModel = [ASHTopicViewModel new];
     _topicViewModel.sortType = 7;
+    _topicViewModel.categoryId = self.categoryId;
     
     [self bindViewModel];
     [self bindTopicVM];
@@ -86,31 +88,8 @@
     }];
     refreshfooter.stateLabel.textColor = [UIColor whiteColor];
     self.tableView.mj_footer = refreshfooter;
-
     
-}
-- (void)setupBanner
-{
-    if (!self.viewModel.model.zhekou_index_banner.count) {
-        return;
-    }
-    if (_bannerView) {
-        [_bannerView removeFromSuperview];
-        _bannerView = nil;
-    }
-    _bannerView = [[ASHBannerView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 5 * ASHScreenWidth / 16)];
-    _bannerView.position = ASHBannerPageControlAtCenter;
-    @weakify(self);
-    NSMutableArray* bannerImages = [NSMutableArray array];
     
-    [self.viewModel.model.zhekou_index_banner enumerateObjectsUsingBlock:^(ASHCategoryItemModel*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [bannerImages addObject:obj.pic];
-    }];
-    _bannerView.images = bannerImages;
-    _bannerView.onDidClickEvent = ^(NSInteger index) {
-        @strongify(self);
-    };
-    self.tableView.tableHeaderView = _bannerView;
 }
 - (void)setupCategoryTopView
 {
@@ -140,7 +119,7 @@
     @weakify(self);
     [_viewModel.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
-        [self setupBanner];
+        [self setupCategoryTopView];
         
         if (self.viewModel.model.zhekou_index_timeline.count) {
             ASHCategoryItemModel* model = [self.viewModel.model.zhekou_index_timeline firstObject];
@@ -185,19 +164,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (self.topicViewModel.model.topic_list.count) {
-        return 2;
+        return 1;
     }
-    return 1;
+    return 0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 1;
-    }
     NSInteger count = self.topicViewModel.model.topic_list.count;
-    if (self.hasTimeline) {
-        count++;
-    }
     return count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -207,41 +180,23 @@
     if (ASHScreenWidth <= 320) {
         height = 120;
     }
-    if (self.hasTimeline && indexPath.row == 2) {
-        height = (float)(self.timelineModel.pic_height * ASHScreenWidth) / (float)self.timelineModel.pic_width ;
-    }
-    if (indexPath.section == 0) {
-        height = 100.0;
-    }
     return height;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell;
-    if (indexPath.section == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ASHCaetgoryTwoCell"];
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHCaetgoryTwoCell" owner:nil options:nil] firstObject];
-        }
-    }else if (self.hasTimeline && indexPath.row == 2) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ASHOneImageCell"];
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHOneImageCell" owner:nil options:nil] firstObject];
-        }
-        [(ASHOneImageCell*)cell setImageUrl:self.timelineModel.pic];
-    }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem1Cell"];
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem1Cell" owner:nil options:nil] firstObject];
-        }
-        
-        NSInteger index = indexPath.row;
-        if (self.hasTimeline && indexPath.row > 2) {
-            index--;
-        }
-        [(ASHShopItem1Cell*)cell setModel:self.topicViewModel.model.topic_list[index]];
-    }
+    ASHShopItem1Cell* cell;
 
+    cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem1Cell"];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem1Cell" owner:nil options:nil] firstObject];
+    }
+        
+    NSInteger index = indexPath.row;
+    if (self.hasTimeline && indexPath.row > 2) {
+        index--;
+    }
+    [(ASHShopItem1Cell*)cell setModel:self.topicViewModel.model.topic_list[index]];
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -254,13 +209,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 0;
+        return 10;
     }
     return 45.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    ASHTopSessionView* view = [[ASHTopSessionView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 45)];
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 10.0)];
+    view.backgroundColor = [UIColor lineColor];
     return view;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -276,14 +232,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
+

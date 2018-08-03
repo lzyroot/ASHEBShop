@@ -15,6 +15,7 @@
 #import "ASHTabManager.h"
 #import "ASHTabCategoryView.h"
 #import "ASHEBCategoryVC.h"
+#import "ASHEBCategory2VC.h"
 @interface ASHEBHomeViewController ()<ASHPageViewControllerDelegate,ASHPageViewControllerDataSource,UIScrollViewDelegate,ASHNewsSegmentedViewDataSource,ASHNewsSegmentedViewDelegate>
 @property(nonatomic, strong)ASHPageViewController* pageViewController;
 @property (nonatomic, strong) ASHNewsSegmentedView *segmentView;
@@ -73,16 +74,21 @@
 
 -(void)initData{
     _titleArr = [NSMutableArray array];
+    _idArr = [NSMutableArray array];
+    _vcArr = [NSMutableArray array];
     for (ASHTabItemModel* model in [ASHTabManager shareInstance].model.tab_elementArr) {
-        if (_titleArr.count >= 11) {
-            break;
-        }
         [_titleArr addObject:model.name];
+        [_idArr addObject:@(model.tab_id)];
     }
-    _idArr = [NSMutableArray arrayWithArray:@[@"0",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"12"]];
-    _vcArr = [[NSMutableArray alloc] init];
     for (NSString* type in _idArr) {
-        ASHEBCategoryVC* vc = [ASHEBCategoryVC new];
+        UIViewController* vc;
+        if ([type integerValue] == 0) {
+            vc = [ASHEBCategoryVC new];
+        }else{
+            vc = [ASHEBCategory2VC new];
+            [(ASHEBCategory2VC*)vc setCategoryId:[type integerValue]];
+        }
+        
         [_vcArr addObject:vc];
     }
 }
@@ -155,6 +161,9 @@
 #pragma mark ASHNewsSegmentedViewDelegate
 - (void)ASHNewsSegmentedViewDidSelect:(id)sender index:(NSUInteger)index
 {
+    if (self.segmentView.currentIndex == index) {
+        return;
+    }
     [self.pageViewController setViewControllerAtIndex:index animated:YES];
 }
 
