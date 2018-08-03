@@ -29,4 +29,6 @@
                  viewRect:(CGRect)rect;
 
 +(void)showToast:(NSString*)title;
+
+- (void)addBottomLine:(CGFloat)height;
 @end

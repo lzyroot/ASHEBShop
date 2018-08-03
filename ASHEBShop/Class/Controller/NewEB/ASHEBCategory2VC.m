@@ -16,6 +16,7 @@
 #import "ASHOneImageCell.h"
 #import "ASHTabCategoryView.h"
 #import "ASHShopItem2Cell.h"
+#import "ASHTypeSessionView.h"
 @interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
 @property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
@@ -24,6 +25,9 @@
 @property (nonatomic, assign)BOOL hasTimeline;//是否有限时秒杀
 @property (nonatomic, strong)ASHCategoryItemModel* timelineModel;//是否有限时秒杀
 @property (nonatomic, strong)ASHTabCategoryView* categoryView;
+@property (nonatomic, strong)ASHTypeSessionView* typeSelectView;
+@property (nonatomic, assign)NSInteger typeIndex;//排序
+@property (nonatomic, assign)BOOL shouldScrollTop;
 @end
 
 @implementation ASHEBCategory2VC
@@ -40,7 +44,8 @@
     _topicViewModel = [ASHTopicViewModel new];
     _topicViewModel.sortType = 7;
     _topicViewModel.categoryId = self.categoryId;
-    
+    self.typeIndex = 0;
+    self.shouldScrollTop = NO;
     [self bindViewModel];
     [self bindTopicVM];
     
@@ -48,7 +53,7 @@
 }
 
 - (void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -65,6 +70,9 @@
     @weakify(self);
     MJRefreshNormalHeader* refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
+        self.topicViewModel.sortType = 7;
+        self.typeIndex = 0;
+        [self.typeSelectView setIndex:0];
         [self requestData];
     }];
     refreshHeader.backgroundColor = [UIColor lineColor];
@@ -101,7 +109,10 @@
         _categoryView = nil;
     }
     _categoryView = [[ASHTabCategoryView alloc] initWithCategoryArr:self.viewModel.model.zhekou_cate_minipic];
-    self.tableView.tableHeaderView = _categoryView;
+    UIView* bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, _categoryView.ash_height + 10)];
+    bgView.backgroundColor = [UIColor lineColor];
+    [bgView addSubview:_categoryView];
+    self.tableView.tableHeaderView = bgView;
     
 }
 - (void)requestData
@@ -152,6 +163,14 @@
         }
         
         [self.tableView reloadData];
+        if (self.shouldScrollTop) {
+            self.shouldScrollTop = NO;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            });
+            
+        }
+        
     } error:^(NSError *error) {
         @strongify(self);
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
@@ -159,6 +178,32 @@
         [self.tableView.mj_header endRefreshing];
         [UIView showToast:kASH_NETWORK_Error];
     }];
+}
+#pragma mark View
+- (ASHTypeSessionView*)typeSelectView
+{
+    if (!_typeSelectView) {
+        _typeSelectView = [[ASHTypeSessionView alloc] initWithFrame:CGRectMake(0, 10, ASHScreenWidth, 40.0)];
+        [_typeSelectView addBottomLine:1.0];
+        
+        @weakify(self);
+        [_typeSelectView setTypeSelectAction:^(NSInteger index) {
+            @strongify(self);
+            
+            if (index == 0) {
+                self.topicViewModel.sortType = 7;
+            }
+            if (index == 1) {
+                self.topicViewModel.sortType = 6;
+            }
+            if (index == 2) {
+                self.topicViewModel.sortType = 1;
+            }
+            self.shouldScrollTop = YES;
+            [self.topicViewModel requestData];
+        }];
+    }
+    return _typeSelectView;
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -192,7 +237,7 @@
     if (index >= self.topicViewModel.model.coupon_list.count) {
         return cell;
     }
-    ASHCouponInfoModel* model1 = self.topicViewModel.model.coupon_list[indexPath.row];
+    ASHCouponInfoModel* model1 = self.topicViewModel.model.coupon_list[index];
     ASHCouponInfoModel* model2;
     if (index + 1 < self.topicViewModel.model.coupon_list.count) {
         model2 = self.topicViewModel.model.coupon_list[ index + 1];
@@ -212,16 +257,12 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 10;
-    }
-    return 45.0;
+
+    return 40.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 10.0)];
-    view.backgroundColor = [UIColor lineColor];
-    return view;
+    return _typeSelectView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {

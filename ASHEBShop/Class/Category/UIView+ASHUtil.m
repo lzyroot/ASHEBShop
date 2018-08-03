@@ -37,6 +37,12 @@
     
     self.layer.mask = shape;
 }
+- (void)addBottomLine:(CGFloat)height
+{
+    UIView* lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.ash_height-height, self.ash_width, height)];
+    lineView.backgroundColor = [UIColor lineColor];
+    [self addSubview:lineView];
+}
 + (void)showToast:(NSString *)title
 {
     UIWindow* view = (UIWindow*)[UIApplication sharedApplication].windows[0];

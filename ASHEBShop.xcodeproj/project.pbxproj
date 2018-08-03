@@ -141,6 +141,7 @@
 		A9A8AFF621142300000C18CB /* cate_coupon_freepost_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A8AFF4211422FF000C18CB /* cate_coupon_freepost_icon@2x.png */; };
 		A9A8AFF721142300000C18CB /* center_badge_hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A8AFF5211422FF000C18CB /* center_badge_hot@2x.png */; };
 		A9A8AFFA2114303C000C18CB /* ASHCouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8AFF92114303C000C18CB /* ASHCouponModel.m */; };
+		A9A8AFFD211447BF000C18CB /* ASHTypeSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8AFFC211447BF000C18CB /* ASHTypeSessionView.m */; };
 		A9C1DD68211296650045E4C4 /* ASHCaetgoryTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */; };
 		A9C1DD69211296650045E4C4 /* ASHCaetgoryTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */; };
 		A9C1DD6D21129CE20045E4C4 /* ASHShopItem1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1DD6B21129CE20045E4C4 /* ASHShopItem1Cell.m */; };
@@ -351,6 +352,8 @@
 		A9A8AFF5211422FF000C18CB /* center_badge_hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_badge_hot@2x.png"; sourceTree = "<group>"; };
 		A9A8AFF82114303C000C18CB /* ASHCouponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCouponModel.h; sourceTree = "<group>"; };
 		A9A8AFF92114303C000C18CB /* ASHCouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCouponModel.m; sourceTree = "<group>"; };
+		A9A8AFFB211447BF000C18CB /* ASHTypeSessionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTypeSessionView.h; sourceTree = "<group>"; };
+		A9A8AFFC211447BF000C18CB /* ASHTypeSessionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTypeSessionView.m; sourceTree = "<group>"; };
 		A9C1DD65211296650045E4C4 /* ASHCaetgoryTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCaetgoryTwoCell.h; sourceTree = "<group>"; };
 		A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCaetgoryTwoCell.m; sourceTree = "<group>"; };
 		A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASHCaetgoryTwoCell.xib; sourceTree = "<group>"; };
@@ -799,6 +802,8 @@
 				A9A8AFEF2113FEDA000C18CB /* ASHShopItem2Cell.h */,
 				A9A8AFF02113FEDA000C18CB /* ASHShopItem2Cell.m */,
 				A9A8AFF12113FEDA000C18CB /* ASHShopItem2Cell.xib */,
+				A9A8AFFB211447BF000C18CB /* ASHTypeSessionView.h */,
+				A9A8AFFC211447BF000C18CB /* ASHTypeSessionView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1003,6 +1008,7 @@
 				A937EDFB1EBB0C5900000C5C /* ASHCouponWebView.m in Sources */,
 				A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */,
 				A988AFF02111D14B009AC6A8 /* ASHCategoryModel.m in Sources */,
+				A9A8AFFD211447BF000C18CB /* ASHTypeSessionView.m in Sources */,
 				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
