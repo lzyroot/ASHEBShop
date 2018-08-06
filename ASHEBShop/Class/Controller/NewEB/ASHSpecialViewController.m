@@ -1,58 +1,51 @@
 //
-//  ASHEBCategoryVC.m
+//  ASHSpecialViewController.m
 //  ASHEBShop
 //
-//  Created by xmfish on 2018/8/1.
+//  Created by xmfish on 2018/8/3.
 //  Copyright © 2018年 ash. All rights reserved.
 //
 
-#import "ASHEBCategory2VC.h"
+#import "ASHSpecialViewController.h"
 #import "ASHCategoryViewModel.h"
-#import "ASHBannerView.h"
 #import "ASHCaetgoryTwoCell.h"
 #import "ASHTopicViewModel.h"
-#import "ASHShopItem1Cell.h"
 #import "ASHTopSessionView.h"
-#import "ASHOneImageCell.h"
 #import "ASHTabCategoryView.h"
 #import "ASHShopItem2Cell.h"
 #import "ASHTypeSessionView.h"
-#import "ASHSpecialViewController.h"
-@interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
+#import "ASHSpecialViewModel.h"
+@interface ASHSpecialViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong)ASHSpecialViewModel* specialViewModel;
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
-@property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
 @property (nonatomic, strong)UITableView* tableView;
-@property (nonatomic, strong)ASHBannerView *bannerView;
-@property (nonatomic, assign)BOOL hasTimeline;//是否有限时秒杀
-@property (nonatomic, strong)ASHCategoryItemModel* timelineModel;//是否有限时秒杀
 @property (nonatomic, strong)ASHTabCategoryView* categoryView;
 @property (nonatomic, strong)ASHTypeSessionView* typeSelectView;
 @property (nonatomic, assign)NSInteger typeIndex;//排序
 @property (nonatomic, assign)BOOL shouldScrollTop;
 @end
 
-@implementation ASHEBCategory2VC
+@implementation ASHSpecialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor lineColor];
     
-    self.hasTimeline = NO;
-    [MobClick event:@"category" attributes:@{@"id":@(0)}];
+    
+    [MobClick event:@"special"];
     _viewModel = [ASHCategoryViewModel new];
-    _viewModel.categoryId = self.categoryId;
-    _topicViewModel = [ASHTopicViewModel new];
-    _topicViewModel.sortType = 7;
-    _topicViewModel.categoryId = self.categoryId;
+    _viewModel.categoryId = self.specialId;
+    _specialViewModel = [ASHSpecialViewModel new];
+    _specialViewModel.sortType = 7;
+    _specialViewModel.specialId = self.specialId;
     self.typeIndex = 0;
     self.shouldScrollTop = NO;
     [self bindViewModel];
-    [self bindTopicVM];
-    
+    [self bindSpecialViewModel];
     [self initTableView];
 }
-
 - (void)initTableView{
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -71,7 +64,7 @@
     @weakify(self);
     MJRefreshNormalHeader* refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
-        self.topicViewModel.sortType = 7;
+        self.specialViewModel.sortType = 7;
         self.typeIndex = 0;
         [self.typeSelectView setIndex:0];
         [self requestData];
@@ -100,6 +93,16 @@
     
     
 }
+- (void)requestData
+{
+    [_viewModel requestData];
+    [_specialViewModel requestData];
+}
+- (void)loadMore
+{
+    [_specialViewModel loadMore];
+}
+
 - (void)setupCategoryTopView
 {
     if (!self.viewModel.model.zhekou_cate_minipic.count) {
@@ -114,11 +117,9 @@
     [_categoryView setCategoryIndexAction:^(NSInteger index) {
         @strongify(self);
         ASHCategoryItemModel* model = self.viewModel.model.zhekou_cate_minipic[index];
-        NSString *string = model.extend;
-        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z\u4e00-\u9fa5/:.]+" options:0 error:NULL];
-        NSString* result = [regular stringByReplacingMatchesInString:string options:0 range:NSMakeRange(0, [string length]) withTemplate:@""];
+
         ASHSpecialViewController* vc = [ASHSpecialViewController new];
-        vc.specialId = [result integerValue];
+        vc.specialId = [model.extend getInteger];
         vc.hidesBottomBarWhenPushed = YES;
         vc.title = model.title;
         [self.navigationController pushViewController:vc animated:YES];
@@ -130,29 +131,13 @@
     self.tableView.tableHeaderView = bgView;
     
 }
-- (void)requestData
-{
-    [_viewModel requestData];
-    [_topicViewModel requestData];
-}
-- (void)loadMore
-{
-    [_topicViewModel loadMore];
-}
+
 - (void)bindViewModel
 {
     @weakify(self);
     [_viewModel.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
         [self setupCategoryTopView];
-        
-        if (self.viewModel.model.zhekou_index_timeline.count) {
-            ASHCategoryItemModel* model = [self.viewModel.model.zhekou_index_timeline firstObject];
-            if ([model.element_type isEqualToString:@"webview"]) {
-                self.hasTimeline = YES;
-                _timelineModel = model;
-            }
-        }
         [self.tableView reloadData];
     } error:^(NSError *error) {
         @strongify(self);
@@ -162,14 +147,14 @@
         [UIView showToast:kASH_NETWORK_Error];
     }];
 }
-- (void)bindTopicVM
+- (void)bindSpecialViewModel
 {
     @weakify(self);
-    [_topicViewModel.requestFinishedSignal subscribeNext:^(id x) {
+    [_specialViewModel.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView.mj_header endRefreshing];
         [self setFooter];
-        if(!self.topicViewModel.hasMore){
+        if(!self.specialViewModel.hasMore){
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }else{
             
@@ -205,16 +190,16 @@
             @strongify(self);
             
             if (index == 0) {
-                self.topicViewModel.sortType = 7;
+                self.specialViewModel.sortType = 7;
             }
             if (index == 1) {
-                self.topicViewModel.sortType = 6;
+                self.specialViewModel.sortType = 6;
             }
             if (index == 2) {
-                self.topicViewModel.sortType = 1;
+                self.specialViewModel.sortType = 1;
             }
             self.shouldScrollTop = YES;
-            [self.topicViewModel requestData];
+            [self.specialViewModel requestData];
         }];
     }
     return _typeSelectView;
@@ -222,14 +207,14 @@
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (self.topicViewModel.model.coupon_list.count) {
+    if (self.specialViewModel.model.coupon_list.count) {
         return 1;
     }
     return 0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = self.topicViewModel.model.coupon_list.count;
+    NSInteger count = self.specialViewModel.model.coupon_list.count;
     count = count / 2 + count % 2;
     return count;
 }
@@ -248,39 +233,30 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem2Cell" owner:nil options:nil] firstObject];
     }
     NSInteger index = indexPath.row*2;
-    if (index >= self.topicViewModel.model.coupon_list.count) {
+    if (index >= self.specialViewModel.model.coupon_list.count) {
         return cell;
     }
-    ASHCouponInfoModel* model1 = self.topicViewModel.model.coupon_list[index];
+    ASHCouponInfoModel* model1 = self.specialViewModel.model.coupon_list[index];
     ASHCouponInfoModel* model2;
-    if (index + 1 < self.topicViewModel.model.coupon_list.count) {
-        model2 = self.topicViewModel.model.coupon_list[ index + 1];
+    if (index + 1 < self.specialViewModel.model.coupon_list.count) {
+        model2 = self.specialViewModel.model.coupon_list[ index + 1];
     }else{
         NSLog(@"%ld",index);
     }
     [cell setModel:model1 secondModel:model2];
-    @weakify(self);
-//    [cell setItemClickAction:^(ASHCouponInfoModel *model) {
-//        @strongify(self);
-//        NSScanner* scanner = [[NSScanner alloc] initWithString:@""];
-//        ASHSpecialViewController* vc = [ASHSpecialViewController new];
-//        vc.specialId = 545;
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }];
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.topicViewModel.hasMore && (indexPath.item >= self.topicViewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {
+    if (self.specialViewModel.hasMore && (indexPath.item >= self.specialViewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {
         [self.tableView.mj_footer beginRefreshing];
     }
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-
+    
     return 40.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -294,7 +270,6 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [[UIView alloc]init];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -302,4 +277,3 @@
 
 
 @end
-

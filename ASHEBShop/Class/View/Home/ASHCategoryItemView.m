@@ -37,6 +37,7 @@
         _tapButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _tapButton.backgroundColor = [UIColor clearColor];
         _tapButton.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+        [_tapButton addTarget:self action:@selector(tapButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:_imageView];
         [self addSubview:_nameLabel];

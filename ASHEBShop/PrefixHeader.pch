@@ -27,6 +27,7 @@
 #import "NSString+ASHJson.h"
 #import <UIImageView+WebCache.h>
 #import "UIView+ASHUtil.h"
+#import "NSString+ASHUtil.h"
 #import <Masonry.h>
 #import "UIView+ASHFrame.h"
 #import "ASHPropertyEntity.h"

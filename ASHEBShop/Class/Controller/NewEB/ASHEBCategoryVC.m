@@ -14,7 +14,11 @@
 #import "ASHShopItem1Cell.h"
 #import "ASHTopSessionView.h"
 #import "ASHOneImageCell.h"
+#import "ASHCouponWebVC.h"
 #import "ASHTabCategoryView.h"
+#import <AXWebViewController.h>
+#import <AlibcTradeSDK/AlibcTradeSDK.h>
+#import <AlibabaAuthSDK/ALBBSDK.h>
 @interface ASHEBCategoryVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
 @property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
@@ -244,6 +248,21 @@
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSInteger index = indexPath.row;
+    if (self.hasTimeline && indexPath.row > 2) {
+        index--;
+    }
+    ASHTopicItemModel*model = self.topicViewModel.model.topic_list[index];
+    ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+    webVC.hidesBottomBarWhenPushed = YES;
+    webVC.couponUrl = model.coupon_info.detail_url;
+    [self.navigationController pushViewController:webVC animated:YES];
+    
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {

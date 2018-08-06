@@ -142,6 +142,8 @@
 		A9A8AFF721142300000C18CB /* center_badge_hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A8AFF5211422FF000C18CB /* center_badge_hot@2x.png */; };
 		A9A8AFFA2114303C000C18CB /* ASHCouponModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8AFF92114303C000C18CB /* ASHCouponModel.m */; };
 		A9A8AFFD211447BF000C18CB /* ASHTypeSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8AFFC211447BF000C18CB /* ASHTypeSessionView.m */; };
+		A9A8B00021145884000C18CB /* ASHSpecialViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8AFFF21145884000C18CB /* ASHSpecialViewModel.m */; };
+		A9A8B00321145A5F000C18CB /* ASHSpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8B00221145A5F000C18CB /* ASHSpecialViewController.m */; };
 		A9C1DD68211296650045E4C4 /* ASHCaetgoryTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */; };
 		A9C1DD69211296650045E4C4 /* ASHCaetgoryTwoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */; };
 		A9C1DD6D21129CE20045E4C4 /* ASHShopItem1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1DD6B21129CE20045E4C4 /* ASHShopItem1Cell.m */; };
@@ -153,6 +155,12 @@
 		A9C1DD7A2112E0C60045E4C4 /* small_zhe_kou.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C1DD792112E0C60045E4C4 /* small_zhe_kou.png */; };
 		A9D0D1A81E95E8810047CB88 /* Default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D0D1A71E95E8810047CB88 /* Default.jpg */; };
 		A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */; };
+		A9E744CB211590DA00645EEA /* NSString+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */; };
+		A9E744CE2115944F00645EEA /* ASHCouponWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */; };
+		A9E744D12117E97E00645EEA /* ASHWebNSURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CF2117E97E00645EEA /* ASHWebNSURLProtocol.m */; };
+		A9E7454B2117F8B500645EEA /* FeHandwriting.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454A2117F8B500645EEA /* FeHandwriting.m */; };
+		A9E7454E2117F90E00645EEA /* FeThreeDotGlow.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454D2117F90E00645EEA /* FeThreeDotGlow.m */; };
+		A9E745512117F93A00645EEA /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454F2117F93900645EEA /* UIColor+flat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -354,6 +362,10 @@
 		A9A8AFF92114303C000C18CB /* ASHCouponModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCouponModel.m; sourceTree = "<group>"; };
 		A9A8AFFB211447BF000C18CB /* ASHTypeSessionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTypeSessionView.h; sourceTree = "<group>"; };
 		A9A8AFFC211447BF000C18CB /* ASHTypeSessionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTypeSessionView.m; sourceTree = "<group>"; };
+		A9A8AFFE21145884000C18CB /* ASHSpecialViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSpecialViewModel.h; sourceTree = "<group>"; };
+		A9A8AFFF21145884000C18CB /* ASHSpecialViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSpecialViewModel.m; sourceTree = "<group>"; };
+		A9A8B00121145A5F000C18CB /* ASHSpecialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSpecialViewController.h; sourceTree = "<group>"; };
+		A9A8B00221145A5F000C18CB /* ASHSpecialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSpecialViewController.m; sourceTree = "<group>"; };
 		A9C1DD65211296650045E4C4 /* ASHCaetgoryTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCaetgoryTwoCell.h; sourceTree = "<group>"; };
 		A9C1DD66211296650045E4C4 /* ASHCaetgoryTwoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCaetgoryTwoCell.m; sourceTree = "<group>"; };
 		A9C1DD67211296650045E4C4 /* ASHCaetgoryTwoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASHCaetgoryTwoCell.xib; sourceTree = "<group>"; };
@@ -370,6 +382,18 @@
 		A9D0D1A71E95E8810047CB88 /* Default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Default.jpg; sourceTree = "<group>"; };
 		A9D0D1AF1E96164F0047CB88 /* ASHSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHSettingVC.h; sourceTree = "<group>"; };
 		A9D0D1B01E96164F0047CB88 /* ASHSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHSettingVC.m; sourceTree = "<group>"; };
+		A9E744C9211590DA00645EEA /* NSString+ASHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHUtil.h"; sourceTree = "<group>"; };
+		A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ASHUtil.m"; sourceTree = "<group>"; };
+		A9E744CC2115944F00645EEA /* ASHCouponWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCouponWebVC.h; sourceTree = "<group>"; };
+		A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHCouponWebVC.m; sourceTree = "<group>"; };
+		A9E744CF2117E97E00645EEA /* ASHWebNSURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHWebNSURLProtocol.m; sourceTree = "<group>"; };
+		A9E744D02117E97E00645EEA /* ASHWebNSURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHWebNSURLProtocol.h; sourceTree = "<group>"; };
+		A9E745492117F8B400645EEA /* FeHandwriting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeHandwriting.h; sourceTree = "<group>"; };
+		A9E7454A2117F8B500645EEA /* FeHandwriting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeHandwriting.m; sourceTree = "<group>"; };
+		A9E7454C2117F90E00645EEA /* FeThreeDotGlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeThreeDotGlow.h; sourceTree = "<group>"; };
+		A9E7454D2117F90E00645EEA /* FeThreeDotGlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeThreeDotGlow.m; sourceTree = "<group>"; };
+		A9E7454F2117F93900645EEA /* UIColor+flat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flat.m"; sourceTree = "<group>"; };
+		A9E745502117F93900645EEA /* UIColor+flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flat.h"; sourceTree = "<group>"; };
 		E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -425,6 +449,8 @@
 		A92BC63E1E7BCD2C0019B435 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				A9E744D02117E97E00645EEA /* ASHWebNSURLProtocol.h */,
+				A9E744CF2117E97E00645EEA /* ASHWebNSURLProtocol.m */,
 				A92BC63F1E7BCD490019B435 /* ASHNetWorkManagerImpl.h */,
 				A92BC6401E7BCD490019B435 /* ASHNetWorkManagerImpl.m */,
 				A92BC6411E7BCD490019B435 /* ASHNetWorkManagerProtocol.h */,
@@ -441,6 +467,10 @@
 		A92BC6491E7FF86F0019B435 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				A9E7454C2117F90E00645EEA /* FeThreeDotGlow.h */,
+				A9E7454D2117F90E00645EEA /* FeThreeDotGlow.m */,
+				A9E745492117F8B400645EEA /* FeHandwriting.h */,
+				A9E7454A2117F8B500645EEA /* FeHandwriting.m */,
 				A92BC64A1E7FF8760019B435 /* TaeSDK */,
 			);
 			path = Vender;
@@ -610,6 +640,8 @@
 				A988AFF22111D2EB009AC6A8 /* ASHCategoryViewModel.m */,
 				A9C1DD762112B4FB0045E4C4 /* ASHTopicViewModel.h */,
 				A9C1DD772112B4FB0045E4C4 /* ASHTopicViewModel.m */,
+				A9A8AFFE21145884000C18CB /* ASHSpecialViewModel.h */,
+				A9A8AFFF21145884000C18CB /* ASHSpecialViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -636,6 +668,8 @@
 		A93EECF61E791A29001378B1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A9E745502117F93900645EEA /* UIColor+flat.h */,
+				A9E7454F2117F93900645EEA /* UIColor+flat.m */,
 				A93EECF71E791A41001378B1 /* UIColor+CustomColor.h */,
 				A93EECF81E791A41001378B1 /* UIColor+CustomColor.m */,
 				A93EECFD1E7921E0001378B1 /* UIImage+ASHUtil.h */,
@@ -650,6 +684,8 @@
 				A93E215220A19B0400B6556E /* UIView+ASHUtil.m */,
 				A93D32A520AD78DE00306F72 /* UIView+ASHFrame.h */,
 				A93D32A620AD78DE00306F72 /* UIView+ASHFrame.m */,
+				A9E744C9211590DA00645EEA /* NSString+ASHUtil.h */,
+				A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -742,6 +778,10 @@
 				A988AFCC2111962D009AC6A8 /* ASHEBCategoryVC.m */,
 				A9A8AFE821131569000C18CB /* ASHEBCategory2VC.h */,
 				A9A8AFE921131569000C18CB /* ASHEBCategory2VC.m */,
+				A9A8B00121145A5F000C18CB /* ASHSpecialViewController.h */,
+				A9A8B00221145A5F000C18CB /* ASHSpecialViewController.m */,
+				A9E744CC2115944F00645EEA /* ASHCouponWebVC.h */,
+				A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -1006,11 +1046,14 @@
 				A92BC6451E7BD4BA0019B435 /* ASHPropertyEntity.m in Sources */,
 				A93D32AA20AD855E00306F72 /* ASHNewHomeViewModel.m in Sources */,
 				A937EDFB1EBB0C5900000C5C /* ASHCouponWebView.m in Sources */,
+				A9E7454B2117F8B500645EEA /* FeHandwriting.m in Sources */,
 				A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */,
 				A988AFF02111D14B009AC6A8 /* ASHCategoryModel.m in Sources */,
 				A9A8AFFD211447BF000C18CB /* ASHTypeSessionView.m in Sources */,
+				A9E7454E2117F90E00645EEA /* FeThreeDotGlow.m in Sources */,
 				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
+				A9A8B00021145884000C18CB /* ASHSpecialViewModel.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
 				A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */,
 				A93E215C20A1A90600B6556E /* ASHNewsSegmentedView.m in Sources */,
@@ -1037,11 +1080,14 @@
 				A93D32C520B2D1D900306F72 /* ASHShopDetailViewModel.m in Sources */,
 				A93EECF91E791A41001378B1 /* UIColor+CustomColor.m in Sources */,
 				A93D32A720AD78DE00306F72 /* UIView+ASHFrame.m in Sources */,
+				A9E744CB211590DA00645EEA /* NSString+ASHUtil.m in Sources */,
 				A93EECDA1E78EE26001378B1 /* main.m in Sources */,
+				A9E745512117F93A00645EEA /* UIColor+flat.m in Sources */,
 				A93EED0E1E7935C4001378B1 /* ShopItemCell.m in Sources */,
 				A98F76AD1E948EA800916E79 /* ASHBaseModel.m in Sources */,
 				A988AFF32111D2EB009AC6A8 /* ASHCategoryViewModel.m in Sources */,
 				A98F76B71E94C8DE00916E79 /* ASHPublicKey.m in Sources */,
+				A9A8B00321145A5F000C18CB /* ASHSpecialViewController.m in Sources */,
 				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
@@ -1053,9 +1099,11 @@
 				A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */,
 				A9C1DD752112AF220045E4C4 /* ASHTopicModel.m in Sources */,
 				A988AFC62111808A009AC6A8 /* ASHSearchButton.m in Sources */,
+				A9E744CE2115944F00645EEA /* ASHCouponWebVC.m in Sources */,
 				A988AFDF2111A606009AC6A8 /* ASHTabManager.m in Sources */,
 				A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */,
 				A93E214B20A1882E00B6556E /* HomeCell2.m in Sources */,
+				A9E744D12117E97E00645EEA /* ASHWebNSURLProtocol.m in Sources */,
 				A988AFC221117DD7009AC6A8 /* ASHEBHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

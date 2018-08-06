@@ -27,7 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *vipPriceLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *saleCountLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *vipCountLabel2;
-
+@property (nonatomic, strong)ASHCouponInfoModel* model;
+@property (nonatomic, strong)ASHCouponInfoModel* model2;
 @end
 @implementation ASHShopItem2Cell
 
@@ -53,7 +54,7 @@
         self.couponImageView1.hidden = YES;
     }
     self.oriPriceLabel1.text = [NSString stringWithFormat:@"原价¥%@",model.raw_price];
-    self.oriPriceLabel1.text = [NSString stringWithFormat:@"券后¥%@",model.zk_price];
+    self.vipPrice1.text = [NSString stringWithFormat:@"券后¥%@",model.zk_price];
     if (model.month_sales < 10000) {
         _saleCountLabel1.text = [NSString stringWithFormat:@"月销%ld",model.month_sales];
     }else{
@@ -76,18 +77,27 @@
             self.couponImageView2.hidden = YES;
         }
         self.oriPriceLabel2.text = [NSString stringWithFormat:@"原价¥%@",model2.raw_price];
-        self.oriPriceLabel2.text = [NSString stringWithFormat:@"券后¥%@",model2.zk_price];
+        self.vipPriceLabel2.text = [NSString stringWithFormat:@"券后¥%@",model2.zk_price];
         if (model2.month_sales < 10000) {
             _saleCountLabel2.text = [NSString stringWithFormat:@"月销%ld",model2.month_sales];
         }else{
             _saleCountLabel2.text = [NSString stringWithFormat:@"月销%.1f万",model2.month_sales/10000.0];
         }
-        _vipCountLabel2.text = [NSString stringWithFormat:@"%ld元券",[model2.raw_price integerValue] - [model.zk_price integerValue]];
+        _vipCountLabel2.text = [NSString stringWithFormat:@"%ld元券",[model2.raw_price integerValue] - [model2.zk_price integerValue]];
     }
-    
+    _model = model;
+    _model2 = model2;
     
 }
-- (IBAction)itemBtnClick:(id)sender {
+- (IBAction)itemBtnClick:(UIButton*)button {
+    if (self.itemClickAction) {
+        if (button.tag == 1) {
+            self.itemClickAction(_model);
+        }else{
+            self.itemClickAction(_model2);
+        }
+        
+    }
 }
 
 @end

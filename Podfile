@@ -18,6 +18,8 @@ pod 'YYAsyncLayer' =>'1.0'
 pod 'YYCache' =>'1.0.4'
 pod 'YYModel' =>'1.0.4'
 
+pod 'AXWebViewController' =>'0.6.0'
+
 pod 'libwebp', :git=> 'https://github.com/wu736139669/libwebp.git'
 
 

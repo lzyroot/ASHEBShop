@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class ASHCouponInfoModel;
 @interface ASHShopItem2Cell : UITableViewCell
-
+@property(copy,nonatomic)void(^itemClickAction)(ASHCouponInfoModel* model);
 - (void)setModel:(ASHCouponInfoModel*)model secondModel:(ASHCouponInfoModel*)model2;
 @end
