@@ -113,17 +113,17 @@ static NSString *const kHTTPHeaderField = @"ASH-WebView-Caching";
         [[self client] URLProtocol:self didLoadData:[NSData data]];
         [[self client] URLProtocolDidFinishLoading:self];
     }
-    NSString *cachesPath = [self cachePathForRequest:[self request]];
-    ASHCachedData *cache = [NSKeyedUnarchiver unarchiveObjectWithFile:cachesPath];
-    
-    if (cache) {
-        NSData *data = cache.data;
-        
-        [[self client] URLProtocol:self didReceiveResponse:cache.response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
-        [[self client] URLProtocol:self didLoadData:data];
-        [[self client] URLProtocolDidFinishLoading:self];
-//        return;
-    }
+//    NSString *cachesPath = [self cachePathForRequest:[self request]];
+//    ASHCachedData *cache = [NSKeyedUnarchiver unarchiveObjectWithFile:cachesPath];
+//    
+//    if (cache) {
+//        NSData *data = cache.data;
+//        
+//        [[self client] URLProtocol:self didReceiveResponse:cache.response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+//        [[self client] URLProtocol:self didLoadData:data];
+//        [[self client] URLProtocolDidFinishLoading:self];
+////        return;
+//    }
     
     
     NSMutableURLRequest *newRequest = [self.request mutableCopy];

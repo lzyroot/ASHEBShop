@@ -70,6 +70,7 @@
     [titleView addSubview:cartButton];
     
     self.navigationItem.titleView = titleView;
+    self.navigationItem.title = @"";
 }
 
 -(void)initData{

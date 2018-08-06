@@ -17,23 +17,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        _button.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
+        [_button setTitle:@"输入商品名或粘贴淘宝标题" forState:UIControlStateNormal];
+        _button.titleLabel.font = [UIFont systemFontOfSize:12.0];
+        [_button setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
+        _button.titleLabel.textColor = [UIColor whiteColor];
+        _button.frame = self.bounds;
+        [_button addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_button];
+        self.layer.masksToBounds = YES;
+        self.layer.cornerRadius = 3.0;
     }
     return self;
 }
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    _button = [UIButton buttonWithType:UIButtonTypeCustom];
-    _button.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.2];
-    [_button setTitle:@"输入商品名或粘贴淘宝标题" forState:UIControlStateNormal];
-    _button.titleLabel.font = [UIFont systemFontOfSize:12.0];
-    [_button setImage:[UIImage imageNamed:@"search.png"] forState:UIControlStateNormal];
-    _button.titleLabel.textColor = [UIColor whiteColor];
-    _button.frame = self.bounds;
-    [_button addTarget:self action:@selector(searchBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_button];
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 3.0;
+
     
 }
 - (void)searchBtnClick:(UIButton*)button

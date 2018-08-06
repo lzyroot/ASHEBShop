@@ -201,7 +201,7 @@
     }
     NSLog(@"%@",navigationAction.request.URL.absoluteString);
     
-    if ([url containsString:@"uland.taobao.com/coupon/edetail"]) {
+    if ([url containsString:@"uland.taobao.com/coupon/edetail"] || [url containsString:@"h5.m.taobao.com/awp/core/detail.htm"]) {
         AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
         showParam.openType = AlibcOpenTypeNative;
         id<AlibcTradePage> page = [AlibcTradePageFactory page:url];
