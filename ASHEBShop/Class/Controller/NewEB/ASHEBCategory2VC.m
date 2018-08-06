@@ -17,6 +17,8 @@
 #import "ASHTabCategoryView.h"
 #import "ASHShopItem2Cell.h"
 #import "ASHTypeSessionView.h"
+#import "ASHCouponWebVC.h"
+#import "ASHTabModel.h"
 #import "ASHSpecialViewController.h"
 @interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
@@ -260,14 +262,13 @@
     }
     [cell setModel:model1 secondModel:model2];
     @weakify(self);
-//    [cell setItemClickAction:^(ASHCouponInfoModel *model) {
-//        @strongify(self);
-//        NSScanner* scanner = [[NSScanner alloc] initWithString:@""];
-//        ASHSpecialViewController* vc = [ASHSpecialViewController new];
-//        vc.specialId = 545;
-//        vc.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:vc animated:YES];
-//    }];
+    [cell setItemClickAction:^(ASHCouponInfoModel *model) {
+        @strongify(self);
+        ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+        webVC.hidesBottomBarWhenPushed = YES;
+        webVC.couponUrl = model.detail_url;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

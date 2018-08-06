@@ -15,4 +15,12 @@
     NSString* result = [regular stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:@""];
     return [result integerValue];
 }
+
+- (CGFloat)widthForFontSize:(CGFloat)fontSize {
+    
+    NSDictionary *textDic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
+    
+    CGSize size = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:textDic context:nil].size;
+    return size.width + 2;
+}
 @end

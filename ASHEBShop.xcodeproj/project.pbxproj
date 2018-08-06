@@ -161,6 +161,14 @@
 		A9E7454B2117F8B500645EEA /* FeHandwriting.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454A2117F8B500645EEA /* FeHandwriting.m */; };
 		A9E7454E2117F90E00645EEA /* FeThreeDotGlow.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454D2117F90E00645EEA /* FeThreeDotGlow.m */; };
 		A9E745512117F93A00645EEA /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7454F2117F93900645EEA /* UIColor+flat.m */; };
+		A9E7455421181B7900645EEA /* ASHSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7455321181B7900645EEA /* ASHSearchViewModel.m */; };
+		A9E745572118254700645EEA /* ASHTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745562118254700645EEA /* ASHTagView.m */; };
+		A9E7455A21182E8600645EEA /* ASHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7455921182E8600645EEA /* ASHSearchViewController.m */; };
+		A9E7455D2118339800645EEA /* ASHSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7455C2118339800645EEA /* ASHSearchModel.m */; };
+		A9E745602118366500645EEA /* ASHSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7455F2118366500645EEA /* ASHSearchManager.m */; };
+		A9E74562211847A500645EEA /* btn_search_history_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */; };
+		A9E74565211850A800645EEA /* ASHSearchRecommondVM.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */; };
+		A9E745682118510100645EEA /* ASHSearchRecommondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745672118510100645EEA /* ASHSearchRecommondModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -394,6 +402,21 @@
 		A9E7454D2117F90E00645EEA /* FeThreeDotGlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeThreeDotGlow.m; sourceTree = "<group>"; };
 		A9E7454F2117F93900645EEA /* UIColor+flat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flat.m"; sourceTree = "<group>"; };
 		A9E745502117F93900645EEA /* UIColor+flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flat.h"; sourceTree = "<group>"; };
+		A9E7455221181B7900645EEA /* ASHSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchViewModel.h; sourceTree = "<group>"; };
+		A9E7455321181B7900645EEA /* ASHSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchViewModel.m; sourceTree = "<group>"; };
+		A9E745552118254700645EEA /* ASHTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTagView.h; sourceTree = "<group>"; };
+		A9E745562118254700645EEA /* ASHTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTagView.m; sourceTree = "<group>"; };
+		A9E7455821182E8600645EEA /* ASHSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchViewController.h; sourceTree = "<group>"; };
+		A9E7455921182E8600645EEA /* ASHSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchViewController.m; sourceTree = "<group>"; };
+		A9E7455B2118339800645EEA /* ASHSearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchModel.h; sourceTree = "<group>"; };
+		A9E7455C2118339800645EEA /* ASHSearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchModel.m; sourceTree = "<group>"; };
+		A9E7455E2118366500645EEA /* ASHSearchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchManager.h; sourceTree = "<group>"; };
+		A9E7455F2118366500645EEA /* ASHSearchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchManager.m; sourceTree = "<group>"; };
+		A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_search_history_clear@2x.png"; sourceTree = "<group>"; };
+		A9E74563211850A800645EEA /* ASHSearchRecommondVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchRecommondVM.h; sourceTree = "<group>"; };
+		A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchRecommondVM.m; sourceTree = "<group>"; };
+		A9E745662118510100645EEA /* ASHSearchRecommondModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchRecommondModel.h; sourceTree = "<group>"; };
+		A9E745672118510100645EEA /* ASHSearchRecommondModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchRecommondModel.m; sourceTree = "<group>"; };
 		E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -574,6 +597,8 @@
 				A93EED051E793592001378B1 /* Cell */,
 				A937EDF91EBB0C5900000C5C /* ASHCouponWebView.h */,
 				A937EDFA1EBB0C5900000C5C /* ASHCouponWebView.m */,
+				A9E745552118254700645EEA /* ASHTagView.h */,
+				A9E745562118254700645EEA /* ASHTagView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +667,10 @@
 				A9C1DD772112B4FB0045E4C4 /* ASHTopicViewModel.m */,
 				A9A8AFFE21145884000C18CB /* ASHSpecialViewModel.h */,
 				A9A8AFFF21145884000C18CB /* ASHSpecialViewModel.m */,
+				A9E7455221181B7900645EEA /* ASHSearchViewModel.h */,
+				A9E7455321181B7900645EEA /* ASHSearchViewModel.m */,
+				A9E74563211850A800645EEA /* ASHSearchRecommondVM.h */,
+				A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -693,6 +722,7 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */,
 				A9A8AFF4211422FF000C18CB /* cate_coupon_freepost_icon@2x.png */,
 				A9A8AFF5211422FF000C18CB /* center_badge_hot@2x.png */,
 				A9A8AFDE2112FDF6000C18CB /* setting_coupon_price_bg@2x.png */,
@@ -782,6 +812,8 @@
 				A9A8B00221145A5F000C18CB /* ASHSpecialViewController.m */,
 				A9E744CC2115944F00645EEA /* ASHCouponWebVC.h */,
 				A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */,
+				A9E7455821182E8600645EEA /* ASHSearchViewController.h */,
+				A9E7455921182E8600645EEA /* ASHSearchViewController.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -810,6 +842,10 @@
 				A9C1DD742112AF220045E4C4 /* ASHTopicModel.m */,
 				A9A8AFF82114303C000C18CB /* ASHCouponModel.h */,
 				A9A8AFF92114303C000C18CB /* ASHCouponModel.m */,
+				A9E7455B2118339800645EEA /* ASHSearchModel.h */,
+				A9E7455C2118339800645EEA /* ASHSearchModel.m */,
+				A9E745662118510100645EEA /* ASHSearchRecommondModel.h */,
+				A9E745672118510100645EEA /* ASHSearchRecommondModel.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -821,6 +857,8 @@
 				A988AFDB2111A50E009AC6A8 /* ASHShareInstace.m */,
 				A988AFDD2111A606009AC6A8 /* ASHTabManager.h */,
 				A988AFDE2111A606009AC6A8 /* ASHTabManager.m */,
+				A9E7455E2118366500645EEA /* ASHSearchManager.h */,
+				A9E7455F2118366500645EEA /* ASHSearchManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -915,6 +953,7 @@
 				A937EE051EBB1F0900000C5C /* delete-btn.js in Resources */,
 				A93E212B2099CF4D00B6556E /* home_normal@3x.png in Resources */,
 				A9A8AFDF2112FDF6000C18CB /* setting_coupon_price_bg@2x.png in Resources */,
+				A9E74562211847A500645EEA /* btn_search_history_clear@2x.png in Resources */,
 				A9C1DD702112A5AC0045E4C4 /* small_quan_hou.png in Resources */,
 				A988AFED2111CBD1009AC6A8 /* grayclose@2x.png in Resources */,
 				A9A8AFF621142300000C18CB /* cate_coupon_freepost_icon@2x.png in Resources */,
@@ -1050,13 +1089,16 @@
 				A988AFD521119EBD009AC6A8 /* ASHTabModel.m in Sources */,
 				A988AFF02111D14B009AC6A8 /* ASHCategoryModel.m in Sources */,
 				A9A8AFFD211447BF000C18CB /* ASHTypeSessionView.m in Sources */,
+				A9E745602118366500645EEA /* ASHSearchManager.m in Sources */,
 				A9E7454E2117F90E00645EEA /* FeThreeDotGlow.m in Sources */,
 				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A9A8B00021145884000C18CB /* ASHSpecialViewModel.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
+				A9E7455D2118339800645EEA /* ASHSearchModel.m in Sources */,
 				A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */,
 				A93E215C20A1A90600B6556E /* ASHNewsSegmentedView.m in Sources */,
+				A9E7455A21182E8600645EEA /* ASHSearchViewController.m in Sources */,
 				A93EECE01E78EE26001378B1 /* ViewController.m in Sources */,
 				A9C1DD6D21129CE20045E4C4 /* ASHShopItem1Cell.m in Sources */,
 				A93E215620A1A23500B6556E /* ASHPageViewController.m in Sources */,
@@ -1064,11 +1106,14 @@
 				A9A8AFE22112FF5A000C18CB /* ASHTopSessionView.m in Sources */,
 				A91CE7B42099BC4A008F612E /* MainTabBarVC.m in Sources */,
 				A9A8AFEA21131569000C18CB /* ASHEBCategory2VC.m in Sources */,
+				A9E745682118510100645EEA /* ASHSearchRecommondModel.m in Sources */,
 				A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */,
 				A9A8AFF22113FEDA000C18CB /* ASHShopItem2Cell.m in Sources */,
 				A98F76B01E9497EF00916E79 /* ASHHomeModel.m in Sources */,
+				A9E745572118254700645EEA /* ASHTagView.m in Sources */,
 				A988AFF62111D3C5009AC6A8 /* ASHBannerView.m in Sources */,
 				A988AFD921119FE2009AC6A8 /* ASHTabViewModel.m in Sources */,
+				A9E7455421181B7900645EEA /* ASHSearchViewModel.m in Sources */,
 				A98F76C01E94CC5200916E79 /* NSBundle+ASHVersion.m in Sources */,
 				A98F76B31E94C07A00916E79 /* ASHNetWork.m in Sources */,
 				A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */,
@@ -1090,6 +1135,7 @@
 				A9A8B00321145A5F000C18CB /* ASHSpecialViewController.m in Sources */,
 				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
+				A9E74565211850A800645EEA /* ASHSearchRecommondVM.m in Sources */,
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
 				A9A8AFFA2114303C000C18CB /* ASHCouponModel.m in Sources */,
 				A9C1DD782112B4FB0045E4C4 /* ASHTopicViewModel.m in Sources */,

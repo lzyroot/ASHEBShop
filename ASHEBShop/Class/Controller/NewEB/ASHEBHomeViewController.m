@@ -16,6 +16,7 @@
 #import "ASHTabCategoryView.h"
 #import "ASHEBCategoryVC.h"
 #import "ASHEBCategory2VC.h"
+#import "ASHSearchViewController.h"
 @interface ASHEBHomeViewController ()<ASHPageViewControllerDelegate,ASHPageViewControllerDataSource,UIScrollViewDelegate,ASHNewsSegmentedViewDataSource,ASHNewsSegmentedViewDelegate>
 @property(nonatomic, strong)ASHPageViewController* pageViewController;
 @property (nonatomic, strong) ASHNewsSegmentedView *segmentView;
@@ -60,6 +61,12 @@
 
     
     ASHSearchButton* button = [[ASHSearchButton alloc] initWithFrame:CGRectMake(10, 0, ASHScreenWidth - 75, 30)];
+    
+    [button setSearchAction:^(UIButton *button) {
+        ASHSearchViewController* searchVC = [ASHSearchViewController new];
+        
+        [self presentViewController:searchVC animated:YES completion:nil];
+    }];
     [titleView addSubview:button];
     
     UIButton* cartButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -67,10 +74,15 @@
     [cartButton setImage:[UIImage imageNamed:@"cart"] forState:UIControlStateNormal];
     cartButton.backgroundColor = [UIColor clearColor];
     cartButton.ash_right = titleView.ash_width - 30;
+    
     [titleView addSubview:cartButton];
     
     self.navigationItem.titleView = titleView;
     self.navigationItem.title = @"";
+}
+- (void)searchBtnClick:(UIButton*)button
+{
+
 }
 
 -(void)initData{

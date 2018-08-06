@@ -10,4 +10,6 @@
 
 @interface NSString (ASHUtil)
 - (NSInteger)getInteger;
+
+- (CGFloat)widthForFontSize:(CGFloat)fontSize;
 @end
