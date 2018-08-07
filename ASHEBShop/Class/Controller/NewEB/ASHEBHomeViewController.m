@@ -64,7 +64,6 @@
     
     [button setSearchAction:^(UIButton *button) {
         ASHSearchViewController* searchVC = [ASHSearchViewController new];
-        
         [self presentViewController:searchVC animated:YES completion:nil];
     }];
     [titleView addSubview:button];

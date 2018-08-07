@@ -169,6 +169,8 @@
 		A9E74562211847A500645EEA /* btn_search_history_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */; };
 		A9E74565211850A800645EEA /* ASHSearchRecommondVM.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */; };
 		A9E745682118510100645EEA /* ASHSearchRecommondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745672118510100645EEA /* ASHSearchRecommondModel.m */; };
+		A9E7456B211925DD00645EEA /* ASHSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E7456A211925DD00645EEA /* ASHSearchListViewController.m */; };
+		A9E7456D211929DE00645EEA /* nav_back_arrow_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E7456C211929DE00645EEA /* nav_back_arrow_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -417,6 +419,9 @@
 		A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchRecommondVM.m; sourceTree = "<group>"; };
 		A9E745662118510100645EEA /* ASHSearchRecommondModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchRecommondModel.h; sourceTree = "<group>"; };
 		A9E745672118510100645EEA /* ASHSearchRecommondModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchRecommondModel.m; sourceTree = "<group>"; };
+		A9E74569211925DD00645EEA /* ASHSearchListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchListViewController.h; sourceTree = "<group>"; };
+		A9E7456A211925DD00645EEA /* ASHSearchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchListViewController.m; sourceTree = "<group>"; };
+		A9E7456C211929DE00645EEA /* nav_back_arrow_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_arrow_icon@2x.png"; sourceTree = "<group>"; };
 		E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -722,6 +727,7 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9E7456C211929DE00645EEA /* nav_back_arrow_icon@2x.png */,
 				A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */,
 				A9A8AFF4211422FF000C18CB /* cate_coupon_freepost_icon@2x.png */,
 				A9A8AFF5211422FF000C18CB /* center_badge_hot@2x.png */,
@@ -814,6 +820,8 @@
 				A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */,
 				A9E7455821182E8600645EEA /* ASHSearchViewController.h */,
 				A9E7455921182E8600645EEA /* ASHSearchViewController.m */,
+				A9E74569211925DD00645EEA /* ASHSearchListViewController.h */,
+				A9E7456A211925DD00645EEA /* ASHSearchListViewController.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -921,7 +929,7 @@
 				TargetAttributes = {
 					A93EECD41E78EE26001378B1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X75CUV458P;
+						DevelopmentTeam = T63J6SF7QS;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1011,6 +1019,7 @@
 				A93D32A120AD713300306F72 /* homelike@3x.png in Resources */,
 				A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */,
 				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,
+				A9E7456D211929DE00645EEA /* nav_back_arrow_icon@2x.png in Resources */,
 				A93D32A320AD713300306F72 /* homelike@2x.png in Resources */,
 				A988AFD121119869009AC6A8 /* category@2x.png in Resources */,
 				A93D32A420AD713300306F72 /* homenolike@2x.png in Resources */,
@@ -1109,6 +1118,7 @@
 				A9E745682118510100645EEA /* ASHSearchRecommondModel.m in Sources */,
 				A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */,
 				A9A8AFF22113FEDA000C18CB /* ASHShopItem2Cell.m in Sources */,
+				A9E7456B211925DD00645EEA /* ASHSearchListViewController.m in Sources */,
 				A98F76B01E9497EF00916E79 /* ASHHomeModel.m in Sources */,
 				A9E745572118254700645EEA /* ASHTagView.m in Sources */,
 				A988AFF62111D3C5009AC6A8 /* ASHBannerView.m in Sources */,
@@ -1272,7 +1282,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X75CUV458P;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1331,8 +1341,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
+				PROVISIONING_PROFILE = "0db1c73a-6ae7-43a6-a7aa-8658a3bff824";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
@@ -1345,7 +1355,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X75CUV458P;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1404,8 +1414,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
+				PROVISIONING_PROFILE = "0db1c73a-6ae7-43a6-a7aa-8658a3bff824";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;

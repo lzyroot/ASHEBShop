@@ -30,6 +30,7 @@
     
     
     MainTabBarVC* nav = [MainTabBarVC new];
+    nav.tabBarController.tabBar.translucent = NO;
 //    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     

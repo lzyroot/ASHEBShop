@@ -9,12 +9,14 @@
 #import "ASHSearchViewController.h"
 #import "ASHTagView.h"
 #import "ASHSearchManager.h"
+#import "ASHSearchListViewController.h"
 @interface ASHSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)UITableView* tableView;
 @property (nonatomic, strong)ASHTagView* hotTagView;
 @property (nonatomic, strong)ASHTagView* historyTagView;
 @property (nonatomic, strong)UITableViewCell* historyCell;
 @property (nonatomic, strong)UIButton* cancelButton;
+
 @end
 
 @implementation ASHSearchViewController
@@ -28,21 +30,26 @@
     [self initTableView];
     [self initSearchBar];
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.cancelButton.enabled = YES;
+}
 - (void)initSearchBar
 {
     UISearchBar *searchbar = [[UISearchBar alloc] init];
-    // 添加到父视图
+    
     [self.view addSubview:searchbar];
-    // 设置原点坐标与大小
+    
     searchbar.frame = CGRectMake(10.0, 20.0, (CGRectGetWidth(self.view.bounds) - 10.0 * 2), 44.0);
     searchbar.barStyle = UIBarStyleDefault;
     searchbar.placeholder = @"输入商品名或粘贴淘宝标题";
     searchbar.translucent = YES;
     searchbar.tintColor = [UIColor blueColor];
-    // 输入框边框颜色
+    
     searchbar.barTintColor = [UIColor whiteColor];
     searchbar.backgroundColor = [UIColor lineColor];
-    // 输入框类型
+    
     searchbar.showsCancelButton = YES;
     searchbar.searchBarStyle = UISearchBarStyleProminent;
     searchbar.delegate = self;
@@ -92,6 +99,7 @@
         [[ASHSearchManager shareInstance] searchWithKey:model.title];
         [self initHistoryView];
         [self.tableView reloadData];
+        [self presentViewController:[ASHSearchListViewController new] animated:YES completion:nil];
     }];
     
 

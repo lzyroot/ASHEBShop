@@ -31,4 +31,6 @@
 +(void)showToast:(NSString*)title;
 
 - (void)addBottomLine:(CGFloat)height;
+
+- (UIView*)subViewOfClassName:(NSString*)className;
 @end
