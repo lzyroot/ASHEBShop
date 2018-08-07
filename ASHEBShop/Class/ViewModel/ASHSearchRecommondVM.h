@@ -12,4 +12,6 @@
 @property (nonatomic, strong,readonly)ASHSearchRecommondModel* model;
 @property (nonatomic, assign)NSInteger sortType;
 @property (nonatomic, strong)NSString* keyWord;
+
+- (void)requestSeachWord:(NSString*)keyword;
 @end

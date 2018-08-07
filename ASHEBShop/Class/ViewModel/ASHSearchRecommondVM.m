@@ -24,18 +24,29 @@
 
 - (void)requestHomeDataWithPage:(NSInteger)page
 {
+    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchRecommondByWordData?sortType=%ld&word=%@",self.sortType,self.keyWord];
+    [self requestUrl:url];
+}
+
+- (void)requestSeachWord:(NSString*)keyword{
+    
+    
+    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchSuggestWordData?word=%@",keyword];
+    [self requestUrl:url];
+}
+- (void)requestUrl:(NSString*)url
+{
     [requestDisposable dispose];
     ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
     proEntity.requireType = HTTPRequestTypeWithGET;
     proEntity.isCache = NO;
-    proEntity.baseUrl = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchRecommondByWordData?sortType=%ld&word=%@",self.sortType,self.keyWord];
+    proEntity.baseUrl = url;
     proEntity.responesOBJ = [ASHSearchRecommondModel class];
     @weakify(self);
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHSearchRecommondModel* model) {
         @strongify(self);
         self.model = model;
         [self.ash_requestFinishedSubscriber sendNext:self.model];
-        [self.ash_requestFinishedSubscriber sendCompleted];
         
     } error:^(NSError *error) {
         [self.ash_requestFinishedSubscriber sendError:error];

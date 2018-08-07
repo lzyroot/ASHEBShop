@@ -11,12 +11,16 @@
 #import "ASHSearchManager.h"
 #import "ASHSearchListViewController.h"
 #import "ASHSearchBar.h"
+#import "ASHSearchRecommondVM.h"
 @interface ASHSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)UITableView* tableView;
 @property (nonatomic, strong)ASHTagView* hotTagView;
 @property (nonatomic, strong)ASHTagView* historyTagView;
 @property (nonatomic, strong)UITableViewCell* historyCell;
 @property (nonatomic, strong)UIButton* cancelButton;
+@property (nonatomic, strong)ASHSearchRecommondVM* searchViewModel;
+@property (nonatomic, assign)BOOL shouldShow;
+@property (nonatomic, strong)ASHSearchBar *searchbar;
 
 @end
 
@@ -27,9 +31,28 @@
     
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.shouldShow = NO;
     [self initData];
     [self initTableView];
     [self initSearchBar];
+    [self bindViewModel];
+}
+- (void)bindViewModel
+{
+    _searchViewModel = [ASHSearchRecommondVM new];
+    _searchViewModel.sortType = 7;
+    
+    @weakify(self);
+    [_searchViewModel.requestFinishedSignal subscribeNext:^(id x) {
+        @strongify(self);
+        if (_searchViewModel.model.search_word_list.count > 0) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            self.shouldShow = YES;
+        }else{
+            self.shouldShow = NO;
+        }
+        [self.tableView reloadData];
+    }];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -38,29 +61,29 @@
 }
 - (void)initSearchBar
 {
-    ASHSearchBar *searchbar = [[ASHSearchBar alloc] init];
+    _searchbar = [[ASHSearchBar alloc] init];
     
-    [self.view addSubview:searchbar];
+    [self.view addSubview:_searchbar];
     
-    searchbar.frame = CGRectMake(10.0, 20.0, (CGRectGetWidth(self.view.bounds) - 10.0 * 2), 30);
-    searchbar.barStyle = UIBarStyleDefault;
-    searchbar.placeholder = @"输入商品名或粘贴淘宝标题";
-    searchbar.translucent = YES;
-    searchbar.tintColor = [UIColor blueColor];
+    _searchbar.frame = CGRectMake(10.0, 20.0, (CGRectGetWidth(self.view.bounds) - 10.0 * 2), 30);
+    _searchbar.barStyle = UIBarStyleDefault;
+    _searchbar.placeholder = @"输入商品名或粘贴淘宝标题";
+    _searchbar.translucent = YES;
+    _searchbar.tintColor = [UIColor blueColor];
+    _searchbar.delegate = self;
+    _searchbar.barTintColor = [UIColor whiteColor];
+    _searchbar.backgroundColor = [UIColor whiteColor];
     
-    searchbar.barTintColor = [UIColor whiteColor];
-    searchbar.backgroundColor = [UIColor whiteColor];
-    
-    searchbar.showsCancelButton = YES;
-    searchbar.searchBarStyle = UISearchBarStyleMinimal;
-    searchbar.delegate = self;
-    UITextField *searchField=[searchbar valueForKey:@"searchField"];
+    _searchbar.showsCancelButton = YES;
+    _searchbar.searchBarStyle = UISearchBarStyleMinimal;
+    _searchbar.delegate = self;
+    UITextField *searchField=[_searchbar valueForKey:@"searchField"];
     searchField.backgroundColor = [UIColor lineColor];
     [searchField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [searchField setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
     [searchField becomeFirstResponder];
     
-    for(UIView *view in  [[[searchbar subviews] objectAtIndex:0] subviews]) {
+    for(UIView *view in  [[[_searchbar subviews] objectAtIndex:0] subviews]) {
         if([view isKindOfClass:[NSClassFromString(@"UINavigationButton") class]]) {
             self.cancelButton = view;
         }
@@ -77,8 +100,12 @@
         self.historyTagView.ash_height = self.historyTagView.tagHeight;
         [self.historyCell addSubview:self.historyTagView];
         
+        @weakify(self);
         [self.historyTagView setTagIndexAction:^(NSInteger index) {
-            
+            @strongify(self);
+            ASHSearchListViewController* vc = [ASHSearchListViewController new];
+            vc.searchKey = [ASHSearchManager shareInstance].historyTags[index];
+            [self presentViewController:vc animated:NO completion:nil];
         }];
         
     }else{
@@ -102,7 +129,10 @@
         [[ASHSearchManager shareInstance] searchWithKey:model.title];
         [self initHistoryView];
         [self.tableView reloadData];
-        [self presentViewController:[ASHSearchListViewController new] animated:YES completion:nil];
+        ASHSearchListViewController* vc = [ASHSearchListViewController new];
+        vc.searchKey = model.title;
+
+        [self presentViewController:vc animated:NO completion:nil];
     }];
     
 
@@ -138,6 +168,9 @@
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (self.shouldShow) {
+        return 1;
+    }
     if ([ASHSearchManager shareInstance].historyTags.count) {
         return 2;
     }
@@ -145,11 +178,17 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (self.shouldShow) {
+        return _searchViewModel.model.search_word_list.count;
+    }
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    if (self.shouldShow) {
+        return 40.0;
+    }
     if (indexPath.section == 0 && [ASHSearchManager shareInstance].historyTags.count) {
         return self.historyTagView.tagHeight;
     }
@@ -159,6 +198,15 @@
 {
     UITableViewCell* cell;
     
+    if (self.shouldShow) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"searchcellresult"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchcellresult"];
+        }
+        NSString* text = _searchViewModel.model.search_word_list[indexPath.row];
+        cell.textLabel.text = text;
+        return cell;
+    }
     if ([ASHSearchManager shareInstance].historyTags.count && indexPath.section == 0) {
         return self.historyCell;
     }
@@ -173,9 +221,19 @@
     
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (!self.shouldShow) {
+        return;
+    }
+    
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     
+    if (self.shouldShow) {
+        return 0;
+    }
     return 40.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -224,10 +282,16 @@
     [self.view endEditing:YES];
     self.cancelButton.enabled = YES;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    if (searchText.length) {
+        self.shouldShow = YES;
+        [_searchViewModel requestSeachWord:searchText];
+    }else{
+        self.shouldShow = NO;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [self.tableView reloadData];
+    }
 }
-
-
 @end

@@ -10,4 +10,6 @@
 
 @interface ASHSearchRecommondModel : ASHBaseModel
 @property (nonatomic, strong)NSMutableArray* rec_word_list;
+@property (nonatomic, strong)NSMutableArray* search_word_list;
+
 @end

@@ -11,6 +11,6 @@
 @implementation ASHSearchRecommondModel
 + (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper
 {
-    return @{@"rec_word_list":@"data.rec_word_list"};
+    return @{@"rec_word_list":@"data.rec_word_list",@"search_word_list":@"data.list"};
 }
 @end

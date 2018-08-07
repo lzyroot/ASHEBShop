@@ -27,6 +27,7 @@
 @property (nonatomic, assign)BOOL hasTimeline;//是否有限时秒杀
 @property (nonatomic, strong)ASHCategoryItemModel* timelineModel;//是否有限时秒杀
 @property (nonatomic, strong)ASHTabCategoryView* categoryView;
+
 @end
 
 @implementation ASHEBCategoryVC
@@ -295,14 +296,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
