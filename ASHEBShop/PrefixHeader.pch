@@ -30,6 +30,7 @@
 #import "NSString+ASHUtil.h"
 #import <Masonry.h>
 #import "UIView+ASHFrame.h"
+#import "UISearchBar+ASHUtil.h"
 #import "ASHPropertyEntity.h"
 #import <ReactiveCocoa.h>
 #import <MJRefresh.h>

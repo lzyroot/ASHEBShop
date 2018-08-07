@@ -10,6 +10,7 @@
 #import "ASHTagView.h"
 #import "ASHSearchManager.h"
 #import "ASHSearchListViewController.h"
+#import "ASHSearchBar.h"
 @interface ASHSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)UITableView* tableView;
 @property (nonatomic, strong)ASHTagView* hotTagView;
@@ -37,25 +38,24 @@
 }
 - (void)initSearchBar
 {
-    UISearchBar *searchbar = [[UISearchBar alloc] init];
+    ASHSearchBar *searchbar = [[ASHSearchBar alloc] init];
     
     [self.view addSubview:searchbar];
     
-    searchbar.frame = CGRectMake(10.0, 20.0, (CGRectGetWidth(self.view.bounds) - 10.0 * 2), 44.0);
+    searchbar.frame = CGRectMake(10.0, 20.0, (CGRectGetWidth(self.view.bounds) - 10.0 * 2), 30);
     searchbar.barStyle = UIBarStyleDefault;
     searchbar.placeholder = @"输入商品名或粘贴淘宝标题";
     searchbar.translucent = YES;
     searchbar.tintColor = [UIColor blueColor];
     
     searchbar.barTintColor = [UIColor whiteColor];
-    searchbar.backgroundColor = [UIColor lineColor];
+    searchbar.backgroundColor = [UIColor whiteColor];
     
     searchbar.showsCancelButton = YES;
-    searchbar.searchBarStyle = UISearchBarStyleProminent;
+    searchbar.searchBarStyle = UISearchBarStyleMinimal;
     searchbar.delegate = self;
     UITextField *searchField=[searchbar valueForKey:@"searchField"];
     searchField.backgroundColor = [UIColor lineColor];
-    searchField.layer.cornerRadius = 1.0;
     [searchField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [searchField setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
     [searchField becomeFirstResponder];
@@ -65,6 +65,9 @@
             self.cancelButton = view;
         }
     }
+    UIView* lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 55, ASHScreenWidth, 1)];
+    lineView.backgroundColor = [UIColor lineColor];
+    [self.view addSubview:lineView];
 }
 - (void)initHistoryView{
     if ([ASHSearchManager shareInstance].historyTags.count) {
@@ -109,7 +112,7 @@
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.ash_top = 68;
+    self.tableView.ash_top = 60;
     self.tableView.layer.masksToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0;
     self.tableView.backgroundColor = [UIColor whiteColor];
