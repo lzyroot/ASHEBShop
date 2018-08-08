@@ -177,6 +177,8 @@
 		A9E745C72119A59E00645EEA /* ASHSearchContentVM.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745C62119A59E00645EEA /* ASHSearchContentVM.m */; };
 		A9E745CA2119A5AD00645EEA /* ASHSearchContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745C92119A5AD00645EEA /* ASHSearchContentModel.m */; };
 		A9E745CD2119AD3D00645EEA /* ASHSearchTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745CC2119AD3D00645EEA /* ASHSearchTagView.m */; };
+		A9E745D0211AA19C00645EEA /* ASHZheKou99Model.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */; };
+		A9E745D3211AA2DA00645EEA /* ASHZheKou99ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -440,6 +442,10 @@
 		A9E745C92119A5AD00645EEA /* ASHSearchContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchContentModel.m; sourceTree = "<group>"; };
 		A9E745CB2119AD3D00645EEA /* ASHSearchTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHSearchTagView.h; sourceTree = "<group>"; };
 		A9E745CC2119AD3D00645EEA /* ASHSearchTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHSearchTagView.m; sourceTree = "<group>"; };
+		A9E745CE211AA19C00645EEA /* ASHZheKou99Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZheKou99Model.h; sourceTree = "<group>"; };
+		A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKou99Model.m; sourceTree = "<group>"; };
+		A9E745D1211AA2DA00645EEA /* ASHZheKou99ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZheKou99ViewModel.h; sourceTree = "<group>"; };
+		A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKou99ViewModel.m; sourceTree = "<group>"; };
 		E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -700,6 +706,8 @@
 				A9E74564211850A800645EEA /* ASHSearchRecommondVM.m */,
 				A9E745C52119A59E00645EEA /* ASHSearchContentVM.h */,
 				A9E745C62119A59E00645EEA /* ASHSearchContentVM.m */,
+				A9E745D1211AA2DA00645EEA /* ASHZheKou99ViewModel.h */,
+				A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -882,6 +890,8 @@
 				A9E745672118510100645EEA /* ASHSearchRecommondModel.m */,
 				A9E745C82119A5AD00645EEA /* ASHSearchContentModel.h */,
 				A9E745C92119A5AD00645EEA /* ASHSearchContentModel.m */,
+				A9E745CE211AA19C00645EEA /* ASHZheKou99Model.h */,
+				A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -1116,6 +1126,7 @@
 			files = (
 				A93D32BE20B2ACED00306F72 /* ShopDetailCell.m in Sources */,
 				A9D0D1B11E96164F0047CB88 /* ASHSettingVC.m in Sources */,
+				A9E745D0211AA19C00645EEA /* ASHZheKou99Model.m in Sources */,
 				A91CE7BD2099C87B008F612E /* BaseViewController.m in Sources */,
 				A9A8AFE6211303DF000C18CB /* ASHOneImageCell.m in Sources */,
 				A93D329B20AD6C6500306F72 /* HomeCell3.m in Sources */,
@@ -1194,6 +1205,7 @@
 				A98F76AA1E948E8100916E79 /* ASHHomeViewModel.m in Sources */,
 				A93E214B20A1882E00B6556E /* HomeCell2.m in Sources */,
 				A9E745C421199CBB00645EEA /* ASHTypeSearchView.m in Sources */,
+				A9E745D3211AA2DA00645EEA /* ASHZheKou99ViewModel.m in Sources */,
 				A9E744D12117E97E00645EEA /* ASHWebNSURLProtocol.m in Sources */,
 				A9E745CD2119AD3D00645EEA /* ASHSearchTagView.m in Sources */,
 				A988AFC221117DD7009AC6A8 /* ASHEBHomeViewController.m in Sources */,

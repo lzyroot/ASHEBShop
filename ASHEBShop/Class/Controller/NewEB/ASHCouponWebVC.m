@@ -126,12 +126,23 @@
 }
 // 当内容开始返回时调用
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSString* doct = @"document.getElementById( \"downloadBar\").style.display= \"none\"";
-        [webView evaluateJavaScript:doct completionHandler:^(id _Nullable html, NSError * _Nullable error) {
-            NSLog(@"html--:%@",html);
-        }];
-    });
+    
+    
+    NSString *doc =@"document.body.outerHTML";
+
+    [webView evaluateJavaScript:doc
+     
+              completionHandler:^(id htmlStr,NSError *  error) {
+                  
+                  
+                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                      NSString* doct = @"document.getElementById( \"downloadBar\").style.display= \"none\"";
+                      [webView evaluateJavaScript:doct completionHandler:^(id _Nullable html, NSError * _Nullable error) {
+                          NSLog(@"html--:%@",html);
+                      }];
+                  });
+                  
+              }] ;
     
     
 }
