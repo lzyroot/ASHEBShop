@@ -40,7 +40,8 @@
     ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
     proEntity.requireType = HTTPRequestTypeWithGET;
     proEntity.isCache = NO;
-    proEntity.baseUrl = url;
+    
+    proEntity.baseUrl = [url urlEncode];
     proEntity.responesOBJ = [ASHSearchRecommondModel class];
     @weakify(self);
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHSearchRecommondModel* model) {

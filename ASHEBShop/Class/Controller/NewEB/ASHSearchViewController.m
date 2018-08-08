@@ -104,7 +104,7 @@
         [self.historyTagView setTagIndexAction:^(NSInteger index) {
             @strongify(self);
             ASHSearchListViewController* vc = [ASHSearchListViewController new];
-            vc.searchKey = [ASHSearchManager shareInstance].historyTags[index];
+            vc.searchKey = ([[[ASHSearchManager shareInstance].historyTags reverseObjectEnumerator] allObjects])[index];
             [self presentViewController:vc animated:NO completion:nil];
         }];
         

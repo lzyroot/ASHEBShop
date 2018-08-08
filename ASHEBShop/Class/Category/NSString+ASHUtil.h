@@ -12,4 +12,7 @@
 - (NSInteger)getInteger;
 
 - (CGFloat)widthForFontSize:(CGFloat)fontSize;
+
+- (NSString*)urlEncode;
+
 @end
