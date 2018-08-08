@@ -16,6 +16,7 @@
 #import "ASHOneImageCell.h"
 #import "ASHCouponWebVC.h"
 #import "ASHTabCategoryView.h"
+#import "ASHZheKou99ViewController.h"
 #import <AXWebViewController.h>
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
@@ -36,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lineColor];
-    
+    self.navigationItem.title = @"";
     self.hasTimeline = NO;
     [MobClick event:@"category" attributes:@{@"id":@(0)}];
     _viewModel = [ASHCategoryViewModel new];
@@ -228,6 +229,19 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHCaetgoryTwoCell" owner:nil options:nil] firstObject];
         }
+        [(ASHCaetgoryTwoCell*)cell setItemClickAction:^(NSInteger index) {
+            if (index == 0) {
+                ASHZheKou99ViewController* vc = [ASHZheKou99ViewController new];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+                webVC.hidesBottomBarWhenPushed = YES;
+                webVC.couponUrl = @"http://m.sqkb.com/coupon/newrank";
+                [self.navigationController pushViewController:webVC animated:YES];
+            }
+
+        }];
     }else if (self.hasTimeline && indexPath.row == 2) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"ASHOneImageCell"];
         if (!cell) {

@@ -179,6 +179,13 @@
 		A9E745CD2119AD3D00645EEA /* ASHSearchTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745CC2119AD3D00645EEA /* ASHSearchTagView.m */; };
 		A9E745D0211AA19C00645EEA /* ASHZheKou99Model.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */; };
 		A9E745D3211AA2DA00645EEA /* ASHZheKou99ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */; };
+		A9E745D6211ABA2900645EEA /* ASHZheKou99ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745D5211ABA2900645EEA /* ASHZheKou99ViewController.m */; };
+		A9E745DC211ACA7900645EEA /* ASHZheKouTimeLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745DB211ACA7900645EEA /* ASHZheKouTimeLineModel.m */; };
+		A9E745DF211ACC7B00645EEA /* ASHZhekouTimelineVM.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745DE211ACC7B00645EEA /* ASHZhekouTimelineVM.m */; };
+		A9E745E2211AD96A00645EEA /* ASHTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745E1211AD96A00645EEA /* ASHTopicViewController.m */; };
+		A9E745E5211ADC0E00645EEA /* tab_99_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E745E3211ADC0D00645EEA /* tab_99_icon@2x.png */; };
+		A9E745E6211ADC0E00645EEA /* tab_99_icon_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E745E4211ADC0D00645EEA /* tab_99_icon_select@2x.png */; };
+		A9E745E9211AEE4800645EEA /* UIViewController+ASHHideen.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E745E8211AEE4800645EEA /* UIViewController+ASHHideen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -446,6 +453,18 @@
 		A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKou99Model.m; sourceTree = "<group>"; };
 		A9E745D1211AA2DA00645EEA /* ASHZheKou99ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZheKou99ViewModel.h; sourceTree = "<group>"; };
 		A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKou99ViewModel.m; sourceTree = "<group>"; };
+		A9E745D4211ABA2900645EEA /* ASHZheKou99ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZheKou99ViewController.h; sourceTree = "<group>"; };
+		A9E745D5211ABA2900645EEA /* ASHZheKou99ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKou99ViewController.m; sourceTree = "<group>"; };
+		A9E745DA211ACA7900645EEA /* ASHZheKouTimeLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZheKouTimeLineModel.h; sourceTree = "<group>"; };
+		A9E745DB211ACA7900645EEA /* ASHZheKouTimeLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZheKouTimeLineModel.m; sourceTree = "<group>"; };
+		A9E745DD211ACC7B00645EEA /* ASHZhekouTimelineVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHZhekouTimelineVM.h; sourceTree = "<group>"; };
+		A9E745DE211ACC7B00645EEA /* ASHZhekouTimelineVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHZhekouTimelineVM.m; sourceTree = "<group>"; };
+		A9E745E0211AD96A00645EEA /* ASHTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTopicViewController.h; sourceTree = "<group>"; };
+		A9E745E1211AD96A00645EEA /* ASHTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHTopicViewController.m; sourceTree = "<group>"; };
+		A9E745E3211ADC0D00645EEA /* tab_99_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_99_icon@2x.png"; sourceTree = "<group>"; };
+		A9E745E4211ADC0D00645EEA /* tab_99_icon_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_99_icon_select@2x.png"; sourceTree = "<group>"; };
+		A9E745E7211AEE4800645EEA /* UIViewController+ASHHideen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ASHHideen.h"; sourceTree = "<group>"; };
+		A9E745E8211AEE4800645EEA /* UIViewController+ASHHideen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ASHHideen.m"; sourceTree = "<group>"; };
 		E92DC0095FB10F58826E69C8 /* Pods-ASHEBShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASHEBShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -708,6 +727,8 @@
 				A9E745C62119A59E00645EEA /* ASHSearchContentVM.m */,
 				A9E745D1211AA2DA00645EEA /* ASHZheKou99ViewModel.h */,
 				A9E745D2211AA2DA00645EEA /* ASHZheKou99ViewModel.m */,
+				A9E745DD211ACC7B00645EEA /* ASHZhekouTimelineVM.h */,
+				A9E745DE211ACC7B00645EEA /* ASHZhekouTimelineVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -754,6 +775,8 @@
 				A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */,
 				A9E7456E211951D800645EEA /* UISearchBar+ASHUtil.h */,
 				A9E7456F211951D800645EEA /* UISearchBar+ASHUtil.m */,
+				A9E745E7211AEE4800645EEA /* UIViewController+ASHHideen.h */,
+				A9E745E8211AEE4800645EEA /* UIViewController+ASHHideen.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -761,6 +784,8 @@
 		A93EED001E792AB6001378B1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9E745E4211ADC0D00645EEA /* tab_99_icon_select@2x.png */,
+				A9E745E3211ADC0D00645EEA /* tab_99_icon@2x.png */,
 				A9E7456C211929DE00645EEA /* nav_back_arrow_icon@2x.png */,
 				A9E74561211847A500645EEA /* btn_search_history_clear@2x.png */,
 				A9A8AFF4211422FF000C18CB /* cate_coupon_freepost_icon@2x.png */,
@@ -856,6 +881,10 @@
 				A9E7455921182E8600645EEA /* ASHSearchViewController.m */,
 				A9E74569211925DD00645EEA /* ASHSearchListViewController.h */,
 				A9E7456A211925DD00645EEA /* ASHSearchListViewController.m */,
+				A9E745D4211ABA2900645EEA /* ASHZheKou99ViewController.h */,
+				A9E745D5211ABA2900645EEA /* ASHZheKou99ViewController.m */,
+				A9E745E0211AD96A00645EEA /* ASHTopicViewController.h */,
+				A9E745E1211AD96A00645EEA /* ASHTopicViewController.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -892,6 +921,8 @@
 				A9E745C92119A5AD00645EEA /* ASHSearchContentModel.m */,
 				A9E745CE211AA19C00645EEA /* ASHZheKou99Model.h */,
 				A9E745CF211AA19C00645EEA /* ASHZheKou99Model.m */,
+				A9E745DA211ACA7900645EEA /* ASHZheKouTimeLineModel.h */,
+				A9E745DB211ACA7900645EEA /* ASHZheKouTimeLineModel.m */,
 			);
 			path = NewEB;
 			sourceTree = "<group>";
@@ -1010,6 +1041,7 @@
 				A90619901E9CFFE600B5D6E5 /* startlabel.png in Resources */,
 				A9A8AFF721142300000C18CB /* center_badge_hot@2x.png in Resources */,
 				A93EECE81E78EE26001378B1 /* LaunchScreen.storyboard in Resources */,
+				A9E745E5211ADC0E00645EEA /* tab_99_icon@2x.png in Resources */,
 				A93D32BF20B2ACED00306F72 /* ShopDetailCell.xib in Resources */,
 				A988AFCA211182EB009AC6A8 /* search@3x.png in Resources */,
 				A93E21282099CF4D00B6556E /* home_normal@2x.png in Resources */,
@@ -1028,6 +1060,7 @@
 				A93E21312099D22500B6556E /* mall_selected@3x.png in Resources */,
 				A93E21322099D22500B6556E /* mall_selected@2x.png in Resources */,
 				A9A8AFDD2112FD63000C18CB /* center_coupon_expired_bg@2x.png in Resources */,
+				A9E745E6211ADC0E00645EEA /* tab_99_icon_select@2x.png in Resources */,
 				A93E21302099D22500B6556E /* mall_normal@3x.png in Resources */,
 				A9A8AFDA2112FAA4000C18CB /* home_nav_bg@2x.png in Resources */,
 				A93EED0F1E7935C4001378B1 /* ShopItemCell.xib in Resources */,
@@ -1144,6 +1177,7 @@
 				A988AFDC2111A50E009AC6A8 /* ASHShareInstace.m in Sources */,
 				A93E215320A19B0400B6556E /* UIView+ASHUtil.m in Sources */,
 				A9A8B00021145884000C18CB /* ASHSpecialViewModel.m in Sources */,
+				A9E745DF211ACC7B00645EEA /* ASHZhekouTimelineVM.m in Sources */,
 				A91CE7B72099BFAB008F612E /* ASHCategoryVC.m in Sources */,
 				A9E7455D2118339800645EEA /* ASHSearchModel.m in Sources */,
 				A93EED121E793D12001378B1 /* UILabel+ASHUtil.m in Sources */,
@@ -1171,6 +1205,8 @@
 				A93D32C220B2C95400306F72 /* ASHShopDetailModel.m in Sources */,
 				A9E745CA2119A5AD00645EEA /* ASHSearchContentModel.m in Sources */,
 				A91CE7BA2099C84B008F612E /* MainViewController.m in Sources */,
+				A9E745D6211ABA2900645EEA /* ASHZheKou99ViewController.m in Sources */,
+				A9E745E2211AD96A00645EEA /* ASHTopicViewController.m in Sources */,
 				A98F76A71E94869400916E79 /* ASHBaseViewModel.m in Sources */,
 				A988AFE22111B3C6009AC6A8 /* ASHTabCategoryView.m in Sources */,
 				A93EECDD1E78EE26001378B1 /* AppDelegate.m in Sources */,
@@ -1189,12 +1225,14 @@
 				A9A8B00321145A5F000C18CB /* ASHSpecialViewController.m in Sources */,
 				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
+				A9E745E9211AEE4800645EEA /* UIViewController+ASHHideen.m in Sources */,
 				A9E74565211850A800645EEA /* ASHSearchRecommondVM.m in Sources */,
 				A93EECFF1E7921E0001378B1 /* UIImage+ASHUtil.m in Sources */,
 				A9A8AFFA2114303C000C18CB /* ASHCouponModel.m in Sources */,
 				A9C1DD782112B4FB0045E4C4 /* ASHTopicViewModel.m in Sources */,
 				A9C1DD68211296650045E4C4 /* ASHCaetgoryTwoCell.m in Sources */,
 				A9E745C72119A59E00645EEA /* ASHSearchContentVM.m in Sources */,
+				A9E745DC211ACA7900645EEA /* ASHZheKouTimeLineModel.m in Sources */,
 				A93E2137209AA80F00B6556E /* HomeCell.m in Sources */,
 				A98F76C31E9514F200916E79 /* NSString+ASHJson.m in Sources */,
 				A93E215920A1A27800B6556E /* UIViewController+ASHChildController.m in Sources */,

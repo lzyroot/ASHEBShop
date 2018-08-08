@@ -32,6 +32,7 @@
 #import "UIView+ASHFrame.h"
 #import "UISearchBar+ASHUtil.h"
 #import "ASHPropertyEntity.h"
+#import "UIViewController+ASHHideen.h"
 #import <ReactiveCocoa.h>
 #import <MJRefresh.h>
 #import <UMMobClick/MobClick.h>

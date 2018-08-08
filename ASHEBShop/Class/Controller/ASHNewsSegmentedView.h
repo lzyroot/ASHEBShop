@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIFont *titleSelectFont;
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *titleSelectColor;
+@property (nonatomic, assign) BOOL showType;
 
 @property (nonatomic, weak, nullable) id<ASHNewsSegmentedViewDelegate> delegate;
 @property (nonatomic, weak, nullable) id<ASHNewsSegmentedViewDataSource> dataSource;

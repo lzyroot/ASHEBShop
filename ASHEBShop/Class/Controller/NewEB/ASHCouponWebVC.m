@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"";
     self.view.backgroundColor = [UIColor lineColor];
     
     [self.view addSubview:self.wkWebView];
@@ -43,7 +44,11 @@
     htmlString = [htmlString stringByReplacingOccurrencesOfString:text withString:@""];
     return htmlString;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
+    [super viewWillAppear:animated];
+}
 -(WKWebView*)wkWebView{
     
     if (!_wkWebView) {
@@ -213,6 +218,7 @@
     NSLog(@"%@",navigationAction.request.URL.absoluteString);
     
     if ([url containsString:@"uland.taobao.com/coupon/edetail"] || [url containsString:@"h5.m.taobao.com/awp/core/detail.htm"]) {
+        [MobClick event:@"gotaobao"];
         AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
         showParam.openType = AlibcOpenTypeNative;
         id<AlibcTradePage> page = [AlibcTradePageFactory page:url];

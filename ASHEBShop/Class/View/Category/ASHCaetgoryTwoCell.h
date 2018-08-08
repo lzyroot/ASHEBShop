@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ASHCaetgoryTwoCell : UITableViewCell
-
+@property(copy,nonatomic)void(^itemClickAction)(NSInteger index);
 @end

@@ -33,6 +33,9 @@
     if (self.categoryId != 0) {
         baseUrl = [NSString stringWithFormat:@"http://m.sqkb.com/topicByCate?sortType=%ld&page=0&pageSize=40&cateCollectionId=%ld&couponPage=%ld",self.sortType,self.categoryId,page];
     }
+    if (_isZhekou) {
+        baseUrl = [NSString stringWithFormat:@"http://m.sqkb.com/coupon/k9/couponList?cate_collection_id=%ld&page=%ld&pagesize=20",self.categoryId,page];
+    }
     proEntity.baseUrl = baseUrl;
     
     

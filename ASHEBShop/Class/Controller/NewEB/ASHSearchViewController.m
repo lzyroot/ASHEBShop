@@ -28,8 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    [MobClick event:@"search"];
+    self.navigationItem.title = @"";
     self.view.backgroundColor = [UIColor whiteColor];
     self.shouldShow = NO;
     [self initData];
@@ -66,8 +66,26 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.navigationController.navigationBar.alpha = 0;
     [super viewWillAppear:animated];
     self.cancelButton.enabled = YES;
+//    self.navigationController.delegate = self;
+}
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.alpha = 1;
+    [super viewWillDisappear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+//    self.navigationController.navigationBarHidden = YES;
+    [super viewDidAppear:animated];
 }
 - (void)initSearchBar
 {
@@ -115,7 +133,7 @@
             @strongify(self);
             ASHSearchListViewController* vc = [ASHSearchListViewController new];
             vc.searchKey = ([[[ASHSearchManager shareInstance].historyTags reverseObjectEnumerator] allObjects])[index];
-            [self presentViewController:vc animated:NO completion:nil];
+            [self.navigationController pushViewController:vc animated:NO];
         }];
         
     }else{
@@ -141,8 +159,7 @@
         [self.tableView reloadData];
         ASHSearchListViewController* vc = [ASHSearchListViewController new];
         vc.searchKey = model.title;
-
-        [self presentViewController:vc animated:NO completion:nil];
+        [self.navigationController pushViewController:vc animated:NO];
     }];
     
 
@@ -169,7 +186,7 @@
 #pragma UISearchBarDelegate
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {

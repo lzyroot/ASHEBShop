@@ -20,9 +20,11 @@
 #import "ASHCouponWebVC.h"
 #import "ASHTabModel.h"
 #import "ASHSpecialViewController.h"
+#import "ASHZhekouTimelineVM.h"
 @interface ASHEBCategory2VC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
 @property (nonatomic, strong)ASHTopicViewModel* topicViewModel;
+@property (nonatomic, strong)ASHZhekouTimelineVM* timeLineVM;
 @property (nonatomic, strong)UITableView* tableView;
 @property (nonatomic, strong)ASHBannerView *bannerView;
 @property (nonatomic, assign)BOOL hasTimeline;//是否有限时秒杀
@@ -39,18 +41,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lineColor];
-    
+    self.navigationItem.title = @"";
     self.hasTimeline = NO;
     [MobClick event:@"category" attributes:@{@"id":@(0)}];
     _viewModel = [ASHCategoryViewModel new];
     _viewModel.categoryId = self.categoryId;
+    
     _topicViewModel = [ASHTopicViewModel new];
     _topicViewModel.sortType = 7;
     _topicViewModel.categoryId = self.categoryId;
+    _topicViewModel.isZhekou = self.isZhekou;
+    
+    if (_isZhekou) {
+        _timeLineVM = [ASHZhekouTimelineVM new];
+        _timeLineVM.categoryId = self.categoryId;
+    }
+    
     self.typeIndex = 0;
     self.shouldScrollTop = NO;
-    [self bindViewModel];
+    
     [self bindTopicVM];
+    if (!_isZhekou) {
+        [self bindViewModel];
+    }else{
+        [self bindTimeLine];
+    }
+    
+    
     
     [self initTableView];
 }
@@ -136,6 +153,7 @@
 {
     [_viewModel requestData];
     [_topicViewModel requestData];
+    [_timeLineVM requestData];
 }
 - (void)loadMore
 {
@@ -162,6 +180,32 @@
         [self.tableView.mj_footer removeFromSuperview];
         [self.tableView.mj_header endRefreshing];
         [UIView showToast:kASH_NETWORK_Error];
+    }];
+}
+- (void)bindTimeLine
+{
+    @weakify(self);
+    [_timeLineVM.requestFinishedSignal subscribeNext:^(id x) {
+        @strongify(self);
+        if (_timeLineVM.model.timeline_element.count) {
+            for (ASHZheKouTimeLineInfoModel* infoModel in _timeLineVM.model.timeline_element) {
+                ASHCouponInfoModel* model = [(ASHTopicItemModel*)[infoModel.topic_list firstObject] coupon_info];
+
+                if (model) {
+                    model.item_count = [(ASHTopicItemModel*)[infoModel.topic_list firstObject] item_count];
+                    model.hasMore = YES;
+                    model.topic_id = [(ASHTopicItemModel*)[infoModel.topic_list firstObject] topic_id];
+                    NSInteger index = infoModel.index;
+                    if (_topicViewModel.model.coupon_list.count > index) {
+                        [_topicViewModel.model.coupon_list insertObject:model atIndex:index];
+                    }
+                }
+
+            }
+        }
+        [self.tableView reloadData];
+    } error:^(NSError *error) {
+        
     }];
 }
 - (void)bindTopicVM
@@ -257,17 +301,30 @@
     ASHCouponInfoModel* model2;
     if (index + 1 < self.topicViewModel.model.coupon_list.count) {
         model2 = self.topicViewModel.model.coupon_list[ index + 1];
-    }else{
-        NSLog(@"%ld",index);
     }
     [cell setModel:model1 secondModel:model2];
     @weakify(self);
     [cell setItemClickAction:^(ASHCouponInfoModel *model) {
         @strongify(self);
-        ASHCouponWebVC* webVC = [ASHCouponWebVC new];
-        webVC.hidesBottomBarWhenPushed = YES;
-        webVC.couponUrl = model.detail_url;
-        [self.navigationController pushViewController:webVC animated:YES];
+        if (model.hasMore) {
+            ASHSpecialViewController* vc = [ASHSpecialViewController new];
+            vc.specialId = model.topic_id;
+            vc.hidesBottomBarWhenPushed = YES;
+            vc.title = model.title;
+            vc.isTopic = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else{
+            
+            ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+            webVC.hidesBottomBarWhenPushed = YES;
+            if (![model.detail_url containsString:@"m.ibantang.com/zhekou"]) {
+                webVC.couponUrl = model.detail_url;
+            }else{
+                webVC.couponUrl = [NSString stringWithFormat:@"http://m.sqkb.com/coupon/%ld",(long)model.coupon_id];
+            }
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
+
     }];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -283,7 +340,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-
+    if (self.isZhekou) {
+        return 0;
+    }
     return 40.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -302,7 +361,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
 

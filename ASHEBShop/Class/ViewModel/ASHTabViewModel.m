@@ -9,6 +9,7 @@
 #import "ASHTabViewModel.h"
 @interface ASHTabViewModel()
 @property (nonatomic, strong)ASHTabModel* model;
+@property (nonatomic, strong)ASHTabModel* zhekouModel;
 @end
 @implementation ASHTabViewModel
 
@@ -38,8 +39,29 @@
         itemModel.pic = @"http://ms1.sqkb.com/dist/image/before/today-best-choose-icon-e566c712cb.png";
         [model.tab_elementArr insertObject:itemModel atIndex:0];
         self.model = model;
-        [self.ash_requestFinishedSubscriber sendNext:self.model];
-//        [self.ash_requestFinishedSubscriber sendCompleted];
+        [self requestZhekou99];
+        [self.ash_requestFinishedSubscriber sendNext:self];
+        
+    } error:^(NSError *error) {
+        [self.ash_requestFinishedSubscriber sendError:error];
+    }];
+}
+- (void)requestZhekou99{
+    [requestDisposable dispose];
+    ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
+    proEntity.requireType = HTTPRequestTypeWithGET;
+    proEntity.isCache = YES;
+    proEntity.baseUrl = @"http://m.sqkb.com/coupon/k9/cateTab";
+    proEntity.responesOBJ = [ASHTabModel class];
+    @weakify(self);
+    requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHTabModel* model) {
+        @strongify(self);
+        ASHTabItemModel* itemModel = [ASHTabItemModel new];
+        itemModel.name = @"精选";
+        itemModel.tab_id = 0;
+        [model.tab_elementArr insertObject:itemModel atIndex:0];
+        self.zhekouModel = model;
+        [self.ash_requestFinishedSubscriber sendNext:self];
         
     } error:^(NSError *error) {
         [self.ash_requestFinishedSubscriber sendError:error];

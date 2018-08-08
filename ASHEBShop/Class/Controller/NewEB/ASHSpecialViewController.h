@@ -10,4 +10,5 @@
 
 @interface ASHSpecialViewController : UIViewController
 @property(nonatomic, assign)NSInteger specialId;
+@property(nonatomic, assign)BOOL isTopic;//是否是普通专场
 @end

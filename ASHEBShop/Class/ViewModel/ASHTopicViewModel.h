@@ -9,7 +9,8 @@
 #import "ASHBaseViewModel.h"
 #import "ASHTopicModel.h"
 @interface ASHTopicViewModel : ASHBaseViewModel
+@property (nonatomic, assign) BOOL isZhekou;
 @property (nonatomic, strong, readonly)ASHTopicModel* model;
 @property (nonatomic, assign)NSInteger sortType;//默认7
-@property(nonatomic, assign)NSInteger categoryId;
+@property (nonatomic, assign)NSInteger categoryId;
 @end

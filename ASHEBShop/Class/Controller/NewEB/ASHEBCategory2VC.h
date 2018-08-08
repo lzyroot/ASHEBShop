@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ASHEBCategory2VC : UIViewController
+@property(nonatomic, assign)BOOL isZhekou;
 @property(nonatomic, assign)NSInteger categoryId;
 @end

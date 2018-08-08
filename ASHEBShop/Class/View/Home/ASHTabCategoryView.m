@@ -156,6 +156,9 @@
             if (self.categoryIndexAction) {
                 self.categoryIndexAction(index - TabCategoryBtnTag);
             }
+            if (self.closeAction) {
+                self.closeAction();
+            }
         }];
     }
 }

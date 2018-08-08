@@ -97,7 +97,12 @@
 - (void)requestData
 {
     [_viewModel requestData];
-    [_specialViewModel requestData];
+    if (_isTopic) {
+        [_specialViewModel requestTopic];
+    }else{
+        [_specialViewModel requestData];
+    }
+    
 }
 - (void)loadMore
 {
@@ -241,15 +246,18 @@
     ASHCouponInfoModel* model2;
     if (index + 1 < self.specialViewModel.model.coupon_list.count) {
         model2 = self.specialViewModel.model.coupon_list[ index + 1];
-    }else{
-        NSLog(@"%ld",index);
     }
     @weakify(self);
     [cell setItemClickAction:^(ASHCouponInfoModel *model) {
         @strongify(self);
         ASHCouponWebVC* webVC = [ASHCouponWebVC new];
         webVC.hidesBottomBarWhenPushed = YES;
-        webVC.couponUrl = model.detail_url;
+        if (![model.detail_url containsString:@"m.ibantang.com/zhekou"]) {
+            webVC.couponUrl = model.detail_url;
+        }else{
+            webVC.couponUrl = [NSString stringWithFormat:@"http://m.sqkb.com/coupon/%ld",(long)model.coupon_id];
+        }
+        
         [self.navigationController pushViewController:webVC animated:YES];
     }];
     
@@ -266,7 +274,9 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    
+    if (self.isTopic) {
+        return 0;
+    }
     return 40.0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

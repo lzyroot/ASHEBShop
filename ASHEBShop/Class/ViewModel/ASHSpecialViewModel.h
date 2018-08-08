@@ -12,4 +12,6 @@
 @property (nonatomic, strong, readonly)ASHTopicModel* model;
 @property (nonatomic, assign)NSInteger sortType;//默认7
 @property(nonatomic, assign)NSInteger specialId;
+
+- (void)requestTopic;
 @end

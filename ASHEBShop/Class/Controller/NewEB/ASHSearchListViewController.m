@@ -32,7 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [MobClick event:@"search"];
+    self.navigationItem.title = @"";
+    [MobClick event:@"searchlist"];
     _viewModel = [ASHSearchContentVM new];
     _viewModel.keyWord = self.searchKey;
     _viewModel.sortType = 7;
@@ -53,6 +54,29 @@
     
     [self requestData];
     
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.alpha = 0;
+    [super viewWillAppear:animated];
+//    self.navigationController.delegate = self;
+}
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+}
+- (void)viewDidLayoutSubviews{
+    
+    [super viewDidLayoutSubviews];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBar.alpha = 1;
+    [super viewWillDisappear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+//    self.navigationController.navigationBarHidden = YES;
+    [super viewDidAppear:animated];
 }
 #pragma mark request
 - (void)requestData
@@ -201,7 +225,7 @@
     @weakify(self);
     [[[backButton rac_signalForControlEvents:UIControlEventTouchUpInside] deliverOnMainThread] subscribeNext:^(id x) {
         @strongify(self);
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
     [self.view addSubview:backButton];
     
@@ -319,9 +343,11 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ASHSearchListViewSearch" object:self.searchbar.text];
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
 }
+
+
 @end

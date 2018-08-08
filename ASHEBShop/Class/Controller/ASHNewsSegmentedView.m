@@ -45,7 +45,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.scrollView.frame = self.bounds;
-    self.scrollView.ash_width = self.ash_width - 50;
+    if (self.showType) {
+        self.scrollView.ash_width = self.ash_width - 50;
+    }else{
+        self.scrollView.ash_width = self.ash_width;
+    }
+    
     [self updateSubViewFrame];
 }
 
@@ -71,26 +76,28 @@
         make.top.right.bottom.equalTo(self);
         make.width.mas_equalTo(20);
     }];
-    
-    //阴影
-    CAGradientLayer *bottomGradient = [CAGradientLayer layer];
-    bottomGradient.colors = @[(__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:1].CGColor, (__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:0].CGColor];
-    bottomGradient.startPoint = CGPointMake(1.0, 0.0);
-    bottomGradient.endPoint = CGPointMake(0.0, 0.0);
-    bottomGradient.frame = CGRectMake(self.ash_width - 80, 0, 50, self.ash_height);
-    [self.layer addSublayer:bottomGradient];
-    
-    _categoryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _categoryBtn.frame = CGRectMake(0, 0, 16, 16);
-    [_categoryBtn setImage:[UIImage imageNamed:@"category.png"] forState:UIControlStateNormal];
-    _categoryBtn.ash_centerY = self.ash_height / 2;
-    _categoryBtn.ash_right = self.ash_width - 20;
-    [_categoryBtn addTarget:self action:@selector(categoryBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_categoryBtn];
-    
 }
 
-
+- (void)setShowType:(BOOL)showType
+{
+    _showType = showType;
+    if (showType && !_categoryBtn) {
+        CAGradientLayer *bottomGradient = [CAGradientLayer layer];
+        bottomGradient.colors = @[(__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:1].CGColor, (__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:0].CGColor];
+        bottomGradient.startPoint = CGPointMake(1.0, 0.0);
+        bottomGradient.endPoint = CGPointMake(0.0, 0.0);
+        bottomGradient.frame = CGRectMake(self.ash_width - 80, 0, 50, self.ash_height);
+        [self.layer addSublayer:bottomGradient];
+        
+        _categoryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _categoryBtn.frame = CGRectMake(0, 0, 16, 16);
+        [_categoryBtn setImage:[UIImage imageNamed:@"category.png"] forState:UIControlStateNormal];
+        _categoryBtn.ash_centerY = self.ash_height / 2;
+        _categoryBtn.ash_right = self.ash_width - 20;
+        [_categoryBtn addTarget:self action:@selector(categoryBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_categoryBtn];
+    }
+}
 - (UIScrollView *)scrollView {
     if (_scrollView == nil) {
         _scrollView = [[UIScrollView alloc] init];

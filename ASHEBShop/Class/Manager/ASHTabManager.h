@@ -12,5 +12,5 @@
 + (instancetype)shareInstance;
 
 @property(nonatomic, readonly,strong)ASHTabModel* model;
-@property(nonatomic, readonly,strong)ASHTabModel* hasRecommendmodel;//手动增加今日推荐
+@property(nonatomic, readonly,strong)ASHTabModel* zhekouModel;
 @end

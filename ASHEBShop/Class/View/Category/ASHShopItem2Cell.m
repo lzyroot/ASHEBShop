@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIView *shopView2;
 @property (weak, nonatomic) IBOutlet UIImageView *shopImageView1;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *itemCountLabel1;
+@property (weak, nonatomic) IBOutlet UILabel *itemCountLabel2;
 @property (weak, nonatomic) IBOutlet UIImageView *couponImageView1;
 @property (weak, nonatomic) IBOutlet UILabel *oriPriceLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *vipPrice1;
@@ -45,6 +47,18 @@
 - (void)setModel:(ASHCouponInfoModel *)model secondModel:(ASHCouponInfoModel *)model2
 {
 
+    if (model.hasMore) {
+        self.itemCountLabel1.hidden = NO;
+        self.itemCountLabel1.text = [NSString stringWithFormat:@"共%ld件",model.item_count ];
+    }else{
+        self.itemCountLabel1.hidden = YES;
+    }
+    if (model2.hasMore) {
+        self.itemCountLabel2.hidden = NO;
+        self.itemCountLabel2.text = [NSString stringWithFormat:@"共%ld件",model2.item_count];
+    }else{
+        self.itemCountLabel2.hidden = YES;
+    }
     [self.shopImageView1 sd_setImageWithURL:[NSURL URLWithString:model.thumbnail_pic]];
     if (model.post_free) {
         self.titleLabel1.text = [NSString stringWithFormat:@"         %@",model.title];

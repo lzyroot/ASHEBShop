@@ -194,24 +194,42 @@
                             <action selector="itemBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q4w-aa-ViY"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共50件   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-Sw-R6O">
+                        <rect key="frame" x="131" y="2" width="53.5" height="16"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33010602678571427" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共50件   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHK-1y-xlH">
+                        <rect key="frame" x="325.5" y="2" width="53.5" height="16"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33010602680000001" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="lJL-lm-Imt" firstAttribute="bottom" secondItem="UuF-T1-qyD" secondAttribute="bottom" id="1Aq-KP-lq7"/>
+                    <constraint firstItem="4Go-oB-JoJ" firstAttribute="leading" secondItem="hlB-Sw-R6O" secondAttribute="trailing" constant="10" id="1Sb-8N-Ghz"/>
                     <constraint firstItem="lJL-lm-Imt" firstAttribute="trailing" secondItem="UuF-T1-qyD" secondAttribute="trailing" id="55L-zz-Pf2"/>
                     <constraint firstAttribute="bottom" secondItem="UuF-T1-qyD" secondAttribute="bottom" constant="5" id="6tu-5p-U7X"/>
                     <constraint firstItem="lJL-lm-Imt" firstAttribute="leading" secondItem="UuF-T1-qyD" secondAttribute="leading" id="9tc-Wc-O6f"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="trailing" secondItem="2O7-wP-htq" secondAttribute="trailing" id="B4E-xX-B3f"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="leading" secondItem="UuF-T1-qyD" secondAttribute="trailing" constant="5" id="HLR-yl-rwE"/>
                     <constraint firstAttribute="trailing" secondItem="4Go-oB-JoJ" secondAttribute="trailing" id="HYE-CQ-GlN"/>
+                    <constraint firstItem="hlB-Sw-R6O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="I1o-SS-A8L"/>
                     <constraint firstItem="UuF-T1-qyD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KxY-bj-tdU"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="leading" secondItem="2O7-wP-htq" secondAttribute="leading" id="Lt7-cY-agB"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="width" secondItem="UuF-T1-qyD" secondAttribute="width" id="RfR-C8-DKO"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="bottom" secondItem="2O7-wP-htq" secondAttribute="bottom" id="YLS-qm-vxR"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YXM-Pg-7k6"/>
                     <constraint firstAttribute="bottom" secondItem="4Go-oB-JoJ" secondAttribute="bottom" constant="5" id="c0r-yR-njO"/>
+                    <constraint firstAttribute="trailing" secondItem="vHK-1y-xlH" secondAttribute="trailing" constant="5" id="e4s-en-gfD"/>
                     <constraint firstItem="lJL-lm-Imt" firstAttribute="top" secondItem="UuF-T1-qyD" secondAttribute="top" id="k3P-sM-9co"/>
                     <constraint firstItem="4Go-oB-JoJ" firstAttribute="top" secondItem="2O7-wP-htq" secondAttribute="top" id="kC9-Ha-bMg"/>
                     <constraint firstItem="UuF-T1-qyD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nPR-WV-0cv"/>
+                    <constraint firstItem="vHK-1y-xlH" firstAttribute="top" secondItem="hlB-Sw-R6O" secondAttribute="top" id="qlx-jQ-TrB"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -219,6 +237,8 @@
             <connections>
                 <outlet property="couponImageView1" destination="szM-WX-NdM" id="4Dk-Pj-v7l"/>
                 <outlet property="couponImageView2" destination="OyJ-EW-wiM" id="KXq-GJ-15m"/>
+                <outlet property="itemCountLabel1" destination="hlB-Sw-R6O" id="GI1-vq-gzz"/>
+                <outlet property="itemCountLabel2" destination="vHK-1y-xlH" id="1c8-v6-W26"/>
                 <outlet property="oriPriceLabel1" destination="o6F-o7-93H" id="yvs-e8-sw7"/>
                 <outlet property="oriPriceLabel2" destination="WJi-hg-Opj" id="Soy-Wb-YzJ"/>
                 <outlet property="saleCountLabel1" destination="b8l-Rr-iqX" id="Vur-7P-a3w"/>
@@ -236,7 +256,7 @@
                 <outlet property="vipPrice1" destination="m38-c8-4GT" id="8ya-ej-fXb"/>
                 <outlet property="vipPriceLabel2" destination="24E-cU-eX9" id="PbN-2L-cQr"/>
             </connections>
-            <point key="canvasLocation" x="-293" y="-200"/>
+            <point key="canvasLocation" x="-154" y="-456"/>
         </tableViewCell>
     </objects>
     <resources>

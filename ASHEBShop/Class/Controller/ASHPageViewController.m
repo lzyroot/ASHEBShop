@@ -746,12 +746,13 @@ typedef NS_ENUM(NSInteger, ASHPageScrollDirection) {
         // 自动清楚cache中childvc，进到前台后将dic中的childvc复制到cache中
         return;
     }
-    @weakify(self);
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        @strongify(self);
-        [self _cache:cache willEvictObject:obj];
-    });
+//    @weakify(self);
+//
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        @strongify(self);
+//        [self _cache:cache willEvictObject:obj];
+//    });
 }
 
 - (void)_cache:(NSCache *)cache willEvictObject:(UIViewController *)obj {

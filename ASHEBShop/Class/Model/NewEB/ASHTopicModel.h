@@ -27,6 +27,10 @@
 @property (nonatomic, assign)NSInteger product_type;
 @property (nonatomic, assign)NSTimeInterval offline_time;
 @property (nonatomic, assign)NSInteger month_sales;
+
+@property (nonatomic, assign)BOOL hasMore;//是否多个商品
+@property (nonatomic, assign)NSInteger item_count;
+@property (nonatomic, assign)NSInteger topic_id;
 @end
 
 @protocol ASHTopicItemModel <NSObject>

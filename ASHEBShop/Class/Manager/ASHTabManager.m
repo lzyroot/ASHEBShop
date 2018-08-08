@@ -11,6 +11,7 @@
 @interface ASHTabManager()
 @property(nonatomic, strong)ASHTabViewModel* viewModel;
 @property(nonatomic,strong)ASHTabModel* model;
+@property(nonatomic,strong)ASHTabModel* zhekouModel;
 @end
 @implementation ASHTabManager
 + (void)load
@@ -30,9 +31,15 @@
     if (self) {
         _viewModel = [ASHTabViewModel new];
         @weakify(self);
-        [_viewModel.requestFinishedSignal subscribeNext:^(id x) {
+        [_viewModel.requestFinishedSignal subscribeNext:^(ASHTabViewModel* tabViewModel) {
             @strongify(self);
-            self.model = x;
+            
+            if (tabViewModel.model) {
+                self.model = tabViewModel.model;
+            }
+            if (tabViewModel.zhekouModel) {
+                self.zhekouModel = tabViewModel.zhekouModel;
+            }
             [[NSNotificationCenter defaultCenter] postNotificationName:@"kASH_Post_Tab" object:nil];
         }];
         [_viewModel requestData];

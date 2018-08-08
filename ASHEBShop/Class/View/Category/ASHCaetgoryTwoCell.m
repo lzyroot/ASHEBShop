@@ -26,7 +26,10 @@
 
     // Configure the view for the selected state
 }
-- (IBAction)itemBtnClick:(id)sender {
+- (IBAction)itemBtnClick:(UIButton*)sender {
+    if (self.itemClickAction) {
+        self.itemClickAction(sender.tag - 1);
+    }
 }
 
 @end

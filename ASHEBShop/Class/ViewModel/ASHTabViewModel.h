@@ -10,4 +10,5 @@
 #import "ASHTabModel.h"
 @interface ASHTabViewModel : ASHBaseViewModel
 @property (nonatomic, strong, readonly)ASHTabModel* model;
+@property (nonatomic, strong, readonly)ASHTabModel* zhekouModel;
 @end
