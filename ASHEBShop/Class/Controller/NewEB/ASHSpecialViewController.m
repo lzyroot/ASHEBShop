@@ -15,6 +15,7 @@
 #import "ASHShopItem2Cell.h"
 #import "ASHTypeSessionView.h"
 #import "ASHSpecialViewModel.h"
+#import "ASHCouponWebVC.h"
 @interface ASHSpecialViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)ASHSpecialViewModel* specialViewModel;
 @property (nonatomic, strong)ASHCategoryViewModel* viewModel;
@@ -57,7 +58,7 @@
     self.tableView.backgroundColor = [UIColor lineColor];
     self.tableView.backgroundView.backgroundColor = [UIColor lineColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
     
     
@@ -243,6 +244,15 @@
     }else{
         NSLog(@"%ld",index);
     }
+    @weakify(self);
+    [cell setItemClickAction:^(ASHCouponInfoModel *model) {
+        @strongify(self);
+        ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+        webVC.hidesBottomBarWhenPushed = YES;
+        webVC.couponUrl = model.detail_url;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }];
+    
     [cell setModel:model1 secondModel:model2];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

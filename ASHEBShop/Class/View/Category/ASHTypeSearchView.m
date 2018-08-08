@@ -76,9 +76,11 @@
     UIButton* leftButton = [self viewWithTag:1];
     UIButton* centerButton = [self viewWithTag:2];
     UIButton* rightButton = [self viewWithTag:3];
+    UIButton* lastButton = [self viewWithTag:4];
     leftButton.selected = NO;
     centerButton.selected = NO;
     rightButton.selected = NO;
+    lastButton.selected = NO;
     button.selected = YES;
     if (self.typeSelectAction) {
         self.typeSelectAction(button.tag - 1);
@@ -89,9 +91,11 @@
     UIButton* leftButton = [self viewWithTag:1];
     UIButton* centerButton = [self viewWithTag:2];
     UIButton* rightButton = [self viewWithTag:3];
+    UIButton* lastButton = [self viewWithTag:4];
     leftButton.selected = NO;
     centerButton.selected = NO;
     rightButton.selected = NO;
+    lastButton.selected = NO;
     
     UIButton* button = [self viewWithTag:index+1];
     button.selected = YES;

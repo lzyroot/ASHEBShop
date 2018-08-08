@@ -36,6 +36,16 @@
     [self initTableView];
     [self initSearchBar];
     [self bindViewModel];
+    
+    @weakify(self);
+    [[[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"ASHSearchListViewSearch" object:nil] takeUntil:self.rac_willDeallocSignal] deliverOnMainThread] subscribeNext:^(NSNotification* x) {
+        @strongify(self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.searchbar.text = x.object;
+            [self.searchbar becomeFirstResponder];
+        });
+
+    }];
 }
 - (void)bindViewModel
 {
@@ -148,7 +158,7 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.backgroundView.backgroundColor = [UIColor lineColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
     
     

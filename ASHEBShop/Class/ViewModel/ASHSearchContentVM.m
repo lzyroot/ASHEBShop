@@ -26,8 +26,8 @@
     [requestDisposable dispose];
     ASHPropertyEntity* proEntity = [[ASHPropertyEntity alloc] init];
     proEntity.requireType = HTTPRequestTypeWithGET;
-    proEntity.isCache = YES;
-    proEntity.baseUrl = [[NSString stringWithFormat:@"http://m.sqkb.com/search/searchResultData?sortType=%ld&word=%@&page=%ld&pageSize=40",self.sortType,self.keyWord,page] urlEncode];
+    proEntity.isCache = NO;
+    proEntity.baseUrl = [NSString stringWithFormat:@"m.sqkb.com/search/searchResultData?sortType=%ld&word=%@&page=%ld&pageSize=40",self.sortType,[self.keyWord urlEncode],page];
     proEntity.responesOBJ = [ASHSearchContentModel class];
     @weakify(self);
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHSearchContentModel* model) {
@@ -41,7 +41,7 @@
             [array addObjectsFromArray:model.coupon_list];
             ((ASHTopicModel*)self.model).coupon_list = array;
         }
-        if (model.coupon_list.count >= 40) {
+        if (model.coupon_list.count >= 20) {
             self.hasMore = YES;
         }else{
             self.hasMore = NO;

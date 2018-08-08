@@ -66,7 +66,7 @@
     self.tableView.backgroundColor = [UIColor lineColor];
     self.tableView.backgroundView.backgroundColor = [UIColor lineColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
     [self.view addSubview:self.tableView];
     
     
@@ -272,6 +272,8 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.topicViewModel.hasMore && (indexPath.item >= self.topicViewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {

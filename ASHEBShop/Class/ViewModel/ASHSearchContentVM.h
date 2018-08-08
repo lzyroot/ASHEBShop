@@ -7,7 +7,7 @@
 //
 
 #import "ASHBaseViewModel.h"
-@class ASHSearchContentModel;
+#import "ASHSearchContentModel.h"
 @interface ASHSearchContentVM : ASHBaseViewModel
 @property (nonatomic, strong,readonly)ASHSearchContentModel* model;
 @property (nonatomic, assign)NSInteger sortType;

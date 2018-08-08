@@ -12,6 +12,7 @@
 #import "ASHTypeSearchView.h"
 #import "ASHShopItem2Cell.h"
 #import "ASHSearchContentVM.h"
+#import "ASHCouponWebVC.h"
 #import "ASHSearchTagView.h"
 @interface ASHSearchListViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong)ASHSearchBar *searchbar;
@@ -40,21 +41,49 @@
     _recommondVM.keyWord = self.searchKey;
     self.typeIndex = 0;
     self.shouldScrollTop = NO;
+
+
+    
+    
+    [self initSearchBar];
+    [self initTableView];
+    
     [self bindViewModel];
     [self bindSpecialViewModel];
     
     [self requestData];
-    [self initSearchBar];
-    [self initTableView];
-    [self setupCategoryTopView];
+    
+}
+#pragma mark request
+- (void)requestData
+{
+    [_viewModel requestData];
+    [_recommondVM requestData];
+}
+- (void)loadMore
+{
+    [_viewModel loadMore];
 }
 - (void)bindViewModel
 {
     @weakify(self);
     [_viewModel.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
-        [self setupCategoryTopView];
+        [self setFooter];
+        if(!self.viewModel.hasMore){
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }else{
+            
+            [self.tableView.mj_footer resetNoMoreData];
+        }
+        
         [self.tableView reloadData];
+        if (self.shouldScrollTop) {
+            self.shouldScrollTop = NO;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.tableView setContentOffset:CGPointZero animated:YES];
+            });
+        }
     } error:^(NSError *error) {
         @strongify(self);
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
@@ -68,23 +97,9 @@
     @weakify(self);
     [_recommondVM.requestFinishedSignal subscribeNext:^(id x) {
         @strongify(self);
-        [self.tableView.mj_header endRefreshing];
-        [self setFooter];
-        if(!self.recommondVM.hasMore){
-            [self.tableView.mj_footer endRefreshingWithNoMoreData];
-        }else{
-            
-            [self.tableView.mj_footer resetNoMoreData];
-        }
-        
+        [self setupCategoryTopView];
         [self.tableView reloadData];
-        if (self.shouldScrollTop) {
-            self.shouldScrollTop = NO;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-            });
-            
-        }
+        
         
     } error:^(NSError *error) {
         @strongify(self);
@@ -94,30 +109,39 @@
         [UIView showToast:kASH_NETWORK_Error];
     }];
 }
+
+#pragma mark View
 - (void)setupCategoryTopView
 {
-//    if (!self.viewModel.model.zhekou_cate_minipic.count) {
-//        return;
-//    }
     if (_headView) {
         [_headView removeFromSuperview];
         _headView = nil;
     }
     _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ASHScreenWidth, 90)];
+    _headView.backgroundColor = [UIColor whiteColor];
     [_headView addSubview:self.typeSelectView];
     [_headView addSubview:self.searchTagView];
     UIView* lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 90, ASHScreenWidth, 0.5)];
     lineView.backgroundColor = [UIColor lineColor];
     [_headView addSubview:lineView];
     
-    self.tableView.tableHeaderView = _headView;
-    
-    
 }
-#pragma mark View
+
 - (ASHSearchTagView*)searchTagView{
     if (!_searchTagView) {
-        _searchTagView = [[ASHSearchTagView alloc] initWithFrame:CGRectMake(0, 41, ASHScreenWidth, 50) titleArray:@[@"绵薄",@"绵薄",@"绵薄zhili",@"绵薄",@"水淀粉绵薄",@"绵薄",@"绵薄",@"绵水淀粉薄",@"绵山薄",@"绵ss薄",@"绵sd薄",@"绵薄",@"绵薄"]];
+        _searchTagView = [[ASHSearchTagView alloc] initWithFrame:CGRectMake(0, 41, ASHScreenWidth, 50) titleArray:self.recommondVM.model.rec_word_list];
+        
+        @weakify(self);
+        [_searchTagView setTagIndexAction:^(NSInteger index) {
+            @strongify(self);
+            NSString* keyword = self.recommondVM.model.rec_word_list[index];
+            self.viewModel.keyWord = keyword;
+            self.recommondVM.keyWord = keyword;
+            self.searchbar.text = keyword;
+            [_searchTagView removeFromSuperview];
+            _searchTagView = nil;
+            [self requestData];
+        }];
     }
     return _searchTagView;
 }
@@ -134,10 +158,13 @@
                 self.viewModel.sortType = 7;
             }
             if (index == 1) {
-                self.viewModel.sortType = 6;
+                self.viewModel.sortType = 1;
             }
             if (index == 2) {
-                self.viewModel.sortType = 1;
+                self.viewModel.sortType = 3;
+            }
+            if (index == 2) {
+                self.viewModel.sortType = 2;
             }
             self.shouldScrollTop = YES;
             [self.viewModel requestData];
@@ -167,7 +194,6 @@
     searchField.backgroundColor = [UIColor lineColor];
     [searchField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
     [searchField setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
-    [searchField becomeFirstResponder];
     
     UIButton* backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.frame = CGRectMake(0, 15, 44, 44);
@@ -183,19 +209,20 @@
 }
 
 - (void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.ash_top = 60;
+//    self.tableView.ash_height -= 60;
     self.tableView.layer.masksToBounds = YES;
     self.tableView.layer.cornerRadius = 5.0;
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = [UIColor lineColor];
     self.tableView.backgroundView.backgroundColor = [UIColor lineColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.showsVerticalScrollIndicator = YES;
+    self.tableView.estimatedRowHeight = ASHScreenWidth / 2 * 1.58;
     [self.view addSubview:self.tableView];
-    
     
     [_tableView registerNib:[UINib nibWithNibName:@"ASHShopItem2Cell" bundle:nil] forCellReuseIdentifier:@"ASHShopItem2Cell"];
 }
@@ -214,15 +241,7 @@
     
     
 }
-- (void)requestData
-{
-    [_viewModel requestData];
-    [_recommondVM requestData];
-}
-- (void)loadMore
-{
-    [_recommondVM loadMore];
-}
+
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -231,10 +250,9 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
-//    NSInteger count = self.viewModel.model.coupon_list.count;
-//    count = count / 2 + count % 2;
-//    return count;
+    NSInteger count = self.viewModel.model.coupon_list.count;
+    count = count / 2 + count % 2;
+    return count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -246,46 +264,64 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ASHShopItem2Cell* cell;
-//    cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem2Cell"];
-//    if (!cell) {
-//        cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem2Cell" owner:nil options:nil] firstObject];
-//    }
-//    NSInteger index = indexPath.row*2;
-//    if (index >= self.specialViewModel.model.coupon_list.count) {
-//        return cell;
-//    }
-//    ASHCouponInfoModel* model1 = self.specialViewModel.model.coupon_list[index];
-//    ASHCouponInfoModel* model2;
-//    if (index + 1 < self.specialViewModel.model.coupon_list.count) {
-//        model2 = self.specialViewModel.model.coupon_list[ index + 1];
-//    }else{
-//        NSLog(@"%ld",index);
-//    }
-//    [cell setModel:model1 secondModel:model2];
+    cell = [tableView dequeueReusableCellWithIdentifier:@"ASHShopItem2Cell"];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"ASHShopItem2Cell" owner:nil options:nil] firstObject];
+    }
+    NSInteger index = indexPath.row*2;
+    if (index >= self.viewModel.model.coupon_list.count) {
+        return cell;
+    }
+    ASHCouponInfoModel* model1 = self.viewModel.model.coupon_list[index];
+    ASHCouponInfoModel* model2;
+    if (index + 1 < self.viewModel.model.coupon_list.count) {
+        model2 = self.viewModel.model.coupon_list[ index + 1];
+    }else{
+        NSLog(@"%ld",index);
+    }
+    @weakify(self);
+    [cell setItemClickAction:^(ASHCouponInfoModel *model) {
+        @strongify(self);
+        ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+        webVC.hidesBottomBarWhenPushed = YES;
+        webVC.couponUrl = model.detail_url;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }];
     
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setModel:model1 secondModel:model2];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    if (self.specialViewModel.hasMore && (indexPath.item >= self.specialViewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {
+//    if (self.viewModel.hasMore && (indexPath.item >= self.viewModel.model.coupon_list.count - 4) && (tableView.contentOffset.y > 0)) {
 //        [self.tableView.mj_footer beginRefreshing];
 //    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     
-    return 0.0;
+    return 90.0;
 }
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    return _typeSelectView;
-//}
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return _headView;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0;
+    return 0.01;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [[UIView alloc]init];
+}
+#pragma mark UISearchBarDelegate
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ASHSearchListViewSearch" object:self.searchbar.text];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
 }
 @end

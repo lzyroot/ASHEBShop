@@ -24,14 +24,14 @@
 
 - (void)requestHomeDataWithPage:(NSInteger)page
 {
-    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchRecommondByWordData?sortType=%ld&word=%@",self.sortType,self.keyWord];
+    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchRecommondByWordData?sortType=%ld&word=%@",self.sortType,[self.keyWord urlEncode] ];
     [self requestUrl:url];
 }
 
 - (void)requestSeachWord:(NSString*)keyword{
     
     
-    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchSuggestWordData?word=%@",keyword];
+    NSString* url = [NSString stringWithFormat:@"http://m.sqkb.com/search/searchSuggestWordData?word=%@",[keyword urlEncode]];
     [self requestUrl:url];
 }
 - (void)requestUrl:(NSString*)url
@@ -41,7 +41,7 @@
     proEntity.requireType = HTTPRequestTypeWithGET;
     proEntity.isCache = NO;
     
-    proEntity.baseUrl = [url urlEncode];
+    proEntity.baseUrl = url;
     proEntity.responesOBJ = [ASHSearchRecommondModel class];
     @weakify(self);
     requestDisposable = [[ASHNetWork newRequestSignWithEneity:proEntity] subscribeNext:^(ASHSearchRecommondModel* model) {
