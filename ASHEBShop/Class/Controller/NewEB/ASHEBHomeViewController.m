@@ -69,6 +69,7 @@
     
     [button setSearchAction:^(UIButton *button) {
         ASHSearchViewController* searchVC = [ASHSearchViewController new];
+        searchVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:searchVC animated:YES];
     }];
     [titleView addSubview:button];
