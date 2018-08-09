@@ -1007,7 +1007,7 @@
 				TargetAttributes = {
 					A93EECD41E78EE26001378B1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = X75CUV458P;
+						DevelopmentTeam = T63J6SF7QS;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1378,7 +1378,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X75CUV458P;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1437,8 +1437,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
+				PROVISIONING_PROFILE = "0db1c73a-6ae7-43a6-a7aa-8658a3bff824";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Debug;
@@ -1451,7 +1451,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: wu ShengHua (E2D99JSE7J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = X75CUV458P;
+				DEVELOPMENT_TEAM = T63J6SF7QS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1510,8 +1510,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ash.ASHEBShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82874b4a-5ff0-45d4-9384-941166006f82";
-				PROVISIONING_PROFILE_SPECIFIER = ASHEBShop;
+				PROVISIONING_PROFILE = "0db1c73a-6ae7-43a6-a7aa-8658a3bff824";
+				PROVISIONING_PROFILE_SPECIFIER = "企业inhouse通用";
 				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 			};
 			name = Release;
