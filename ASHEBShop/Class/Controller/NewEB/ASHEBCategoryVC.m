@@ -16,6 +16,7 @@
 #import "ASHOneImageCell.h"
 #import "ASHCouponWebVC.h"
 #import "ASHTabCategoryView.h"
+#import "ASHSpecialViewController.h"
 #import "ASHZheKou99ViewController.h"
 #import <AXWebViewController.h>
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
@@ -115,6 +116,19 @@
     _bannerView.images = bannerImages;
     _bannerView.onDidClickEvent = ^(NSInteger index) {
         @strongify(self);
+        ASHCategoryItemModel* model = self.viewModel.model.zhekou_index_banner[index];
+        NSString* topicString = model.extend;
+        topicString = [[topicString componentsSeparatedByString:@"?"] firstObject];
+        
+        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z\u4e00-\u9fa5/:.]+" options:0 error:NULL];
+        NSString* result = [regular stringByReplacingMatchesInString:topicString options:0 range:NSMakeRange(0, [topicString length]) withTemplate:@""];
+        
+        ASHSpecialViewController* vc = [ASHSpecialViewController new];
+        vc.specialId = [result integerValue];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.title = model.title;
+        vc.isTopic = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     self.tableView.tableHeaderView = _bannerView;
 }
@@ -255,6 +269,7 @@
         }
         
         NSInteger index = indexPath.row;
+        
         if (self.hasTimeline && indexPath.row > 2) {
             index--;
         }
@@ -268,6 +283,13 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if(self.hasTimeline && indexPath.row == 2){
+        ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+        webVC.hidesBottomBarWhenPushed = YES;
+        webVC.couponUrl = self.timelineModel.extend;
+        [self.navigationController pushViewController:webVC animated:YES];
+        return;
+    }
     NSInteger index = indexPath.row;
     if (self.hasTimeline && indexPath.row > 2) {
         index--;

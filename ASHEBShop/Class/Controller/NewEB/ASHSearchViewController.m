@@ -190,7 +190,13 @@
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    
+
+    [[ASHSearchManager shareInstance] searchWithKey:searchBar.text];
+    [self initHistoryView];
+    [self.tableView reloadData];
+    ASHSearchListViewController* vc = [ASHSearchListViewController new];
+    vc.searchKey = searchBar.text;
+    [self.navigationController pushViewController:vc animated:NO];
 }
 #pragma mark UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -253,7 +259,13 @@
     if (!self.shouldShow) {
         return;
     }
-    
+    NSString* text = _searchViewModel.model.search_word_list[indexPath.row];
+    [[ASHSearchManager shareInstance] searchWithKey:text];
+    [self initHistoryView];
+    [self.tableView reloadData];
+    ASHSearchListViewController* vc = [ASHSearchListViewController new];
+    vc.searchKey = text;
+    [self.navigationController pushViewController:vc animated:NO];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
