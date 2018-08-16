@@ -15,6 +15,7 @@ FOUNDATION_EXPORT NSString *kASH_CACHE_PATH;
 
 //post
 FOUNDATION_EXPORT NSString *kASH_Post_Tab;
-
+FOUNDATION_EXPORT NSString *kASHTaobaoQueryBagFinishNotification;
+FOUNDATION_EXPORT NSString *kASHTaobaoQLoginSuccess;
 //string
 FOUNDATION_EXPORT NSString *kASH_NETWORK_Error;

@@ -66,4 +66,5 @@
 +(NSString *)stringWithNSInteger:(NSInteger)integer{
     return [NSString stringWithFormat:@"%ld",integer];
 }
+
 @end

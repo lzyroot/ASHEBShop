@@ -90,7 +90,10 @@ static NSString *const kHTTPHeaderField = @"ASH-WebView-Caching";
     if ([request valueForHTTPHeaderField:kHTTPHeaderField]) {
         return NO;
     }
-    
+    NSString *taobaoBagUrl = @"https://acs.m.taobao.com/h5/mtop.trade.querybag";
+    if ([request.URL.absoluteString containsString:taobaoBagUrl]) {
+        return NO;
+    }
     return YES;
 }
 
@@ -124,6 +127,7 @@ static NSString *const kHTTPHeaderField = @"ASH-WebView-Caching";
 //        [[self client] URLProtocolDidFinishLoading:self];
 ////        return;
 //    }
+    
     
     
     NSMutableURLRequest *newRequest = [self.request mutableCopy];

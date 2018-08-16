@@ -19,4 +19,6 @@
 +(NSString *) jsonStringWithObject:(id) object;
 
 +(NSString *)stringWithNSInteger:(NSInteger)integer;
+
+
 @end

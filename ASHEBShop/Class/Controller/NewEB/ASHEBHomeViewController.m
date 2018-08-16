@@ -16,6 +16,8 @@
 #import "ASHTabCategoryView.h"
 #import "ASHEBCategoryVC.h"
 #import "ASHEBCategory2VC.h"
+#import "ASHCouponWebVC.h"
+#import "ASHWebCartViewController.h"
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
 #import "ASHSearchViewController.h"
@@ -74,7 +76,7 @@
     }];
     [titleView addSubview:button];
     UIButton* cartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cartButton.frame = CGRectMake(0, 7, 16, 16);
+    cartButton.frame = CGRectMake(0, 6, 22, 22);
     [cartButton setImage:[UIImage imageNamed:@"cart"] forState:UIControlStateNormal];
     cartButton.backgroundColor = [UIColor clearColor];
     cartButton.ash_right = titleView.ash_width - 30;
@@ -82,13 +84,16 @@
     @weakify(self);
     [[cartButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
-        AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
-        id<AlibcTradePage> page = [AlibcTradePageFactory myCartsPage];
-        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:nil trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
-            
-        } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-            NSLog(@"%@", [error description]);
-        }];
+        ASHWebCartViewController* webVC = [ASHWebCartViewController new];
+        webVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:webVC animated:YES];
+//        AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
+//        id<AlibcTradePage> page = [AlibcTradePageFactory myCartsPage];
+//        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:nil trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+//
+//        } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+//            NSLog(@"%@", [error description]);
+//        }];
     }];
     [titleView addSubview:cartButton];
     

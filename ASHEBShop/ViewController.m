@@ -99,8 +99,10 @@
         id<AlibcTradePage> page = [AlibcTradePageFactory myCartsPage];
         AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
         showParam.openType = AlibcOpenTypeAuto;
+        AlibcTradeTaokeParams *taoKeParams = [[AlibcTradeTaokeParams alloc] init];
+        taoKeParams.pid = kASH_TAOBAO_PID;
 //        showParam.isNeedPush = YES;
-        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams: nil trackParam: nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams: taoKeParams trackParam: nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
             
         } tradeProcessFailedCallback:^(NSError * _Nullable error) {
             
@@ -251,13 +253,14 @@
     
     AlibcTradeShowParams* showParam = [[AlibcTradeShowParams alloc] init];
     showParam.openType = AlibcOpenTypeAuto;
-    
+    AlibcTradeTaokeParams *taoKeParams = [[AlibcTradeTaokeParams alloc] init];
+    taoKeParams.pid = kASH_TAOBAO_PID;
     if (_viewModel.model.goodsJa.count > indexPath.row) {
         ASHHomeItemModel* model = [_viewModel.model.goodsJa objectAtIndex:indexPath.row];
         NSDictionary *dict = @{@"index" : @(model.id)};
         [MobClick event:@"shopclick" attributes:dict];
         id<AlibcTradePage> page = [AlibcTradePageFactory page: model.goodsUrl];
-        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:nil trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:taoKeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
             
         } tradeProcessFailedCallback:^(NSError * _Nullable error) {
             NSLog(@"%@", [error description]);

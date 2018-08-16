@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithHexString:@"#FBF5F5" alpha:1.0];
-    self.title = @"推荐";
+    self.title = @"精选";
     [self initTableView];
     _viewModel = [ASHNewHomeViewModel new];
     [self.tableView.mj_header beginRefreshing];

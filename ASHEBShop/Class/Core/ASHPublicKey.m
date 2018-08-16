@@ -16,5 +16,8 @@ NSString* kASH_CACHE_PATH = @"CACHE_PATH";
 
 
 NSString* kASH_Post_Tab = @"kASH_Post_Tab";
-
+NSString* kASHTaobaoQueryBagFinishNotification = @"kASHTaobaoQueryBagFinishNotification";
+NSString* kASHTaobaoQLoginSuccess = @"kASHTaobaoQLoginSuccess";
 NSString* kASH_NETWORK_Error = @"网络异常,请稍后重试";
+
+

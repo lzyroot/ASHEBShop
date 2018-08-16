@@ -91,7 +91,10 @@
 #pragma mark - open url
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    [[AlibcTradeSDK sharedInstance] application:app openURL:url options:options];
+    
+    if([[AlibcTradeSDK sharedInstance] application:app openURL:url options:options]){
+        
+    }
     return YES;
 }
 - (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation
