@@ -90,11 +90,18 @@ static NSString *const kHTTPHeaderField = @"ASH-WebView-Caching";
     if ([request valueForHTTPHeaderField:kHTTPHeaderField]) {
         return NO;
     }
+    
+    NSString *urlString = request.URL.absoluteString;
+    
     NSString *taobaoBagUrl = @"https://acs.m.taobao.com/h5/mtop.trade.querybag";
-    if ([request.URL.absoluteString containsString:taobaoBagUrl]) {
+    if ([urlString containsString:taobaoBagUrl]) {
         return NO;
     }
-    return YES;
+    
+    if([urlString containsString:@"analytics.js"]){
+        return YES;
+    }
+    return NO;
 }
 
 + (NSURLRequest*)canonicalRequestForRequest:(NSURLRequest *)request

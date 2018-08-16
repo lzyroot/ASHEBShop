@@ -13,7 +13,7 @@
 #import "ALPTBURIParam.h"
 #import "ALPJumpFailedStrategy.h"
 
-#define ALPSDKVersion @"1.1.0.4"
+#define ALPSDKVersion @"1.1.1.2"
 
 typedef NS_ENUM(NSInteger, ALPOpenType) {
     ALPOpenTypeNative,          //跳转native打开
@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, ALPConfigEnv) {
     ALPConfigEnvDaily,       //测试环境
     ALPConfigEnvPreRelease,  //预发环境
 };
+
+typedef void(^ALPJumpBackBlock)(NSURL *_Nullable url, NSError *_Nullable error);
 
 @interface ALPTBLinkPartnerSDK : NSObject
 
@@ -70,22 +72,15 @@ typedef NS_ENUM(NSInteger, ALPConfigEnv) {
 /**
  *  设置业务追踪id，仅供二方使用，其他接入无需关心
  *
- *  @param ttid
+ *  @param ttid ttid
  */
 + (void)setTTID:(nonnull NSString *)ttid;
-
-/**
- *  授权登录时必传
- *
- *  @param authSecret 百川平台appSecret
- */
-+ (void)setAuthSecret:(nonnull NSString *)authSecret;
 
 /**
  *  跳转到店铺页
  *
  *  @param param    店铺的配置参数
- *  @param strategy 跳转失败时处理策略，不传，默认h5页面打开
+ *  @param strategy 跳转失败时处理策略，不传，返回错误信息
  *
  *  @return 错误信息
  */
@@ -96,7 +91,7 @@ typedef NS_ENUM(NSInteger, ALPConfigEnv) {
  *  跳转到商品详情页
  *
  *  @param param    商品详情的配置参数
- *  @param strategy 跳转失败时处理策略，不传，默认h5页面打开
+ *  @param strategy 跳转失败时处理策略，不传，返回错误信息
  *
  *  @return 错误信息
  */
@@ -108,14 +103,26 @@ typedef NS_ENUM(NSInteger, ALPConfigEnv) {
  *  跳转到接入AlibcFlowCustoms SDK的APP，相当于通用跳转（类似openURL：）
  *
  *  @param param    URI的配置参数
- *  @param strategy 跳转失败时处理策略，不传，默认h5页面打开（通用跳转设置为ALPJumpFailedModeOpenNone）
+ *  @param strategy 跳转失败时处理策略，不传，返回错误信息
  *
  *  @return 错误信息
  */
 + (nullable ALPError *)jumpURI:(nonnull ALPTBURIParam *)param
                 failedStrategy:(nullable ALPJumpFailedStrategy *)strategy;
 
-;
+/**
+ *  通用跳转，param参数中的routeRule必传，匹配接入AlibcFlowCustoms SDK 中注册的插件执行，回跳时触发回调
+ *
+ *  @param param    URI的配置参数
+ *  @param strategy 跳转失败时处理策略，不传，返回错误信息
+ *  @param callback 触发插件执行，回跳时的回调。
+ *  跳转去目标APP，切换回来，认为用户取消操作触发回调，返回错误信息
+ *
+ *  @return 错误信息
+ */
++ (nullable ALPError *)jumpURI:(nonnull ALPTBURIParam *)param
+                failedStrategy:(nullable ALPJumpFailedStrategy *)strategy
+              jumpBackCallback:(nullable ALPJumpBackBlock)callback;
 
 /**
  *  跳转失败，是否支持默认打开手淘
@@ -134,6 +141,13 @@ typedef NS_ENUM(NSInteger, ALPConfigEnv) {
  */
 + (BOOL)handleOpenURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication;
 
-
+/**
+ *  检查是否能打开指定app，传入是linkKey，比如：@"taobao"，指手淘
+ *
+ *  @param linkkey linkkey
+ *
+ *  @return 是否能打开APP
+ */
++ (BOOL)canOpenApp:(nonnull NSString *)linkkey;
 
 @end

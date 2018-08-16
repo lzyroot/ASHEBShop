@@ -226,13 +226,17 @@
         showParam.openType = AlibcOpenTypeNative;
         AlibcTradeTaokeParams *taoKeParams = [[AlibcTradeTaokeParams alloc] init];
         taoKeParams.pid = kASH_TAOBAO_PID;
-        id<AlibcTradePage> page = [AlibcTradePageFactory page:url];
-//        id<AlibcTradePage> page = [AlibcTradePageFactory itemDetailPage:self.itemId];
-        [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:taoKeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
-            
-        } tradeProcessFailedCallback:^(NSError * _Nullable error) {
-            NSLog(@"%@", [error description]);
-        }];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            id<AlibcTradePage> page = [AlibcTradePageFactory page:url];
+//            id<AlibcTradePage> page = [AlibcTradePageFactory itemDetailPage:self.itemId];
+            [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:taoKeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
+                
+            } tradeProcessFailedCallback:^(NSError * _Nullable error) {
+                NSLog(@"%@", [error description]);
+            }];
+        });
+        
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
 

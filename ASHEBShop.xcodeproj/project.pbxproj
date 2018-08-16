@@ -19,25 +19,6 @@
 		A92BC6421E7BCD490019B435 /* ASHNetWorkManagerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BC6401E7BCD490019B435 /* ASHNetWorkManagerImpl.m */; };
 		A92BC6451E7BD4BA0019B435 /* ASHPropertyEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = A92BC6441E7BD4BA0019B435 /* ASHPropertyEntity.m */; };
 		A92BC6481E7FF7B00019B435 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A92BC6471E7FF7AF0019B435 /* yw_1222.jpg */; };
-		A92BC65E1E7FF8760019B435 /* AlibabaAuthExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC64B1E7FF8760019B435 /* AlibabaAuthExt.framework */; };
-		A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A92BC64C1E7FF8760019B435 /* AlibabaAuthSDK.bundle */; };
-		A92BC6601E7FF8760019B435 /* AlibabaAuthSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC64D1E7FF8760019B435 /* AlibabaAuthSDK.framework */; };
-		A92BC6611E7FF8760019B435 /* AlibcLinkPartnerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC64E1E7FF8760019B435 /* AlibcLinkPartnerSDK.framework */; };
-		A92BC6621E7FF8760019B435 /* AlibcTradeBiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC64F1E7FF8760019B435 /* AlibcTradeBiz.framework */; };
-		A92BC6631E7FF8760019B435 /* AlibcTradeCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6501E7FF8760019B435 /* AlibcTradeCommon.framework */; };
-		A92BC6641E7FF8760019B435 /* AlibcTradeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6511E7FF8760019B435 /* AlibcTradeSDK.framework */; };
-		A92BC6651E7FF8760019B435 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A92BC6521E7FF8760019B435 /* AlipaySDK.bundle */; };
-		A92BC6661E7FF8760019B435 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6531E7FF8760019B435 /* AlipaySDK.framework */; };
-		A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A92BC6541E7FF8760019B435 /* ALPLinkPartnerSDK.bundle */; };
-		A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A92BC6551E7FF8760019B435 /* NBResource.bundle */; };
-		A92BC6691E7FF8760019B435 /* OpenMtopExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6561E7FF8760019B435 /* OpenMtopExt.framework */; };
-		A92BC66A1E7FF8760019B435 /* OpenMtopSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6571E7FF8760019B435 /* OpenMtopSDK.framework */; };
-		A92BC66B1E7FF8760019B435 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6581E7FF8760019B435 /* SecurityGuardSDK.framework */; };
-		A92BC66C1E7FF8760019B435 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6591E7FF8760019B435 /* SGMain.framework */; };
-		A92BC66D1E7FF8760019B435 /* SGNoCaptcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC65A1E7FF8760019B435 /* SGNoCaptcha.framework */; };
-		A92BC66E1E7FF8760019B435 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC65B1E7FF8760019B435 /* SGSecurityBody.framework */; };
-		A92BC66F1E7FF8760019B435 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC65C1E7FF8760019B435 /* UTDID.framework */; };
-		A92BC6701E7FF8760019B435 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC65D1E7FF8760019B435 /* UTMini.framework */; };
 		A92BC6741E7FFA460019B435 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6731E7FFA460019B435 /* CoreTelephony.framework */; };
 		A92BC6761E7FFA6C0019B435 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92BC6751E7FFA6C0019B435 /* CoreMotion.framework */; };
 		A9318F261E822B2800E66569 /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = A9318F251E822B2800E66569 /* set.png */; };
@@ -181,6 +162,26 @@
 		A9D5B836212575E7009286F9 /* tab_recommend_icon_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B834212575E7009286F9 /* tab_recommend_icon_select@2x.png */; };
 		A9D5B83821257662009286F9 /* icon_page_nodata_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B83721257662009286F9 /* icon_page_nodata_empty@2x.png */; };
 		A9D5B83B21258244009286F9 /* NSDictionary+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5B83A21258244009286F9 /* NSDictionary+ASHUtil.m */; };
+		A9D5B86921259D5D009286F9 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85A21259D59009286F9 /* UTMini.framework */; };
+		A9D5B86A21259D5D009286F9 /* AlibcTradeBiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85B21259D5A009286F9 /* AlibcTradeBiz.framework */; };
+		A9D5B86B21259D5D009286F9 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85C21259D5A009286F9 /* AlipaySDK.framework */; };
+		A9D5B86C21259D5D009286F9 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85D21259D5A009286F9 /* SecurityGuardSDK.framework */; };
+		A9D5B86D21259D5D009286F9 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85E21259D5A009286F9 /* SGMain.framework */; };
+		A9D5B86E21259D5D009286F9 /* OpenMtopExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B85F21259D5B009286F9 /* OpenMtopExt.framework */; };
+		A9D5B86F21259D5D009286F9 /* OpenMtopSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86021259D5B009286F9 /* OpenMtopSDK.framework */; };
+		A9D5B87021259D5D009286F9 /* AlibcTradeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86121259D5B009286F9 /* AlibcTradeSDK.framework */; };
+		A9D5B87121259D5D009286F9 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86221259D5B009286F9 /* UTDID.framework */; };
+		A9D5B87221259D5D009286F9 /* AlibcLinkPartnerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86321259D5C009286F9 /* AlibcLinkPartnerSDK.framework */; };
+		A9D5B87321259D5D009286F9 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86421259D5C009286F9 /* SGSecurityBody.framework */; };
+		A9D5B87421259D5D009286F9 /* AlibcTradeCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86521259D5C009286F9 /* AlibcTradeCommon.framework */; };
+		A9D5B87521259D5D009286F9 /* AlibabaAuthExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86621259D5C009286F9 /* AlibabaAuthExt.framework */; };
+		A9D5B87621259D5D009286F9 /* AlibabaAuthSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86721259D5C009286F9 /* AlibabaAuthSDK.framework */; };
+		A9D5B87721259D5D009286F9 /* TUnionTradeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D5B86821259D5D009286F9 /* TUnionTradeSDK.framework */; };
+		A9D5B87C21259D61009286F9 /* AlibabaAuthSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87821259D60009286F9 /* AlibabaAuthSDK.bundle */; };
+		A9D5B87D21259D61009286F9 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87921259D60009286F9 /* AlipaySDK.bundle */; };
+		A9D5B87E21259D61009286F9 /* ALPLinkPartnerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */; };
+		A9D5B87F21259D61009286F9 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87B21259D61009286F9 /* NBResource.bundle */; };
+		A9D5B88121259F12009286F9 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B88021259F12009286F9 /* yw_1222.jpg */; };
 		A9E744CB211590DA00645EEA /* NSString+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */; };
 		A9E744CE2115944F00645EEA /* ASHCouponWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */; };
 		A9E744D12117E97E00645EEA /* ASHWebNSURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CF2117E97E00645EEA /* ASHWebNSURLProtocol.m */; };
@@ -241,25 +242,6 @@
 		A92BC6441E7BD4BA0019B435 /* ASHPropertyEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHPropertyEntity.m; sourceTree = "<group>"; };
 		A92BC6461E7BD50D0019B435 /* ASHTypedefDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHTypedefDefine.h; sourceTree = "<group>"; };
 		A92BC6471E7FF7AF0019B435 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
-		A92BC64B1E7FF8760019B435 /* AlibabaAuthExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthExt.framework; sourceTree = "<group>"; };
-		A92BC64C1E7FF8760019B435 /* AlibabaAuthSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlibabaAuthSDK.bundle; sourceTree = "<group>"; };
-		A92BC64D1E7FF8760019B435 /* AlibabaAuthSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthSDK.framework; sourceTree = "<group>"; };
-		A92BC64E1E7FF8760019B435 /* AlibcLinkPartnerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcLinkPartnerSDK.framework; sourceTree = "<group>"; };
-		A92BC64F1E7FF8760019B435 /* AlibcTradeBiz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeBiz.framework; sourceTree = "<group>"; };
-		A92BC6501E7FF8760019B435 /* AlibcTradeCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeCommon.framework; sourceTree = "<group>"; };
-		A92BC6511E7FF8760019B435 /* AlibcTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeSDK.framework; sourceTree = "<group>"; };
-		A92BC6521E7FF8760019B435 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		A92BC6531E7FF8760019B435 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
-		A92BC6541E7FF8760019B435 /* ALPLinkPartnerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ALPLinkPartnerSDK.bundle; sourceTree = "<group>"; };
-		A92BC6551E7FF8760019B435 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
-		A92BC6561E7FF8760019B435 /* OpenMtopExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenMtopExt.framework; sourceTree = "<group>"; };
-		A92BC6571E7FF8760019B435 /* OpenMtopSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenMtopSDK.framework; sourceTree = "<group>"; };
-		A92BC6581E7FF8760019B435 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
-		A92BC6591E7FF8760019B435 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
-		A92BC65A1E7FF8760019B435 /* SGNoCaptcha.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGNoCaptcha.framework; sourceTree = "<group>"; };
-		A92BC65B1E7FF8760019B435 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
-		A92BC65C1E7FF8760019B435 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
-		A92BC65D1E7FF8760019B435 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
 		A92BC6711E7FFA060019B435 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A92BC6731E7FFA460019B435 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A92BC6751E7FFA6C0019B435 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -467,6 +449,26 @@
 		A9D5B83721257662009286F9 /* icon_page_nodata_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_page_nodata_empty@2x.png"; sourceTree = "<group>"; };
 		A9D5B83921258244009286F9 /* NSDictionary+ASHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ASHUtil.h"; sourceTree = "<group>"; };
 		A9D5B83A21258244009286F9 /* NSDictionary+ASHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ASHUtil.m"; sourceTree = "<group>"; };
+		A9D5B85A21259D59009286F9 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		A9D5B85B21259D5A009286F9 /* AlibcTradeBiz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeBiz.framework; sourceTree = "<group>"; };
+		A9D5B85C21259D5A009286F9 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		A9D5B85D21259D5A009286F9 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		A9D5B85E21259D5A009286F9 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
+		A9D5B85F21259D5B009286F9 /* OpenMtopExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenMtopExt.framework; sourceTree = "<group>"; };
+		A9D5B86021259D5B009286F9 /* OpenMtopSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenMtopSDK.framework; sourceTree = "<group>"; };
+		A9D5B86121259D5B009286F9 /* AlibcTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeSDK.framework; sourceTree = "<group>"; };
+		A9D5B86221259D5B009286F9 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		A9D5B86321259D5C009286F9 /* AlibcLinkPartnerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcLinkPartnerSDK.framework; sourceTree = "<group>"; };
+		A9D5B86421259D5C009286F9 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
+		A9D5B86521259D5C009286F9 /* AlibcTradeCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeCommon.framework; sourceTree = "<group>"; };
+		A9D5B86621259D5C009286F9 /* AlibabaAuthExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthExt.framework; sourceTree = "<group>"; };
+		A9D5B86721259D5C009286F9 /* AlibabaAuthSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibabaAuthSDK.framework; sourceTree = "<group>"; };
+		A9D5B86821259D5D009286F9 /* TUnionTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TUnionTradeSDK.framework; sourceTree = "<group>"; };
+		A9D5B87821259D60009286F9 /* AlibabaAuthSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlibabaAuthSDK.bundle; sourceTree = "<group>"; };
+		A9D5B87921259D60009286F9 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ALPLinkPartnerSDK.bundle; sourceTree = "<group>"; };
+		A9D5B87B21259D61009286F9 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
+		A9D5B88021259F12009286F9 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		A9E744C9211590DA00645EEA /* NSString+ASHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHUtil.h"; sourceTree = "<group>"; };
 		A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ASHUtil.m"; sourceTree = "<group>"; };
 		A9E744CC2115944F00645EEA /* ASHCouponWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCouponWebVC.h; sourceTree = "<group>"; };
@@ -539,23 +541,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92BC6761E7FFA6C0019B435 /* CoreMotion.framework in Frameworks */,
+				A9D5B87721259D5D009286F9 /* TUnionTradeSDK.framework in Frameworks */,
+				A9D5B86C21259D5D009286F9 /* SecurityGuardSDK.framework in Frameworks */,
 				A92BC6741E7FFA460019B435 /* CoreTelephony.framework in Frameworks */,
-				A92BC6611E7FF8760019B435 /* AlibcLinkPartnerSDK.framework in Frameworks */,
-				A92BC6661E7FF8760019B435 /* AlipaySDK.framework in Frameworks */,
-				A92BC6701E7FF8760019B435 /* UTMini.framework in Frameworks */,
-				A92BC6601E7FF8760019B435 /* AlibabaAuthSDK.framework in Frameworks */,
-				A92BC66C1E7FF8760019B435 /* SGMain.framework in Frameworks */,
-				A92BC6691E7FF8760019B435 /* OpenMtopExt.framework in Frameworks */,
-				A92BC6641E7FF8760019B435 /* AlibcTradeSDK.framework in Frameworks */,
-				A92BC66E1E7FF8760019B435 /* SGSecurityBody.framework in Frameworks */,
-				A92BC66A1E7FF8760019B435 /* OpenMtopSDK.framework in Frameworks */,
-				A92BC66F1E7FF8760019B435 /* UTDID.framework in Frameworks */,
-				A92BC66B1E7FF8760019B435 /* SecurityGuardSDK.framework in Frameworks */,
+				A9D5B87521259D5D009286F9 /* AlibabaAuthExt.framework in Frameworks */,
+				A9D5B86E21259D5D009286F9 /* OpenMtopExt.framework in Frameworks */,
+				A9D5B87421259D5D009286F9 /* AlibcTradeCommon.framework in Frameworks */,
+				A9D5B86D21259D5D009286F9 /* SGMain.framework in Frameworks */,
+				A9D5B87121259D5D009286F9 /* UTDID.framework in Frameworks */,
+				A9D5B87321259D5D009286F9 /* SGSecurityBody.framework in Frameworks */,
+				A9D5B87021259D5D009286F9 /* AlibcTradeSDK.framework in Frameworks */,
+				A9D5B86F21259D5D009286F9 /* OpenMtopSDK.framework in Frameworks */,
+				A9D5B86921259D5D009286F9 /* UTMini.framework in Frameworks */,
 				1FBA5CE63B3B6A91950AEFAE /* libPods-ASHEBShop.a in Frameworks */,
-				A92BC65E1E7FF8760019B435 /* AlibabaAuthExt.framework in Frameworks */,
-				A92BC6631E7FF8760019B435 /* AlibcTradeCommon.framework in Frameworks */,
-				A92BC66D1E7FF8760019B435 /* SGNoCaptcha.framework in Frameworks */,
-				A92BC6621E7FF8760019B435 /* AlibcTradeBiz.framework in Frameworks */,
+				A9D5B86A21259D5D009286F9 /* AlibcTradeBiz.framework in Frameworks */,
+				A9D5B86B21259D5D009286F9 /* AlipaySDK.framework in Frameworks */,
+				A9D5B87621259D5D009286F9 /* AlibabaAuthSDK.framework in Frameworks */,
+				A9D5B87221259D5D009286F9 /* AlibcLinkPartnerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,25 +619,25 @@
 		A92BC64A1E7FF8760019B435 /* TaeSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A92BC64B1E7FF8760019B435 /* AlibabaAuthExt.framework */,
-				A92BC64C1E7FF8760019B435 /* AlibabaAuthSDK.bundle */,
-				A92BC64D1E7FF8760019B435 /* AlibabaAuthSDK.framework */,
-				A92BC64E1E7FF8760019B435 /* AlibcLinkPartnerSDK.framework */,
-				A92BC64F1E7FF8760019B435 /* AlibcTradeBiz.framework */,
-				A92BC6501E7FF8760019B435 /* AlibcTradeCommon.framework */,
-				A92BC6511E7FF8760019B435 /* AlibcTradeSDK.framework */,
-				A92BC6521E7FF8760019B435 /* AlipaySDK.bundle */,
-				A92BC6531E7FF8760019B435 /* AlipaySDK.framework */,
-				A92BC6541E7FF8760019B435 /* ALPLinkPartnerSDK.bundle */,
-				A92BC6551E7FF8760019B435 /* NBResource.bundle */,
-				A92BC6561E7FF8760019B435 /* OpenMtopExt.framework */,
-				A92BC6571E7FF8760019B435 /* OpenMtopSDK.framework */,
-				A92BC6581E7FF8760019B435 /* SecurityGuardSDK.framework */,
-				A92BC6591E7FF8760019B435 /* SGMain.framework */,
-				A92BC65A1E7FF8760019B435 /* SGNoCaptcha.framework */,
-				A92BC65B1E7FF8760019B435 /* SGSecurityBody.framework */,
-				A92BC65C1E7FF8760019B435 /* UTDID.framework */,
-				A92BC65D1E7FF8760019B435 /* UTMini.framework */,
+				A9D5B87821259D60009286F9 /* AlibabaAuthSDK.bundle */,
+				A9D5B87921259D60009286F9 /* AlipaySDK.bundle */,
+				A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */,
+				A9D5B87B21259D61009286F9 /* NBResource.bundle */,
+				A9D5B86621259D5C009286F9 /* AlibabaAuthExt.framework */,
+				A9D5B86721259D5C009286F9 /* AlibabaAuthSDK.framework */,
+				A9D5B86321259D5C009286F9 /* AlibcLinkPartnerSDK.framework */,
+				A9D5B85B21259D5A009286F9 /* AlibcTradeBiz.framework */,
+				A9D5B86521259D5C009286F9 /* AlibcTradeCommon.framework */,
+				A9D5B86121259D5B009286F9 /* AlibcTradeSDK.framework */,
+				A9D5B85C21259D5A009286F9 /* AlipaySDK.framework */,
+				A9D5B85F21259D5B009286F9 /* OpenMtopExt.framework */,
+				A9D5B86021259D5B009286F9 /* OpenMtopSDK.framework */,
+				A9D5B85D21259D5A009286F9 /* SecurityGuardSDK.framework */,
+				A9D5B85E21259D5A009286F9 /* SGMain.framework */,
+				A9D5B86421259D5C009286F9 /* SGSecurityBody.framework */,
+				A9D5B86821259D5D009286F9 /* TUnionTradeSDK.framework */,
+				A9D5B86221259D5B009286F9 /* UTDID.framework */,
+				A9D5B85A21259D59009286F9 /* UTMini.framework */,
 			);
 			path = TaeSDK;
 			sourceTree = "<group>";
@@ -667,6 +669,7 @@
 				A93EECDC1E78EE26001378B1 /* AppDelegate.m */,
 				A93EECDE1E78EE26001378B1 /* ViewController.h */,
 				A93EECDF1E78EE26001378B1 /* ViewController.m */,
+				A9D5B88021259F12009286F9 /* yw_1222.jpg */,
 				A9E745F7211B09C900645EEA /* icon100.png */,
 				A9E745F6211B09C800645EEA /* startlabel1.png */,
 				A9E745F4211B073000645EEA /* startlabel.png */,
@@ -1138,6 +1141,7 @@
 				A988AFC9211182EB009AC6A8 /* search@2x.png in Resources */,
 				A937EE051EBB1F0900000C5C /* delete-btn.js in Resources */,
 				A93E212B2099CF4D00B6556E /* home_normal@3x.png in Resources */,
+				A9D5B87F21259D61009286F9 /* NBResource.bundle in Resources */,
 				A9A8AFDF2112FDF6000C18CB /* setting_coupon_price_bg@2x.png in Resources */,
 				A9E74562211847A500645EEA /* btn_search_history_clear@2x.png in Resources */,
 				A9C1DD702112A5AC0045E4C4 /* small_quan_hou.png in Resources */,
@@ -1158,7 +1162,6 @@
 				A923CEC41E9C7BDE00C7246B /* cart.png in Resources */,
 				A9D5B81E21257494009286F9 /* loading15.png in Resources */,
 				A93EECE51E78EE26001378B1 /* Assets.xcassets in Resources */,
-				A92BC6651E7FF8760019B435 /* AlipaySDK.bundle in Resources */,
 				A93E21292099CF4D00B6556E /* home_selected@3x.png in Resources */,
 				A93E21332099D22500B6556E /* mall_normal@2x.png in Resources */,
 				A9C1DD722112A5F20045E4C4 /* quan_bg.png in Resources */,
@@ -1177,6 +1180,7 @@
 				A9A8AFDD2112FD63000C18CB /* center_coupon_expired_bg@2x.png in Resources */,
 				A9D5B81F21257494009286F9 /* loading8.png in Resources */,
 				A9E745E6211ADC0E00645EEA /* tab_99_icon_select@2x.png in Resources */,
+				A9D5B87E21259D61009286F9 /* ALPLinkPartnerSDK.bundle in Resources */,
 				A93E21302099D22500B6556E /* mall_normal@3x.png in Resources */,
 				A9E745F8211B09C900645EEA /* startlabel1.png in Resources */,
 				A9A8AFDA2112FAA4000C18CB /* home_nav_bg@2x.png in Resources */,
@@ -1195,6 +1199,7 @@
 				A9318F261E822B2800E66569 /* set.png in Resources */,
 				A93D32C920B6E96000306F72 /* icon1024.png in Resources */,
 				A9D5B83221257494009286F9 /* loading12.png in Resources */,
+				A9D5B87C21259D61009286F9 /* AlibabaAuthSDK.bundle in Resources */,
 				A9E745F3211B072900645EEA /* icon180.png in Resources */,
 				A937EE031EBB1D9100000C5C /* close.png in Resources */,
 				A93EECE31E78EE26001378B1 /* Main.storyboard in Resources */,
@@ -1207,22 +1212,21 @@
 				A9D5B82A21257494009286F9 /* loading17.png in Resources */,
 				A93D32A220AD713300306F72 /* homenolike@3x.png in Resources */,
 				A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */,
+				A9D5B88121259F12009286F9 /* yw_1222.jpg in Resources */,
 				A9D5B82721257494009286F9 /* loading10.png in Resources */,
 				A9E745F5211B073000645EEA /* startlabel.png in Resources */,
 				A9D5B82521257494009286F9 /* loading7.png in Resources */,
 				A93E212A2099CF4D00B6556E /* home_selected@2x.png in Resources */,
 				A9D5B82D21257494009286F9 /* loading19.png in Resources */,
-				A92BC65F1E7FF8760019B435 /* AlibabaAuthSDK.bundle in Resources */,
 				A9D5B835212575E7009286F9 /* tab_recommend_icon_select.png in Resources */,
 				A9D5B82021257494009286F9 /* loading20.png in Resources */,
-				A92BC6671E7FF8760019B435 /* ALPLinkPartnerSDK.bundle in Resources */,
 				A9D5B83121257494009286F9 /* loading5.png in Resources */,
+				A9D5B87D21259D61009286F9 /* AlipaySDK.bundle in Resources */,
 				A93D329C20AD6C6500306F72 /* HomeCell3.xib in Resources */,
 				A988AFE92111C7E9009AC6A8 /* whiteClose@3x.png in Resources */,
 				A906198E1E9CCEA400B5D6E5 /* account-3.png in Resources */,
 				A93D32A120AD713300306F72 /* homelike@3x.png in Resources */,
 				A906198D1E9CCEA400B5D6E5 /* account-2.png in Resources */,
-				A92BC6681E7FF8760019B435 /* NBResource.bundle in Resources */,
 				A9E7456D211929DE00645EEA /* nav_back_arrow_icon@2x.png in Resources */,
 				A93D32A320AD713300306F72 /* homelike@2x.png in Resources */,
 				A988AFD121119869009AC6A8 /* category@2x.png in Resources */,
@@ -1511,6 +1515,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ASHEBShop/Class/Vender/TaeSDK",
+					"$(PROJECT_DIR)/ASHEBShop/Class",
 				);
 				GCC_PREFIX_HEADER = ASHEBShop/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1584,6 +1589,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ASHEBShop/Class/Vender/TaeSDK",
+					"$(PROJECT_DIR)/ASHEBShop/Class",
 				);
 				GCC_PREFIX_HEADER = ASHEBShop/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (

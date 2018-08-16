@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 
   s.dependency  'UTDID'
 
-  s.dependency  'UTDID'
-  s.dependency  'SecurityGuardSDK'
-  s.dependency  'SGMain'
-  s.dependency  'SGSecurityBody'
-  s.dependency  'SGNoCaptcha'
+#  s.dependency  'UTDID'
+#  s.dependency  'SecurityGuardSDK'
+#  s.dependency  'SGMain'
+#  s.dependency  'SGSecurityBody'
+#  s.dependency  'SGNoCaptcha'
 
   s.source = { :git=>"git@gitlab.alibaba-inc.com:wireless/opensdk.git", :commit=> "d81fd09" }
 
