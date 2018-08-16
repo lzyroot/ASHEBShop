@@ -133,21 +133,24 @@
 - (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
     
     
-    NSString *doc =@"document.body.outerHTML";
-
-    [webView evaluateJavaScript:doc
-     
-              completionHandler:^(id htmlStr,NSError *  error) {
-                  
-                  
-                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                      NSString* doct = @"document.getElementById( \"downloadBar\").style.display= \"none\"";
-                      [webView evaluateJavaScript:doct completionHandler:^(id _Nullable html, NSError * _Nullable error) {
-                          NSLog(@"html--:%@",html);
-                      }];
-                  });
-                  
-              }] ;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *doc =@"document.body.outerHTML";
+        
+        [webView evaluateJavaScript:doc
+         
+                  completionHandler:^(id htmlStr,NSError *  error) {
+                      
+                      
+                      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                          NSString* doct = @"document.getElementById( \"downloadBar\").style.display= \"none\"";
+                          [webView evaluateJavaScript:doct completionHandler:^(id _Nullable html, NSError * _Nullable error) {
+                              NSLog(@"html--:%@",html);
+                          }];
+                      });
+                      
+                  }] ;
+    });
+   
     
     
 }
@@ -208,7 +211,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     
     NSString* url = navigationAction.request.URL.absoluteString;
-    if ([url containsString:@"http://m.sqkb.com/coupon/"] && self.isfinish == YES) {
+    if (([url containsString:@"http://m.sqkb.com/coupon/"] || [url containsString:@"https://m.sqkb.com/coupon/"])  && self.isfinish == YES) {
         ASHCouponWebVC* webVC = [ASHCouponWebVC new];
         webVC.couponUrl = url;
         [self.navigationController pushViewController:webVC animated:YES];

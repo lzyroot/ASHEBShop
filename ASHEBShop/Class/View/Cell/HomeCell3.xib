@@ -28,20 +28,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhJ-CQ-FN4">
-                                        <rect key="frame" x="8" y="13" width="37.5" height="18"/>
+                                        <rect key="frame" x="8" y="13" width="242" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="242" id="MBA-BJ-EpZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homenolike.png" translatesAutoresizingMaskIntoConstraints="NO" id="zLK-uR-5G3">
-                                        <rect key="frame" x="257.5" y="14" width="16" height="16"/>
+                                        <rect key="frame" x="260" y="14" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="58i-Nr-iR7"/>
                                             <constraint firstAttribute="width" constant="16" id="qfi-E5-Z74"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1024" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-Dm-O5g">
-                                        <rect key="frame" x="281.5" y="2" width="32.5" height="39"/>
+                                        <rect key="frame" x="284" y="2" width="30" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
