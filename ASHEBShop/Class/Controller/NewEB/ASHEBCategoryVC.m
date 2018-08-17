@@ -245,9 +245,13 @@
         }
         [(ASHCaetgoryTwoCell*)cell setItemClickAction:^(NSInteger index) {
             if (index == 0) {
-                ASHZheKou99ViewController* vc = [ASHZheKou99ViewController new];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
+//                ASHZheKou99ViewController* vc = [ASHZheKou99ViewController new];
+//                vc.hidesBottomBarWhenPushed = YES;
+//                [self.navigationController pushViewController:vc animated:YES];
+                ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+                webVC.hidesBottomBarWhenPushed = YES;
+                webVC.couponUrl = @"http://m.sqkb.com/mod/60?use_wk=1";
+                [self.navigationController pushViewController:webVC animated:YES];
             }else{
                 ASHCouponWebVC* webVC = [ASHCouponWebVC new];
                 webVC.hidesBottomBarWhenPushed = YES;

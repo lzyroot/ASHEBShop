@@ -182,6 +182,7 @@
 		A9D5B87E21259D61009286F9 /* ALPLinkPartnerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */; };
 		A9D5B87F21259D61009286F9 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87B21259D61009286F9 /* NBResource.bundle */; };
 		A9D5B88121259F12009286F9 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B88021259F12009286F9 /* yw_1222.jpg */; };
+		A9D5B8842125AA50009286F9 /* ASHLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5B8832125AA50009286F9 /* ASHLoadView.m */; };
 		A9E744CB211590DA00645EEA /* NSString+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */; };
 		A9E744CE2115944F00645EEA /* ASHCouponWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */; };
 		A9E744D12117E97E00645EEA /* ASHWebNSURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CF2117E97E00645EEA /* ASHWebNSURLProtocol.m */; };
@@ -469,6 +470,8 @@
 		A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ALPLinkPartnerSDK.bundle; sourceTree = "<group>"; };
 		A9D5B87B21259D61009286F9 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
 		A9D5B88021259F12009286F9 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
+		A9D5B8822125AA50009286F9 /* ASHLoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHLoadView.h; sourceTree = "<group>"; };
+		A9D5B8832125AA50009286F9 /* ASHLoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHLoadView.m; sourceTree = "<group>"; };
 		A9E744C9211590DA00645EEA /* NSString+ASHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHUtil.h"; sourceTree = "<group>"; };
 		A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ASHUtil.m"; sourceTree = "<group>"; };
 		A9E744CC2115944F00645EEA /* ASHCouponWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHCouponWebVC.h; sourceTree = "<group>"; };
@@ -725,6 +728,8 @@
 				A9E74572211953BF00645EEA /* ASHSearchBar.m */,
 				A9E745CB2119AD3D00645EEA /* ASHSearchTagView.h */,
 				A9E745CC2119AD3D00645EEA /* ASHSearchTagView.m */,
+				A9D5B8822125AA50009286F9 /* ASHLoadView.h */,
+				A9D5B8832125AA50009286F9 /* ASHLoadView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1365,6 +1370,7 @@
 				A98F76B71E94C8DE00916E79 /* ASHPublicKey.m in Sources */,
 				A9A8B00321145A5F000C18CB /* ASHSpecialViewController.m in Sources */,
 				A988AFCD2111962D009AC6A8 /* ASHEBCategoryVC.m in Sources */,
+				A9D5B8842125AA50009286F9 /* ASHLoadView.m in Sources */,
 				A98F76BA1E94CB8A00916E79 /* ASHCommonUtil.m in Sources */,
 				A9E745E9211AEE4800645EEA /* UIViewController+ASHHideen.m in Sources */,
 				A9E74565211850A800645EEA /* ASHSearchRecommondVM.m in Sources */,

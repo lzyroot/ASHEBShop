@@ -11,13 +11,13 @@
 #import <WebKit/WebKit.h>
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
-#import "FeThreeDotGlow.h"
+#import "ASHLoadView.h"
 @interface ASHWebCartViewController ()<UIWebViewDelegate>
 @property(nonatomic,strong)UIButton* loginBtn;
 @property(nonatomic,strong)UIView* backView;
 @property(nonatomic, strong) UIWebView* webView;
 @property(nonatomic, strong) ASHCartJonParser* parser;
-@property (strong, nonatomic) FeThreeDotGlow *threeDot;
+@property(strong, nonatomic) ASHLoadView *loadingView;
 
 @end
 
@@ -96,9 +96,11 @@
     _parser = [ASHCartJonParser new];
     [self.view addSubview:self.webView];
     [self setCartVC:self webView:self.webView];
-    _threeDot = [[FeThreeDotGlow alloc] initWithView:self.view blur:NO];
-    [self.view addSubview:_threeDot];
-    [_threeDot show];
+    _loadingView = [ASHLoadView new];
+    _loadingView.ash_top = 100;
+    _loadingView.ash_centerX = self.view.ash_width / 2;
+    [self.view addSubview:_loadingView];
+    [_loadingView show];
     
 }
 - (void)setNoLogin{
@@ -154,7 +156,7 @@
                         
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [_threeDot dismiss];
+    [_loadingView hide];
 }
 - (void)dealloc
 {

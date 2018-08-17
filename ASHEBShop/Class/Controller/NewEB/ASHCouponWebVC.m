@@ -9,17 +9,18 @@
 #import "ASHCouponWebVC.h"
 #import <WebKit/WebKit.h>
 #import "FeThreeDotGlow.h"
+#import "ASHLoadView.h"
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
 @interface ASHCouponWebVC ()<WKScriptMessageHandler,WKNavigationDelegate,WKUIDelegate>
 @property(nonatomic, strong) WKWebView* wkWebView;
 @property(nonatomic, strong)NSString* itemId;
 @property(nonatomic, assign)BOOL isfinish;
-@property (strong, nonatomic) FeThreeDotGlow *threeDot;
+@property(strong, nonatomic) ASHLoadView *loadingView;
+
 @end
 
 @implementation ASHCouponWebVC
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,9 +32,12 @@
     self.isfinish = NO;
     [MobClick event:@"couponpage"];
     
-    _threeDot = [[FeThreeDotGlow alloc] initWithView:self.view blur:NO];
-    [self.view addSubview:_threeDot];
-    [_threeDot show];
+   
+    _loadingView = [ASHLoadView new];
+    _loadingView.ash_top = 100;
+    _loadingView.ash_centerX = self.view.ash_width / 2;
+    [self.view addSubview:_loadingView];
+    [_loadingView show];
 }
 - (NSString *)filterHtmlString:(NSString *)htmlString{
     NSScanner *theScanner;
@@ -70,24 +74,6 @@
         // 在iOS上默认为NO，表示不能自动通过窗口打开
         
         config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
-        
-        // web内容处理池
-        
-//        config.processPool = [ProcessPool sharedProcessPool].wkProcessPool;
-        
-        
-        
-        // 通过JS与webview内容交互
-        
-//        config.userContentController = [[WKUserContentController alloc] init];
-        
-        // 注入JS对象名称AppModel，当JS通过AppModel来调用时，
-        
-        // 我们可以在WKScriptMessageHandler代理中接收到
-        
-//        [config.userContentController addScriptMessageHandler:self name:@"webViewApp"];
-        
-        
         
         self.wkWebView = [[WKWebView alloc] initWithFrame:CGRectMake(0,0,ASHScreenWidth,ASHScreenHeight)
                           
@@ -188,7 +174,7 @@
     });
     
     self.isfinish = YES;
-    [_threeDot dismiss];
+    [_loadingView hide];
 }
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
@@ -213,6 +199,7 @@
     NSString* url = navigationAction.request.URL.absoluteString;
     if (([url containsString:@"http://m.sqkb.com/coupon/"] || [url containsString:@"https://m.sqkb.com/coupon/"])  && self.isfinish == YES) {
         ASHCouponWebVC* webVC = [ASHCouponWebVC new];
+
         webVC.couponUrl = url;
         [self.navigationController pushViewController:webVC animated:YES];
         decisionHandler(WKNavigationActionPolicyCancel);
@@ -226,8 +213,14 @@
         showParam.openType = AlibcOpenTypeNative;
         AlibcTradeTaokeParams *taoKeParams = [[AlibcTradeTaokeParams alloc] init];
         taoKeParams.pid = kASH_TAOBAO_PID;
-        
+        if ([url containsString:@"pid=mm_"]) {
+            NSRange range =  [url rangeOfString:@"pid=mm_"];
+            range.length = 29;
+            range.location += 4;
+            url = [url stringByReplacingCharactersInRange:range withString:kASH_TAOBAO_PID];
+        }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
             id<AlibcTradePage> page = [AlibcTradePageFactory page:url];
 //            id<AlibcTradePage> page = [AlibcTradePageFactory itemDetailPage:self.itemId];
             [[AlibcTradeSDK sharedInstance].tradeService show: self page:page showParams:showParam taoKeParams:taoKeParams trackParam:nil tradeProcessSuccessCallback:^(AlibcTradeResult * _Nullable result) {
