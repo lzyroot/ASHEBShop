@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ASHWebCartViewController : UIViewController
-
+@property(nonatomic, assign)BOOL shouldBottom;
 @end

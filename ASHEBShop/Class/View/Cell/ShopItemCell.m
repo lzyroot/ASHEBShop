@@ -82,4 +82,21 @@
     }
     _model = model;
 }
+- (void)setDetailModel:(ASHCartDetailModel*)model{
+    self.titleLabel.text = model.title;
+    self.detailLabel.text = model.title;
+    [self.shopImageView sd_setImageWithURL:[NSURL URLWithString:model.pict_url]];
+
+
+    NSRange start = [model.coupon_info rangeOfString:@"减"];
+    NSString* couponPrice = [model.coupon_info substringWithRange:NSMakeRange(start.location + 1, model.coupon_info.length-1 - start.location-1)];
+    self.couponPriceLabel.text = [NSString stringWithFormat:@"¥%@",couponPrice];
+    
+    self.oriPriceLabel.text = [NSString stringWithFormat:@"%.2f", [model.zk_final_price floatValue]];
+    [self.oriPriceLabel ash_labelByStrikeline];
+    
+    self.priceLabel.text = [NSString stringWithFormat:@"%.2f", [model.zk_final_price floatValue] - [couponPrice floatValue]];
+    
+    self.couponView.userInteractionEnabled = NO;
+}
 @end

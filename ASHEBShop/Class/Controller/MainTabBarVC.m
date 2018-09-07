@@ -13,6 +13,7 @@
 #import "MainViewController.h"
 #import "ASHZheKou99ViewController.h"
 #import "MainViewController.h"
+#import "ASHWebCartViewController.h"
 @implementation MainTabBarVC
 -(void)viewDidLoad
 {
@@ -21,6 +22,13 @@
     UITabBarItem* mainItem = [[UITabBarItem alloc] initWithTitle:@"推荐" image:[UIImage imageNamed:@"home_normal"] selectedImage:[[UIImage imageNamed:@"home_selected"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ];
     [mainItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor mainColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     mainNav.tabBarItem = mainItem;
+    
+    ASHWebCartViewController* cartVC = [ASHWebCartViewController new];
+    cartVC.shouldBottom = YES;
+    UINavigationController* cartNav = [[UINavigationController alloc] initWithRootViewController:cartVC];
+    UITabBarItem* cartItem = [[UITabBarItem alloc] initWithTitle:@"购物车" image:[UIImage imageNamed:@"tab_brand_icon"] selectedImage:[[UIImage imageNamed:@"tab_brand_icon_select"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [cartItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor mainColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    cartNav.tabBarItem = cartItem;
     
     UINavigationController* categoryNav = [[UINavigationController alloc] initWithRootViewController:[ASHZheKou99ViewController new]];
     UITabBarItem* categoryItem = [[UITabBarItem alloc] initWithTitle:@"9块9" image:[UIImage imageNamed:@"tab_99_icon"] selectedImage:[[UIImage imageNamed:@"tab_99_icon_select"]  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -32,7 +40,7 @@
     [thirdItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor mainColor],NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
     thirdNav.tabBarItem = thirdItem;
     
-    [self setViewControllers:@[mainNav,categoryNav,thirdNav]];
+    [self setViewControllers:@[mainNav,cartNav,categoryNav,thirdNav]];
 
     self.selectedIndex = 0;
 }

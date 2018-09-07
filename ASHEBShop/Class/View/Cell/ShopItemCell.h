@@ -13,5 +13,5 @@
 @property(nonatomic, strong)ASHHomeItemModel* model;
 
 @property(nonatomic, copy)void(^couponAction)(ASHHomeItemModel* model);
-
+- (void)setDetailModel:(ASHCartDetailModel*)model;
 @end

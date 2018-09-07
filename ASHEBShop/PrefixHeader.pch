@@ -38,5 +38,6 @@
 #import <UMMobClick/MobClick.h>
 #import <MBProgressHUD.h>
 #import "NSDictionary+ASHUtil.h"
+#import "ASHCouponManager.h"
 
 #endif /* PrefixHeader_pch */
