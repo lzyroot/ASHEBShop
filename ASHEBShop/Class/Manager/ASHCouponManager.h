@@ -14,6 +14,7 @@
 
 - (BOOL)hasCacheCoupon:(NSInteger)num_iid;
 - (void)saveCacheWithID:(NSInteger)num_iid withModel:(ASHCartDetailModel*)model;
+- (void)saveNoWithID:(NSInteger)num_iid;
 - (void)addCouponWithID:(NSInteger)num_iid withModel:(ASHCartDetailModel*)model;
 
 - (NSInteger)totalPrice;

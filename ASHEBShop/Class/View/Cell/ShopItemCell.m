@@ -13,6 +13,7 @@
 #import <ReactiveCocoa.h>
 
 @interface ShopItemCell()
+@property (weak, nonatomic) IBOutlet UILabel *isLikeLabel;
 @property (weak, nonatomic) IBOutlet UIView *shopContentView;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *oriPriceLabel;
@@ -98,5 +99,10 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%.2f", [model.zk_final_price floatValue] - [couponPrice floatValue]];
     
     self.couponView.userInteractionEnabled = NO;
+    
+    self.isLikeLabel.hidden = YES;
+    if (model.isLike) {
+        self.isLikeLabel.hidden = NO;
+    }
 }
 @end

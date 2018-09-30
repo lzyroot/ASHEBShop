@@ -42,6 +42,8 @@
         if (detailModel) {
             detailModel.price = price;
             [[ASHCouponManager shareInstance] saveCacheWithID:num_iid withModel:detailModel];
+        }else{
+            
         }
         
         self.model = model;

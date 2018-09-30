@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -46,7 +46,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-3d-jtz">
-                                <rect key="frame" x="128" y="12" width="177" height="20"/>
+                                <rect key="frame" x="128" y="12" width="177" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,6 +97,17 @@
                                     <constraint firstItem="duJ-l7-T2o" firstAttribute="leading" secondItem="buZ-rE-eRI" secondAttribute="leading" id="orm-iR-Lbh"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同款" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7n-EV-ytS">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
+                                <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0kF-WC-2EZ"/>
+                                    <constraint firstAttribute="height" constant="43" id="xqn-qQ-5Gm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,9 +123,11 @@
                             <constraint firstItem="9Td-oL-zZg" firstAttribute="leading" secondItem="nE2-Um-QGf" secondAttribute="leading" constant="8" id="cfT-Wx-lpo"/>
                             <constraint firstAttribute="bottom" secondItem="buZ-rE-eRI" secondAttribute="bottom" id="dBw-RS-YGB"/>
                             <constraint firstItem="WE3-ue-hQD" firstAttribute="leading" secondItem="GqB-KF-49f" secondAttribute="leading" id="gcH-Xv-tkx"/>
+                            <constraint firstItem="S7n-EV-ytS" firstAttribute="leading" secondItem="nE2-Um-QGf" secondAttribute="leading" id="iHN-z9-jLp"/>
                             <constraint firstAttribute="bottom" secondItem="9Td-oL-zZg" secondAttribute="bottom" constant="12" id="lT1-NL-jXv"/>
                             <constraint firstItem="Hqu-WV-gz3" firstAttribute="leading" secondItem="WE3-ue-hQD" secondAttribute="trailing" constant="3" id="owI-aE-izF"/>
                             <constraint firstItem="Hqu-WV-gz3" firstAttribute="top" secondItem="WE3-ue-hQD" secondAttribute="top" constant="6" id="tug-aU-4El"/>
+                            <constraint firstItem="S7n-EV-ytS" firstAttribute="top" secondItem="nE2-Um-QGf" secondAttribute="top" id="u2L-7V-Qnu"/>
                             <constraint firstItem="buZ-rE-eRI" firstAttribute="leading" secondItem="GqB-KF-49f" secondAttribute="trailing" constant="8" id="zWf-GH-6vh"/>
                         </constraints>
                     </view>
@@ -133,13 +146,14 @@
                 <outlet property="couponView" destination="buZ-rE-eRI" id="VJN-3a-47x"/>
                 <outlet property="detailLabel" destination="GqB-KF-49f" id="KWt-Oe-Qkg"/>
                 <outlet property="detailRight" destination="zWf-GH-6vh" id="V0L-P9-P6h"/>
+                <outlet property="isLikeLabel" destination="S7n-EV-ytS" id="O9W-8q-qDc"/>
                 <outlet property="oriPriceLabel" destination="Hqu-WV-gz3" id="1ay-oP-NsU"/>
                 <outlet property="priceLabel" destination="WE3-ue-hQD" id="ExY-nR-dTe"/>
                 <outlet property="shopContentView" destination="nE2-Um-QGf" id="tzF-jh-h54"/>
                 <outlet property="shopImageView" destination="9Td-oL-zZg" id="s5K-5C-JZM"/>
                 <outlet property="titleLabel" destination="bkS-3d-jtz" id="KdU-dO-TdG"/>
             </connections>
-            <point key="canvasLocation" x="-5" y="21"/>
+            <point key="canvasLocation" x="-5.5" y="20.5"/>
         </tableViewCell>
     </objects>
 </document>
