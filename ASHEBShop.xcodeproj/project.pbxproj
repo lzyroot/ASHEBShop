@@ -192,7 +192,6 @@
 		A9D5B87D21259D61009286F9 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87921259D60009286F9 /* AlipaySDK.bundle */; };
 		A9D5B87E21259D61009286F9 /* ALPLinkPartnerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */; };
 		A9D5B87F21259D61009286F9 /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B87B21259D61009286F9 /* NBResource.bundle */; };
-		A9D5B88121259F12009286F9 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D5B88021259F12009286F9 /* yw_1222.jpg */; };
 		A9D5B8842125AA50009286F9 /* ASHLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5B8832125AA50009286F9 /* ASHLoadView.m */; };
 		A9E744CB211590DA00645EEA /* NSString+ASHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CA211590DA00645EEA /* NSString+ASHUtil.m */; };
 		A9E744CE2115944F00645EEA /* ASHCouponWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E744CD2115944F00645EEA /* ASHCouponWebVC.m */; };
@@ -495,7 +494,6 @@
 		A9D5B87921259D60009286F9 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		A9D5B87A21259D61009286F9 /* ALPLinkPartnerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ALPLinkPartnerSDK.bundle; sourceTree = "<group>"; };
 		A9D5B87B21259D61009286F9 /* NBResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NBResource.bundle; sourceTree = "<group>"; };
-		A9D5B88021259F12009286F9 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		A9D5B8822125AA50009286F9 /* ASHLoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASHLoadView.h; sourceTree = "<group>"; };
 		A9D5B8832125AA50009286F9 /* ASHLoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASHLoadView.m; sourceTree = "<group>"; };
 		A9E744C9211590DA00645EEA /* NSString+ASHUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ASHUtil.h"; sourceTree = "<group>"; };
@@ -698,7 +696,6 @@
 				A93EECDC1E78EE26001378B1 /* AppDelegate.m */,
 				A93EECDE1E78EE26001378B1 /* ViewController.h */,
 				A93EECDF1E78EE26001378B1 /* ViewController.m */,
-				A9D5B88021259F12009286F9 /* yw_1222.jpg */,
 				A9E745F7211B09C900645EEA /* icon100.png */,
 				A9E745F6211B09C800645EEA /* startlabel1.png */,
 				A9E745F4211B073000645EEA /* startlabel.png */,
@@ -1132,7 +1129,6 @@
 				A93EECD11E78EE26001378B1 /* Sources */,
 				A93EECD21E78EE26001378B1 /* Frameworks */,
 				A93EECD31E78EE26001378B1 /* Resources */,
-				0F30C3B402ABEB6A505177E6 /* [CP] Embed Pods Frameworks */,
 				79BE20313D0DECDB1CEE9005 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1262,7 +1258,6 @@
 				A9D5B82A21257494009286F9 /* loading17.png in Resources */,
 				A93D32A220AD713300306F72 /* homenolike@3x.png in Resources */,
 				A906198A1E9CCE2B00B5D6E5 /* up.png in Resources */,
-				A9D5B88121259F12009286F9 /* yw_1222.jpg in Resources */,
 				A9D5B82721257494009286F9 /* loading10.png in Resources */,
 				A9E745F5211B073000645EEA /* startlabel.png in Resources */,
 				A9D5B82521257494009286F9 /* loading7.png in Resources */,
@@ -1295,30 +1290,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F30C3B402ABEB6A505177E6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		79BE20313D0DECDB1CEE9005 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ASHEBShop/Pods-ASHEBShop-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1331,13 +1314,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ASHEBShop-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

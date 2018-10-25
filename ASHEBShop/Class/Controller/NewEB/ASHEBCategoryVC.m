@@ -18,7 +18,6 @@
 #import "ASHTabCategoryView.h"
 #import "ASHSpecialViewController.h"
 #import "ASHZheKou99ViewController.h"
-#import <AXWebViewController.h>
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
 #import <AlibabaAuthSDK/ALBBSDK.h>
 @interface ASHEBCategoryVC ()<UITableViewDelegate,UITableViewDataSource>

@@ -1,0 +1,123 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - libwebp (0.5.1):
+    - libwebp/core (= 0.5.1)
+    - libwebp/dec (= 0.5.1)
+    - libwebp/demux (= 0.5.1)
+    - libwebp/dsp (= 0.5.1)
+    - libwebp/enc (= 0.5.1)
+    - libwebp/mux (= 0.5.1)
+    - libwebp/utils (= 0.5.1)
+    - libwebp/webp (= 0.5.1)
+  - libwebp/core (0.5.1):
+    - libwebp/webp
+  - libwebp/dec (0.5.1):
+    - libwebp/core
+  - libwebp/demux (0.5.1):
+    - libwebp/core
+  - libwebp/dsp (0.5.1):
+    - libwebp/core
+  - libwebp/enc (0.5.1):
+    - libwebp/core
+  - libwebp/mux (0.5.1):
+    - libwebp/core
+  - libwebp/utils (0.5.1):
+    - libwebp/core
+  - libwebp/webp (0.5.1)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SDWebImage/WebP (3.8.2):
+    - libwebp
+    - SDWebImage/Core
+  - UMengAnalytics (4.2.4)
+  - YYAsyncLayer (1.0)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYDispatchQueuePool (1.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (= 3.1.0)
+  - libwebp (from `https://github.com/wu736139669/libwebp.git`)
+  - Masonry (= 1.0.2)
+  - MBProgressHUD (= 1.0.0)
+  - MJRefresh (= 3.1.12)
+  - ReactiveCocoa (= 2.5)
+  - SDWebImage (= 3.8.2)
+  - SDWebImage/WebP (= 3.8.2)
+  - UMengAnalytics (= 4.2.4)
+  - YYAsyncLayer (= 1.0)
+  - YYCache (= 1.0.4)
+  - YYCategories (= 1.0.4)
+  - YYDispatchQueuePool (= 1.0)
+  - YYModel (= 1.0.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - ReactiveCocoa
+    - SDWebImage
+    - UMengAnalytics
+    - YYAsyncLayer
+    - YYCache
+    - YYCategories
+    - YYDispatchQueuePool
+    - YYModel
+
+EXTERNAL SOURCES:
+  libwebp:
+    :git: https://github.com/wu736139669/libwebp.git
+
+CHECKOUT OPTIONS:
+  libwebp:
+    :commit: 0380ab3bdec87bf18ce396bd397e65eb7a02a186
+    :git: https://github.com/wu736139669/libwebp.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  libwebp: c6667780953f0aab2bcd782a84c63fbf1f1bf621
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 99b6e436f85e14246acb12623b53a30a87b9e448
+
+COCOAPODS: 1.5.3
